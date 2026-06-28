@@ -13,7 +13,7 @@ const formatVal = (v, q) => {
   return `${v} ${q.unit}`;
 };
 
-function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor, winner, question }) {
+function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor, side, winner, question }) {
   return (
     <div className="flex gap-1.5 pb-1 justify-center flex-wrap overflow-visible">
       {hand.map(card => {
@@ -29,8 +29,8 @@ function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor
               flipped={flipped}
               size="xs"
               playerColor={playerColor}
-              winner={winner === (playerColor === 'blue' ? 'A' : 'B')}
-              loser={winner !== (playerColor === 'blue' ? 'A' : 'B') && winner !== 'draw'}
+              winner={winner === side}
+              loser={winner !== side && winner !== 'draw'}
             />
           );
         }
@@ -192,6 +192,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
           selectedId={top.card.id}
           flipped={flipped}
           playerColor={top.color}
+          side={top.side}
           winner={showResult ? winner : null}
           question={question}
         />
@@ -220,6 +221,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
           selectedId={bottom.card.id}
           flipped={flipped}
           playerColor={bottom.color}
+          side={bottom.side}
           winner={showResult ? winner : null}
           question={question}
         />
