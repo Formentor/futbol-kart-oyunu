@@ -263,6 +263,8 @@ export function useOnlineGame(allPlayers) {
     playerA: gs?.player_a ?? '',
     playerB: gs?.player_b ?? '',
     waitingForOpponent: phase === 'waiting-for-b' || phase === 'draft-waiting' || phase === 'play-waiting',
+    oppDraftDone: role === 'A' ? (gs?.draft_confirmed_b ?? false) : (gs?.draft_confirmed_a ?? false),
+    oppCardSelected: role === 'A' ? !!gs?.chosen_b : !!gs?.chosen_a,
     createGame,
     joinGame,
 

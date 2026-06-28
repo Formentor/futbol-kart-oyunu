@@ -1,12 +1,14 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import PlayerCard from './PlayerCard';
+import Toast from './Toast';
 
 const DRAFT_TIMER = 30;
 
 export default function DraftScreen({ game, nameA, nameB }) {
   const { phase, poolA, poolB, draftSelA, draftSelB,
-    toggleDraftA, toggleDraftB, confirmDraftA, confirmDraftB, HAND_SIZE } = game;
+    toggleDraftA, toggleDraftB, confirmDraftA, confirmDraftB, HAND_SIZE,
+    isOnline, oppDraftDone, playerA, playerB, role } = game;
 
   const isA = phase === 'draft-A';
   const pool = isA ? poolA : poolB;
@@ -62,8 +64,11 @@ export default function DraftScreen({ game, nameA, nameB }) {
   const timerPct = (timeLeft / DRAFT_TIMER) * 100;
   const timerColor = timeLeft <= 5 ? 'bg-red-500' : timeLeft <= 10 ? 'bg-yellow-500' : accent.timerBar;
 
+  const oppName = isOnline ? (role === 'A' ? playerB : playerA) : null;
+
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+      {isOnline && <Toast message={`✅ ${oppName} kadrosunu seçti!`} trigger={oppDraftDone} />}
       {/* Header */}
       <div className="bg-gray-900 border-b border-gray-700 px-6 py-4 flex items-center justify-between">
         <div>

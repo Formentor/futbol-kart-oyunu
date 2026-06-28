@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import PlayerCard from './PlayerCard';
+import Toast from './Toast';
 
 const TIMER_SECONDS = 20;
 
@@ -13,6 +14,7 @@ export default function PlayScreen({ game, nameA, nameB }) {
     selectCardA, confirmCardA,
     selectCardB, confirmCardB,
     autoPlayCard,
+    isOnline, oppCardSelected, playerA, playerB, role,
   } = game;
 
   const isA = phase === 'play-select-A';
@@ -56,8 +58,11 @@ export default function PlayScreen({ game, nameA, nameB }) {
   const timerPct = (timeLeft / TIMER_SECONDS) * 100;
   const timerColor = timeLeft <= 3 ? 'bg-red-500' : timeLeft <= 6 ? 'bg-yellow-500' : accent.timerBar;
 
+  const oppName = isOnline ? (role === 'A' ? playerB : playerA) : null;
+
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+      {isOnline && <Toast message={`⚡ ${oppName} kartını seçti!`} trigger={oppCardSelected} />}
       {/* Scoreboard */}
       <div className="bg-gray-900 border-b border-gray-700 px-4 py-2">
         <div className="flex items-center justify-between max-w-sm mx-auto">
