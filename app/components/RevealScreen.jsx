@@ -88,12 +88,15 @@ export default function RevealScreen({ game, nameA, nameB }) {
     : null;
 
   useEffect(() => {
+    // resultKey becomes null when round_result is cleared (transitioning to next round).
+    // In that case the component already returns null — no need to reset flip state,
+    // which would cause a visible flip-back animation just before unmounting.
+    if (!resultKey) return;
     setFlipped(false);
     setShowValues(false);
     setShowResult(false);
     setNextTimer(null);
     clearInterval(nextIntervalRef.current);
-    if (!resultKey) return;
     const t1 = setTimeout(() => setFlipped(true), 900);
     const t2 = setTimeout(() => setShowValues(true), 1750);
     const t3 = setTimeout(() => {
