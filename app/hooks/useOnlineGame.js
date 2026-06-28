@@ -225,7 +225,7 @@ export function useOnlineGame(allPlayers) {
 
   // ── Round navigation ─────────────────────────────────────────────────────────
   const nextRound = useCallback(async () => {
-    // Fresh read to get the latest state (used_a/b, question_index may have just been written)
+    // Fresh read only for question_index + used counts (these are safe to read once)
     const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
     if (!data) return;
     const latest = data.state;
@@ -235,7 +235,8 @@ export function useOnlineGame(allPlayers) {
     const patch = allUsed || outOfQ
       ? { phase: 'gameover', chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false }
       : { phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false };
-    await supabase.from('games').update({ state: { ...latest, ...patch }, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
+    // Use atomic patch — merges only these fields without touching anything else
+    await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: patch });
   }, [roomCode]);
 
   // ── Ready-next coordination ──────────────────────────────────────────────────
@@ -244,11 +245,8 @@ export function useOnlineGame(allPlayers) {
   const readyNext = useCallback(async () => {
     if (!roomCode) return;
     const key = role === 'A' ? 'ready_next_a' : 'ready_next_b';
-    // Always fresh-read to avoid overwriting the other player's flag
-    const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
-    if (!data) return;
-    const merged = { ...data.state, [key]: true };
-    await supabase.from('games').update({ state: merged, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
+    // Atomic patch — only sets our flag, never touches the other player's flag
+    await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: { [key]: true } });
   }, [role, roomCode]);
 
   // Role A: advance when both ready
