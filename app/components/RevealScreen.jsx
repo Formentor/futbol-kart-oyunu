@@ -4,6 +4,7 @@ import FlipCard from './FlipCard';
 import PlayerCard from './PlayerCard';
 
 const NEXT_TIMER = 10;
+const FINAL_TIMER = 10;
 
 const formatVal = (v, q) => {
   if (!q) return v;
@@ -78,7 +79,9 @@ export default function RevealScreen({ game, nameA, nameB }) {
   const [showValues, setShowValues] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [nextTimer, setNextTimer] = useState(null);
+  const [finalTimer, setFinalTimer] = useState(null);
   const nextIntervalRef = useRef(null);
+  const finalIntervalRef = useRef(null);
   const isFinal = phase === 'reveal-final';
 
   // Stable key so animations only re-trigger when the actual round changes,
@@ -96,7 +99,9 @@ export default function RevealScreen({ game, nameA, nameB }) {
     setShowValues(false);
     setShowResult(false);
     setNextTimer(null);
+    setFinalTimer(null);
     clearInterval(nextIntervalRef.current);
+    clearInterval(finalIntervalRef.current);
     const t1 = setTimeout(() => setFlipped(true), 900);
     const t2 = setTimeout(() => setShowValues(true), 1750);
     const t3 = setTimeout(() => {
@@ -107,7 +112,6 @@ export default function RevealScreen({ game, nameA, nameB }) {
           setNextTimer(prev => {
             if (prev <= 1) {
               clearInterval(nextIntervalRef.current);
-              // auto-advance: for online, mark ready; for local, go next
               if (isOnline) readyNext?.();
               else nextRound();
               return 0;
@@ -115,9 +119,21 @@ export default function RevealScreen({ game, nameA, nameB }) {
             return prev - 1;
           });
         }, 1000);
+      } else {
+        setFinalTimer(FINAL_TIMER);
+        finalIntervalRef.current = setInterval(() => {
+          setFinalTimer(prev => {
+            if (prev <= 1) {
+              clearInterval(finalIntervalRef.current);
+              goToGameOver();
+              return 0;
+            }
+            return prev - 1;
+          });
+        }, 1000);
       }
     }, 2000);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearInterval(nextIntervalRef.current); };
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearInterval(nextIntervalRef.current); clearInterval(finalIntervalRef.current); };
   }, [resultKey]);
 
   const handleNext = () => {
@@ -253,12 +269,12 @@ export default function RevealScreen({ game, nameA, nameB }) {
       {/* Next button */}
       {isFinal ? (
         <button
-          onClick={goToGameOver}
+          onClick={() => { clearInterval(finalIntervalRef.current); goToGameOver(); }}
           disabled={!showValues}
           className={`px-6 py-2 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shrink-0
             ${showValues ? 'bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer' : 'bg-gray-800 text-gray-600 cursor-not-allowed'}`}
         >
-          Sonucu Gör →
+          Sonucu Gör{finalTimer !== null ? ` (${finalTimer}s)` : ''} →
         </button>
       ) : showResult && (
         <div className="flex flex-col items-center gap-1.5 w-full max-w-xs shrink-0">

@@ -96,6 +96,7 @@ export function useOnlineGame(allPlayers) {
       phase: isFinal ? 'reveal-final' : 'reveal',
       ready_next_a: false,
       ready_next_b: false,
+      reveal_started_at: new Date().toISOString(),
     } }).then(({ error }) => {
       if (error) {
         console.error('Resolution RPC failed, will retry:', error);
@@ -141,8 +142,10 @@ export function useOnlineGame(allPlayers) {
   // polling + an immediate check when the page becomes visible again.
   const PLAY_TIMEOUT_MS  = 21000;
   const DRAFT_TIMEOUT_MS = 31000;
+  const REVEAL_TIMEOUT_MS = 12000;
   const roomCodeRef = useRef(roomCode);
   useEffect(() => { roomCodeRef.current = roomCode; }, [roomCode]);
+  const nextRoundRef = useRef(null);
 
   const enforceTimeouts = useCallback(async () => {
     const rc = roomCodeRef.current;
@@ -150,6 +153,19 @@ export function useOnlineGame(allPlayers) {
     const { data } = await supabase.from('games').select('state').eq('room_code', rc).single();
     if (!data) return;
     const s = data.state;
+
+    // Reveal timeout — auto-advance when both players are in background
+    if ((s.phase === 'reveal' || s.phase === 'reveal-final') && s.reveal_started_at) {
+      const elapsed = Date.now() - new Date(s.reveal_started_at).getTime();
+      if (elapsed >= REVEAL_TIMEOUT_MS) {
+        if (s.phase === 'reveal') {
+          await nextRoundRef.current?.();
+        } else {
+          await supabase.rpc('patch_game_state', { p_room_code: rc, p_patch: { phase: 'gameover' } });
+        }
+      }
+      return;
+    }
 
     // Play timeout
     if (s.phase === 'play' && s.play_started_at && !s.round_result) {
@@ -198,7 +214,7 @@ export function useOnlineGame(allPlayers) {
 
   useEffect(() => {
     if (role !== 'A' || !roomCode) return;
-    const inTimedPhase = gs?.phase === 'play' || gs?.phase === 'draft';
+    const inTimedPhase = gs?.phase === 'play' || gs?.phase === 'draft' || gs?.phase === 'reveal' || gs?.phase === 'reveal-final';
     if (!inTimedPhase) return;
 
     // Poll every 2s so the timeout fires even when the tab is in the background
@@ -349,6 +365,7 @@ export function useOnlineGame(allPlayers) {
     // Use atomic patch — merges only these fields without touching anything else
     await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: patch });
   }, [roomCode]);
+  useEffect(() => { nextRoundRef.current = nextRound; }, [nextRound]);
 
   // ── Ready-next coordination ──────────────────────────────────────────────────
   const readyNextRef = useRef(false); // prevent double nextRound call

@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import PlayerCard from './PlayerCard';
 import Toast from './Toast';
 
-const TIMER_SECONDS = 20;
+const TIMER_SECONDS = 15;
 
 export default function PlayScreen({ game, nameA, nameB }) {
   const {
@@ -140,7 +140,7 @@ export default function PlayScreen({ game, nameA, nameB }) {
                   selected={isChosen}
                   selectionNumber={isChosen ? p.selectionNumber : null}
                   onClick={isUsed ? undefined : () => select(p.id)}
-                  size="xs"
+                  size="sm"
                   dimmed={isUsed}
                 />
                 {isUsed && (

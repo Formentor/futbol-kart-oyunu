@@ -98,13 +98,10 @@ export default function PlayerCard({
         shadow-lg ${r.shine} flex flex-col overflow-hidden
       `}
     >
-      {/* Top row: rating + position (left) | flag (right) */}
-      <div className="flex items-start justify-between px-2 pt-1.5 shrink-0">
-        <div className="flex flex-col leading-tight">
-          <span className={`font-black leading-none ${dim.rating} ${r.textDark}`}>{player.rating}</span>
-          <span className={`font-bold uppercase tracking-wider ${dim.pos} ${r.textDark} opacity-70`}>{player.position}</span>
-        </div>
-        <span className={`${size === 'sm' ? 'text-base' : 'text-xl'} leading-none mt-0.5`}>{player.flag_emoji}</span>
+      {/* Top row: flag + position (left) */}
+      <div className="flex items-center gap-1 px-2 pt-1.5 shrink-0">
+        <span className={`${size === 'xs' ? 'text-sm' : size === 'sm' ? 'text-base' : 'text-xl'} leading-none`}>{player.flag_emoji}</span>
+        <span className={`font-bold uppercase tracking-wider ${dim.pos} ${r.textDark} opacity-70`}>{player.position}</span>
       </div>
 
       {/* Player image — fills remaining space */}
