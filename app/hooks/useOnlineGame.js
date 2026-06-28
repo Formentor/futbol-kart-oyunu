@@ -12,7 +12,8 @@ export function useOnlineGame(allPlayers) {
   const [gs, setGs] = useState(null);     // game state from Supabase
   const [lobbyError, setLobbyError] = useState('');
   const resolvedRef = useRef(false);      // prevent double-resolve
-  const pendingChoiceRef = useRef(null);  // { key, id } — preserve selection against stale realtime events
+  const pendingChoiceRef = useRef(null);  // { key, id } — preserve card selection against stale realtime events
+  const pendingDraftRef = useRef(null);   // { key, value } — preserve draft selection against stale realtime events
 
   // ── Supabase helpers ────────────────────────────────────────────────────────
   const gsRef = useRef(null);
@@ -44,10 +45,15 @@ export function useOnlineGame(allPlayers) {
         { event: 'UPDATE', schema: 'public', table: 'games', filter: `room_code=eq.${roomCode}` },
         payload => {
           const incoming = payload.new.state;
-          // If we have a pending choice and it got wiped by a stale event, restore it
+          // Restore pending card choice if wiped by stale event
           if (pendingChoiceRef.current) {
             const { key, id } = pendingChoiceRef.current;
             if (!incoming[key]) incoming[key] = id;
+          }
+          // Restore pending draft selection if wiped by stale event
+          if (pendingDraftRef.current) {
+            const { key, value } = pendingDraftRef.current;
+            incoming[key] = value;
           }
           setGs(incoming);
         })
@@ -141,8 +147,11 @@ export function useOnlineGame(allPlayers) {
     const next = current.includes(id)
       ? current.filter(x => x !== id)
       : current.length < HAND_SIZE ? [...current, id] : current;
+    pendingDraftRef.current = { key, value: next };
     setGs(prev => ({ ...prev, [key]: next }));
-    updateState({ [key]: next });
+    updateState({ [key]: next }).then(() => {
+      pendingDraftRef.current = null;
+    });
   }, [gs, role, updateState]);
 
   const confirmDraft = useCallback(async () => {
