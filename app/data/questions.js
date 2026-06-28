@@ -22,13 +22,9 @@ export const QUESTIONS = [
   { id:'S21', text:'Hangi futbolcunun forma numarası daha büyüktür?',                      field:'shirt_number',             higher_wins:true,  unit:'no' },
   { id:'S22', text:'Hangi futbolcu Dünya Kupası\'nda daha fazla gol atmıştır?',            field:'world_cup_goals',          higher_wins:true,  unit:'gol' },
   { id:'S23', text:'Hangi futbolcu daha ağırdır?',                                         field:'weight_kg',                higher_wins:true,  unit:'kg' },
-  { id:'S24', text:'Hangi futbolcunun kariyerindeki en yüksek FIFA puanı daha büyüktür?',  field:'peak_rating',              higher_wins:true,  unit:'puan' },
   { id:'S25', text:'Hangi futbolcunun Instagram takipçisi daha fazladır?',                  field:'instagram_m',              higher_wins:true,  unit:'M' },
   { id:'S26', text:'Hangi futbolcunun tek sezonda attığı en fazla gol sayısı daha yüksektir?', field:'best_season_goals',    higher_wins:true,  unit:'gol' },
   { id:'S27', text:'Hangi futbolcu kariyerini daha uzun sürdürmüştür?',                    field:'years_pro',                higher_wins:true,  unit:'yıl' },
-  { id:'S28', text:'Hangi futbolcunun hız (PAC) puanı daha yüksektir?',                    field:'pace',                     higher_wins:true,  unit:'puan' },
-  { id:'S29', text:'Hangi futbolcunun şut (SHO) puanı daha yüksektir?',                   field:'shooting',                 higher_wins:true,  unit:'puan' },
-  { id:'S30', text:'Hangi futbolcunun dribling (DRI) puanı daha yüksektir?',              field:'dribbling',                higher_wins:true,  unit:'puan' },
 ];
 
 export function pickQuestions(count = 15) {
