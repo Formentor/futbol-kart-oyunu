@@ -26,9 +26,20 @@ export default function PlayScreen({ game, nameA, nameB }) {
   const select = isA ? selectCardA : selectCardB;
   const playerLabel = isA ? nameA : nameB;
 
-  const accent = isA
-    ? { text: 'text-blue-400', border: 'border-blue-800', bg: 'bg-blue-950/40', btn: 'bg-blue-600 hover:bg-blue-500', timerBg: 'bg-blue-900/40', timerBar: 'bg-blue-500' }
-    : { text: 'text-red-400', border: 'border-red-800', bg: 'bg-red-950/40', btn: 'bg-red-600 hover:bg-red-500', timerBg: 'bg-red-900/40', timerBar: 'bg-red-500' };
+  // Always green — you're always selecting your own cards
+  const accent = { text: 'text-green-400', border: 'border-green-800', bg: 'bg-green-950/40', btn: 'bg-green-600 hover:bg-green-500', timerBg: 'bg-green-900/40', timerBar: 'bg-green-500' };
+
+  // Scoreboard: "me" = green, opponent = red
+  // Online: role tells us which side we are. Local: current turn player is "me".
+  const iAmA = isOnline ? role === 'A' : isA;
+  const myScoreColor   = 'text-green-300';
+  const oppScoreColor  = 'text-red-300';
+  const myNameColor    = 'text-green-400';
+  const oppNameColor   = 'text-red-400';
+  const aNameCls  = iAmA ? myNameColor  : oppNameColor;
+  const bNameCls  = iAmA ? oppNameColor : myNameColor;
+  const aScoreCls = iAmA ? myScoreColor : oppScoreColor;
+  const bScoreCls = iAmA ? oppScoreColor : myScoreColor;
 
   // Timer — synced to server timestamp so rejoining shows correct remaining time
   const getInitialTime = () => {
@@ -77,16 +88,16 @@ export default function PlayScreen({ game, nameA, nameB }) {
       <div className="bg-gray-900 border-b border-gray-700 px-4 py-2">
         <div className="flex items-center justify-between max-w-sm mx-auto">
           <div className="text-center">
-            <p className="text-blue-400 font-black text-xs uppercase tracking-wider">{nameA}</p>
-            <p className="text-3xl font-black text-blue-300">{scoreA}</p>
+            <p className={`${aNameCls} font-black text-xs uppercase tracking-wider`}>{nameA}</p>
+            <p className={`text-3xl font-black ${aScoreCls}`}>{scoreA}</p>
           </div>
           <div className="text-center px-3">
             <p className="text-gray-500 text-xs">ilk {WIN_SCORE} kazanır</p>
             <p className="text-gray-600 text-xs">{availableHand.length} kart kaldı</p>
           </div>
           <div className="text-center">
-            <p className="text-red-400 font-black text-xs uppercase tracking-wider">{nameB}</p>
-            <p className="text-3xl font-black text-red-300">{scoreB}</p>
+            <p className={`${bNameCls} font-black text-xs uppercase tracking-wider`}>{nameB}</p>
+            <p className={`text-3xl font-black ${bScoreCls}`}>{scoreB}</p>
           </div>
         </div>
       </div>

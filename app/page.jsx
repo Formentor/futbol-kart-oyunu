@@ -144,6 +144,8 @@ export default function Home() {
           nameA={oNameA}
           nameB={oNameB}
           onLeaderboard={() => setShowLeaderboard(true)}
+          role={onlineGame.role}
+          isOnline
         />
       );
     }

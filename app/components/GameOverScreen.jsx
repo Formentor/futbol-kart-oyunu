@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { saveResult } from './LeaderboardScreen';
 
-export default function GameOverScreen({ game, nameA, nameB, onLeaderboard }) {
+export default function GameOverScreen({ game, nameA, nameB, onLeaderboard, role, isOnline }) {
   const { scoreA, scoreB, roundHistory, resetGame, WIN_SCORE } = game;
   const saved = useRef(false);
   const [step, setStep] = useState(0); // 0=hidden 1=scores 2=winner 3=confetti 4=summary
@@ -24,6 +24,33 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard }) {
   const isDraw = scoreA === scoreB;
   const winnerName = scoreA > scoreB ? nameA : scoreB > scoreA ? nameB : null;
   const winnerSide = scoreA > scoreB ? 'A' : scoreB > scoreA ? 'B' : null;
+
+  // Perspective-aware colors: own = green, opponent = red
+  // Online: use role. Local: winner = green, loser = red.
+  const getNameCls = (side) => {
+    if (isOnline) return side === role ? 'text-green-400' : 'text-red-400';
+    if (isDraw) return 'text-yellow-400';
+    return winnerSide === side ? 'text-green-400' : 'text-red-400';
+  };
+  const getScoreCls = (side) => {
+    if (isOnline) return side === role ? 'text-green-300' : 'text-red-300';
+    if (isDraw) return 'text-gray-300';
+    return winnerSide === side ? 'text-green-300' : 'text-red-300';
+  };
+  const getWinnerCls = () => {
+    if (isDraw) return 'text-yellow-400';
+    if (isOnline) return winnerSide === role ? 'text-green-400' : 'text-red-400';
+    return 'text-green-400';
+  };
+  const getHistoryCls = (side) => {
+    if (isOnline) return side === role ? 'text-green-300' : 'text-red-300';
+    return side === 'A' ? 'text-green-300' : 'text-red-300';
+  };
+  const getHistoryWinnerCls = (rWinner) => {
+    if (rWinner === 'draw') return 'text-yellow-400';
+    if (isOnline) return rWinner === role ? 'text-green-400' : 'text-red-400';
+    return rWinner === 'A' ? 'text-green-400' : 'text-red-400';
+  };
 
   const particles = Array.from({ length: 28 }, (_, i) => ({
     id: i,
@@ -71,13 +98,13 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard }) {
         style={{ transitionDelay: '0ms' }}
       >
         <div className={`text-center transition-transform duration-500 ${step >= 2 && winnerSide === 'A' ? 'scale-125' : step >= 2 && winnerSide === 'B' ? 'scale-75 opacity-40' : ''}`}>
-          <p className="text-blue-400 text-sm font-bold uppercase tracking-wider mb-1">{nameA}</p>
-          <p className={`text-6xl font-black ${winnerSide === 'A' ? 'text-blue-300' : 'text-gray-500'}`}>{scoreA}</p>
+          <p className={`${getNameCls('A')} text-sm font-bold uppercase tracking-wider mb-1`}>{nameA}</p>
+          <p className={`text-6xl font-black ${step >= 2 ? getScoreCls('A') : 'text-gray-300'}`}>{scoreA}</p>
         </div>
         <div className="text-gray-600 font-black text-3xl">—</div>
         <div className={`text-center transition-transform duration-500 ${step >= 2 && winnerSide === 'B' ? 'scale-125' : step >= 2 && winnerSide === 'A' ? 'scale-75 opacity-40' : ''}`}>
-          <p className="text-red-400 text-sm font-bold uppercase tracking-wider mb-1">{nameB}</p>
-          <p className={`text-6xl font-black ${winnerSide === 'B' ? 'text-red-300' : 'text-gray-500'}`}>{scoreB}</p>
+          <p className={`${getNameCls('B')} text-sm font-bold uppercase tracking-wider mb-1`}>{nameB}</p>
+          <p className={`text-6xl font-black ${step >= 2 ? getScoreCls('B') : 'text-gray-300'}`}>{scoreB}</p>
         </div>
       </div>
 
@@ -89,12 +116,11 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard }) {
         <p className={`text-6xl mb-3 ${step >= 3 ? 'animate-bounce' : ''}`}>
           {isDraw ? '🤝' : '🏆'}
         </p>
-        <h2 className={`text-4xl font-black uppercase tracking-widest
-          ${isDraw ? 'text-yellow-400' : winnerSide === 'A' ? 'text-blue-400' : 'text-red-400'}`}>
+        <h2 className={`text-4xl font-black uppercase tracking-widest ${getWinnerCls()}`}>
           {isDraw ? 'Beraberlik!' : `${winnerName} Kazandı!`}
         </h2>
         {!isDraw && (
-          <p className={`text-sm font-bold mt-1 ${winnerSide === 'A' ? 'text-blue-300' : 'text-red-300'}`}>
+          <p className="text-sm font-bold mt-1 text-red-400">
             {winnerSide === 'A' ? nameB : nameA} kaybetti
           </p>
         )}
@@ -111,15 +137,15 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard }) {
             <div key={i} className="px-4 py-3 border-b border-gray-800 last:border-0">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs text-gray-500 font-bold">Soru {i + 1}</span>
-                <span className={`text-xs font-black ${r.winner === 'A' ? 'text-blue-400' : r.winner === 'B' ? 'text-red-400' : 'text-yellow-400'}`}>
+                <span className={`text-xs font-black ${getHistoryWinnerCls(r.winner)}`}>
                   {r.winner === 'draw' ? 'Berabere' : r.winner === 'A' ? `${nameA} ✓` : `${nameB} ✓`}
                 </span>
               </div>
               <p className="text-xs text-gray-300 mb-1.5">{r.question?.text}</p>
               <div className="flex items-center gap-2 text-xs">
-                <span className={`${r.winner === 'A' ? 'text-blue-300 font-bold' : 'text-gray-500'}`}>{r.cardA?.name} ({r.valA})</span>
+                <span className={`${r.winner === 'A' ? `${getHistoryCls('A')} font-bold` : 'text-gray-500'}`}>{r.cardA?.name} ({r.valA})</span>
                 <span className="text-gray-700">vs</span>
-                <span className={`${r.winner === 'B' ? 'text-red-300 font-bold' : 'text-gray-500'}`}>{r.cardB?.name} ({r.valB})</span>
+                <span className={`${r.winner === 'B' ? `${getHistoryCls('B')} font-bold` : 'text-gray-500'}`}>{r.cardB?.name} ({r.valB})</span>
               </div>
             </div>
           ))}

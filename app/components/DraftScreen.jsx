@@ -16,9 +16,8 @@ export default function DraftScreen({ game, nameA, nameB }) {
   const toggle = isA ? toggleDraftA : toggleDraftB;
   const confirm = isA ? confirmDraftA : confirmDraftB;
   const playerLabel = isA ? nameA : nameB;
-  const accent = isA
-    ? { text: 'text-blue-400', border: 'border-blue-800', bg: 'bg-blue-950/40', btn: 'bg-blue-600 hover:bg-blue-500', timerBar: 'bg-blue-500' }
-    : { text: 'text-red-400', border: 'border-red-800', bg: 'bg-red-950/40', btn: 'bg-red-600 hover:bg-red-500', timerBar: 'bg-red-500' };
+  // Always green — you're always selecting your own cards
+  const accent = { text: 'text-green-400', border: 'border-green-800', bg: 'bg-green-950/40', btn: 'bg-green-600 hover:bg-green-500', timerBar: 'bg-green-500' };
 
   const getInitialDraftTime = () => {
     if (isOnline && draftStartedAt) {
