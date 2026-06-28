@@ -95,6 +95,18 @@ export function useOnlineGame(allPlayers) {
     }
   }, [gs?.phase]);
 
+  // ── Stuck detector: poll Supabase every 2s when waiting for opponent's card ──
+  useEffect(() => {
+    if (!roomCode || !gs) return;
+    const myChosen = role === 'A' ? gs.chosen_a : gs.chosen_b;
+    if (gs.phase !== 'play' || !myChosen || gs.round_result) return;
+    const poll = setInterval(async () => {
+      const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+      if (data) setGs(data.state);
+    }, 2000);
+    return () => clearInterval(poll);
+  }, [gs?.phase, gs?.chosen_a, gs?.chosen_b, gs?.round_result, roomCode, role]);
+
   // ── Lobby actions ────────────────────────────────────────────────────────────
   const createGame = useCallback(async (nameA) => {
     if (!allPlayers.length) return;
@@ -159,12 +171,17 @@ export function useOnlineGame(allPlayers) {
     const key = role === 'A' ? 'chosen_a' : 'chosen_b';
     pendingChoiceRef.current = { key, id };
     setGs(prev => ({ ...prev, [key]: id }));
-    // Always fresh-read so we don't overwrite the other player's simultaneous choice
-    const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
-    if (data) {
+
+    // Retry loop: re-read and re-write until our key sticks (guards against overwrite races)
+    for (let attempt = 0; attempt < 4; attempt++) {
+      const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+      if (!data) break;
+      if (data.state[key] === id) break; // already confirmed
       const merged = { ...data.state, [key]: id };
       await supabase.from('games').update({ state: merged, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
+      if (attempt < 3) await new Promise(r => setTimeout(r, 150 + attempt * 100));
     }
+
     pendingChoiceRef.current = null;
   }, [role, roomCode]);
 
