@@ -81,13 +81,19 @@ export default function RevealScreen({ game, nameA, nameB }) {
   const nextIntervalRef = useRef(null);
   const isFinal = phase === 'reveal-final';
 
+  // Stable key so animations only re-trigger when the actual round changes,
+  // not when object references change due to realtime polling events.
+  const resultKey = roundResult
+    ? `${roundResult.cardA?.id}-${roundResult.cardB?.id}-${roundResult.winner}`
+    : null;
+
   useEffect(() => {
     setFlipped(false);
     setShowValues(false);
     setShowResult(false);
     setNextTimer(null);
     clearInterval(nextIntervalRef.current);
-    if (!roundResult) return;
+    if (!resultKey) return;
     const t1 = setTimeout(() => setFlipped(true), 900);
     const t2 = setTimeout(() => setShowValues(true), 1750);
     const t3 = setTimeout(() => {
@@ -109,7 +115,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
       }
     }, 2000);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearInterval(nextIntervalRef.current); };
-  }, [roundResult]);
+  }, [resultKey]);
 
   const handleNext = () => {
     clearInterval(nextIntervalRef.current);
