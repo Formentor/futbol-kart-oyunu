@@ -62,20 +62,24 @@ export function useOnlineGame(allPlayers) {
   }, [roomCode]);
 
   // ── Role A: auto-resolve when both cards chosen ──────────────────────────────
-  useEffect(() => {
-    if (role !== 'A' || !gs) return;
-    if (!gs.chosen_a || !gs.chosen_b || gs.round_result) return;
+  // Accepts the state object directly so it can be called from the stuck detector too.
+  const doResolve = useCallback((g) => {
+    if (!g || role !== 'A') return;
+    if (!g.chosen_a || !g.chosen_b || g.round_result) return;
     if (resolvedRef.current) return;
     resolvedRef.current = true;
 
-    const cardA = gs.hand_a.find(p => p.id === gs.chosen_a);
-    const cardB = gs.hand_b.find(p => p.id === gs.chosen_b);
-    if (!cardA || !cardB) return;
+    const cardA = g.hand_a.find(p => p.id === g.chosen_a);
+    const cardB = g.hand_b.find(p => p.id === g.chosen_b);
+    if (!cardA || !cardB) {
+      resolvedRef.current = false; // allow retry if cards not found yet
+      return;
+    }
 
-    const question = gs.questions[gs.question_index];
+    const question = g.questions[g.question_index];
     const winner = compareCards(cardA, cardB, question);
-    const newScoreA = winner === 'A' ? gs.score_a + 1 : gs.score_a;
-    const newScoreB = winner === 'B' ? gs.score_b + 1 : gs.score_b;
+    const newScoreA = winner === 'A' ? g.score_a + 1 : g.score_a;
+    const newScoreB = winner === 'B' ? g.score_b + 1 : g.score_b;
     const result = {
       winner, cardA, cardB, question,
       valA: getVal(cardA, question.field),
@@ -84,16 +88,25 @@ export function useOnlineGame(allPlayers) {
     const isFinal = newScoreA >= WIN_SCORE || newScoreB >= WIN_SCORE;
     supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: {
       round_result: result,
-      round_history: [...gs.round_history, result],
-      used_a: [...gs.used_a, gs.chosen_a],
-      used_b: [...gs.used_b, gs.chosen_b],
+      round_history: [...g.round_history, result],
+      used_a: [...g.used_a, g.chosen_a],
+      used_b: [...g.used_b, g.chosen_b],
       score_a: newScoreA,
       score_b: newScoreB,
       phase: isFinal ? 'reveal-final' : 'reveal',
       ready_next_a: false,
       ready_next_b: false,
-    } });
-  }, [gs?.chosen_a, gs?.chosen_b, gs?.round_result, role, roomCode]);
+    } }).then(({ error }) => {
+      if (error) {
+        console.error('Resolution RPC failed, will retry:', error);
+        resolvedRef.current = false;
+      }
+    });
+  }, [role, roomCode]);
+
+  useEffect(() => {
+    doResolve(gs);
+  }, [gs?.chosen_a, gs?.chosen_b, gs?.round_result, doResolve]);
 
   // ── Reset guards on new round ────────────────────────────────────────────────
   useEffect(() => {
@@ -111,10 +124,17 @@ export function useOnlineGame(allPlayers) {
     if (gs.phase !== 'play' || !myChosen || gs.round_result) return;
     const poll = setInterval(async () => {
       const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
-      if (data) setGs(data.state);
+      if (!data) return;
+      // For role A: if both cards chosen but still in play, force-retry resolution
+      // in case the realtime event was missed or the previous RPC failed.
+      if (role === 'A' && data.state.chosen_a && data.state.chosen_b && !data.state.round_result) {
+        resolvedRef.current = false;
+        doResolve(data.state);
+      }
+      setGs(data.state);
     }, 2000);
     return () => clearInterval(poll);
-  }, [gs?.phase, gs?.chosen_a, gs?.chosen_b, gs?.round_result, roomCode, role]);
+  }, [gs?.phase, gs?.chosen_a, gs?.chosen_b, gs?.round_result, roomCode, role, doResolve]);
 
   // ── Lobby actions ────────────────────────────────────────────────────────────
   const createGame = useCallback(async (nameA) => {
