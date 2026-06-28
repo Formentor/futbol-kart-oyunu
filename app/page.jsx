@@ -108,10 +108,8 @@ export default function Home() {
       return <LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} />;
     }
 
-    const gsState = onlineGame;
-    // Derive display names from Supabase
-    const oNameA = onlineGame.role === 'A' ? 'Sen (A)' : 'Rakip (A)';
-    const oNameB = onlineGame.role === 'B' ? 'Sen (B)' : 'Rakip (B)';
+    const oNameA = onlineGame.playerA || 'Oyuncu A';
+    const oNameB = onlineGame.playerB || 'Oyuncu B';
 
     // Waiting overlay (draft confirmed, waiting for other player)
     const waiting = phase === 'draft-waiting' || phase === 'play-waiting';

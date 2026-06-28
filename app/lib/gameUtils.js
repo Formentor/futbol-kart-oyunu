@@ -91,5 +91,7 @@ export function buildInitialState(playerAName, allPlayers) {
     used_b: [],
     round_result: null,
     round_history: [],
+    ready_next_a: false,
+    ready_next_b: false,
   };
 }

@@ -264,5 +264,9 @@ export function useGameState(allPlayers) {
     selectCardB, confirmCardB,
     autoPlayCard, playSuddenDeath,
     nextRound, goToGameOver, resetGame,
+    // local: readyNext is just nextRound (no coordination needed)
+    readyNext: nextRound,
+    myReady: false,
+    oppReady: false,
   };
 }

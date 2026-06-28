@@ -1,7 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import FlipCard from './FlipCard';
 import PlayerCard from './PlayerCard';
+
+const NEXT_TIMER = 10;
 
 const formatVal = (v, q) => {
   if (!q) return v;
@@ -66,22 +68,52 @@ function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor
 
 export default function RevealScreen({ game, nameA, nameB }) {
   const { roundResult, roundHistory, handA, handB, usedA, usedB, scoreA, scoreB, WIN_SCORE,
-    nextRound, goToGameOver, phase } = game;
+    nextRound, goToGameOver, phase,
+    readyNext, myReady, oppReady, isOnline,
+  } = game;
 
   const [flipped, setFlipped] = useState(false);
   const [showValues, setShowValues] = useState(false);
   const [showResult, setShowResult] = useState(false);
+  const [nextTimer, setNextTimer] = useState(null);
+  const nextIntervalRef = useRef(null);
+  const isFinal = phase === 'reveal-final';
 
   useEffect(() => {
     setFlipped(false);
     setShowValues(false);
     setShowResult(false);
+    setNextTimer(null);
+    clearInterval(nextIntervalRef.current);
     if (!roundResult) return;
     const t1 = setTimeout(() => setFlipped(true), 900);
     const t2 = setTimeout(() => setShowValues(true), 1750);
-    const t3 = setTimeout(() => setShowResult(true), 2000);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+    const t3 = setTimeout(() => {
+      setShowResult(true);
+      if (!isFinal) {
+        setNextTimer(NEXT_TIMER);
+        nextIntervalRef.current = setInterval(() => {
+          setNextTimer(prev => {
+            if (prev <= 1) {
+              clearInterval(nextIntervalRef.current);
+              // auto-advance: for online, mark ready; for local, go next
+              if (isOnline) readyNext?.();
+              else nextRound();
+              return 0;
+            }
+            return prev - 1;
+          });
+        }, 1000);
+      }
+    }, 2000);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearInterval(nextIntervalRef.current); };
   }, [roundResult]);
+
+  const handleNext = () => {
+    clearInterval(nextIntervalRef.current);
+    if (isOnline) readyNext?.();
+    else { isFinal ? goToGameOver() : nextRound(); }
+  };
 
   if (!roundResult) return null;
 
@@ -93,7 +125,6 @@ export default function RevealScreen({ game, nameA, nameB }) {
     if (r.cardA) cardOutcomes[r.cardA.id] = r.winner === 'A' ? 'win' : r.winner === 'draw' ? 'draw' : 'loss';
     if (r.cardB) cardOutcomes[r.cardB.id] = r.winner === 'B' ? 'win' : r.winner === 'draw' ? 'draw' : 'loss';
   });
-  const isFinal = phase === 'reveal-final';
   const isDraw = winner === 'draw';
 
   const winnerLabel = isDraw ? 'Beraberlik!' : winner === 'A' ? `${nameA} Kazandı!` : `${nameB} Kazandı!`;
@@ -195,14 +226,38 @@ export default function RevealScreen({ game, nameA, nameB }) {
         </div>
       </div>
 
-      <button
-        onClick={isFinal ? goToGameOver : nextRound}
-        disabled={!showValues}
-        className={`px-8 py-3 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg
-          ${showValues ? 'bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer' : 'bg-gray-800 text-gray-600 cursor-not-allowed'}`}
-      >
-        {isFinal ? 'Sonucu Gör →' : isDraw ? 'Beraberlik Turu →' : 'Sonraki Soru →'}
-      </button>
+      {/* Next button */}
+      {isFinal ? (
+        <button
+          onClick={goToGameOver}
+          disabled={!showValues}
+          className={`px-8 py-3 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg
+            ${showValues ? 'bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer' : 'bg-gray-800 text-gray-600 cursor-not-allowed'}`}
+        >
+          Sonucu Gör →
+        </button>
+      ) : showResult && (
+        <div className="flex flex-col items-center gap-2 w-full max-w-xs">
+          {isOnline && myReady ? (
+            <div className="w-full py-3 rounded-xl bg-gray-800 border border-green-700 text-green-400 font-black text-sm uppercase tracking-widest text-center">
+              ✓ Hazırsın {oppReady ? '— Rakip de hazır!' : '— Rakip bekleniyor...'}
+            </div>
+          ) : (
+            <button
+              onClick={handleNext}
+              className="w-full py-3 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer"
+            >
+              {isDraw ? 'Beraberlik Turu →' : 'Sonraki Soru →'}
+              {nextTimer !== null && ` (${nextTimer}s)`}
+            </button>
+          )}
+          {isOnline && (
+            <p className="text-gray-600 text-xs">
+              {myReady && !oppReady ? 'Rakip hazır olunca geçilecek' : !myReady && nextTimer !== null ? `${nextTimer}s sonra otomatik geçilecek` : ''}
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

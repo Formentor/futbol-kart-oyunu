@@ -14,12 +14,21 @@ export function useOnlineGame(allPlayers) {
   const resolvedRef = useRef(false);      // prevent double-resolve
 
   // ── Supabase helpers ────────────────────────────────────────────────────────
-  const updateState = useCallback(async (patch, code) => {
+  const gsRef = useRef(null);
+  useEffect(() => { gsRef.current = gs; }, [gs]);
+
+  const updateState = useCallback(async (patch, code, baseState) => {
     const rc = code || roomCode;
-    const { data } = await supabase
-      .from('games').select('state').eq('room_code', rc).single();
-    if (!data) return;
-    const merged = { ...data.state, ...patch };
+    const base = baseState ?? gsRef.current;
+    if (!base && !baseState) {
+      // fallback: fetch from supabase if we have no local state
+      const { data } = await supabase.from('games').select('state').eq('room_code', rc).single();
+      if (!data) return;
+      const merged = { ...data.state, ...patch };
+      await supabase.from('games').update({ state: merged, updated_at: new Date().toISOString() }).eq('room_code', rc);
+      return;
+    }
+    const merged = { ...base, ...patch };
     await supabase.from('games')
       .update({ state: merged, updated_at: new Date().toISOString() })
       .eq('room_code', rc);
@@ -134,11 +143,18 @@ export function useOnlineGame(allPlayers) {
   }, [gs, role, roomCode, updateState]);
 
   // ── Play actions ────────────────────────────────────────────────────────────
-  const selectCard = useCallback((id) => {
+  const selectCard = useCallback(async (id) => {
     const key = role === 'A' ? 'chosen_a' : 'chosen_b';
     setGs(prev => ({ ...prev, [key]: id }));
-    updateState({ [key]: id });
-  }, [role, updateState]);
+    const { error } = await supabase.from('games').update({
+      state: { ...gsRef.current, [key]: id },
+      updated_at: new Date().toISOString(),
+    }).eq('room_code', roomCode);
+    if (error) {
+      // retry once on failure
+      await updateState({ [key]: id });
+    }
+  }, [role, roomCode, updateState]);
 
   const confirmCard = useCallback(() => {
     // Selection already pushed to Supabase in selectCard; nothing more needed.
@@ -163,11 +179,24 @@ export function useOnlineGame(allPlayers) {
     const outOfQ = nextQIndex >= gs.questions.length;
 
     if (allUsed || outOfQ) {
-      await updateState({ phase: 'gameover', chosen_a: null, chosen_b: null, round_result: null });
+      await updateState({ phase: 'gameover', chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false });
     } else {
-      await updateState({ phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null });
+      await updateState({ phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false });
     }
   }, [gs, updateState]);
+
+  // ── Ready-next coordination (both players must confirm to advance) ───────────
+  const readyNext = useCallback(async () => {
+    if (!gs) return;
+    const key = role === 'A' ? 'ready_next_a' : 'ready_next_b';
+    await updateState({ [key]: true });
+  }, [gs, role, updateState]);
+
+  // Role A: advance when both ready
+  useEffect(() => {
+    if (role !== 'A' || !gs) return;
+    if (gs.ready_next_a && gs.ready_next_b) nextRound();
+  }, [gs?.ready_next_a, gs?.ready_next_b, role]);
 
   const goToGameOver = useCallback(() => updateState({ phase: 'gameover' }), [updateState]);
   const resetGame = useCallback(() => { setGs(null); setRoomCode(null); setRole(null); }, []);
@@ -202,6 +231,8 @@ export function useOnlineGame(allPlayers) {
     roomCode,
     role,
     lobbyError,
+    playerA: gs?.player_a ?? '',
+    playerB: gs?.player_b ?? '',
     waitingForOpponent: phase === 'waiting-for-b' || phase === 'draft-waiting' || phase === 'play-waiting',
     createGame,
     joinGame,
@@ -239,6 +270,9 @@ export function useOnlineGame(allPlayers) {
     confirmCardB: confirmCard,
     autoPlayCard,
     nextRound,
+    readyNext,
+    myReady: role === 'A' ? (gs?.ready_next_a ?? false) : (gs?.ready_next_b ?? false),
+    oppReady: role === 'A' ? (gs?.ready_next_b ?? false) : (gs?.ready_next_a ?? false),
     goToGameOver,
     resetGame,
     onPlayersLoaded: () => {},

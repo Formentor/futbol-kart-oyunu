@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import PlayerCard from './PlayerCard';
 
-const TIMER_SECONDS = 10;
+const TIMER_SECONDS = 20;
 
 export default function PlayScreen({ game, nameA, nameB }) {
   const {
