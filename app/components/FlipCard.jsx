@@ -59,7 +59,7 @@ export default function FlipCard({
     <>
       <style>{styles}</style>
       {/* Outer wrapper handles win/lose animation — isolated from flip */}
-      <div style={{ width: w, height: h, flexShrink: 0, ...outerAnim }}>
+      <div style={{ width: w, height: h, flexShrink: 0, overflow: 'visible', ...outerAnim }}>
         {/* Inner wrapper handles 3D flip */}
         <div style={{ perspective: '1000px', width: '100%', height: '100%' }}>
           <div

@@ -15,7 +15,7 @@ const formatVal = (v, q) => {
 
 function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor, winner, question }) {
   return (
-    <div className="flex gap-2 overflow-x-auto pb-1 justify-center flex-wrap">
+    <div className="flex gap-2 pb-1 justify-center flex-wrap overflow-visible">
       {hand.map(card => {
         const isSelected = card.id === selectedId;
         const isPrevUsed = usedSet.has(card.id) && !isSelected;
@@ -178,7 +178,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
       {!flipped && <p className="text-gray-600 text-xs animate-pulse tracking-widest uppercase">Kartlar açılıyor...</p>}
 
       {/* Top player (me in online, A in local) */}
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl overflow-visible">
         <p className={`text-xs font-black uppercase tracking-wider mb-2 text-center ${nameColor(top.side, 'top')}`}>
           {top.name} {showResult && winner === top.side ? '⭐' : ''}
         </p>
@@ -203,7 +203,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
       <div className={`text-gray-700 font-black text-lg transition-opacity duration-300 ${flipped ? 'opacity-100' : 'opacity-0'}`}>— VS —</div>
 
       {/* Bottom player (opponent in online, B in local) */}
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl overflow-visible">
         <div className="flex justify-center mb-1">
           <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px] ${valBg(bottom.side)}`}>
             <p className="text-[10px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
