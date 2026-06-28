@@ -159,16 +159,14 @@ export function useOnlineGame(allPlayers) {
     const key = role === 'A' ? 'chosen_a' : 'chosen_b';
     pendingChoiceRef.current = { key, id };
     setGs(prev => ({ ...prev, [key]: id }));
-    const { error } = await supabase.from('games').update({
-      state: { ...gsRef.current, [key]: id },
-      updated_at: new Date().toISOString(),
-    }).eq('room_code', roomCode);
-    if (error) {
-      await updateState({ [key]: id });
+    // Always fresh-read so we don't overwrite the other player's simultaneous choice
+    const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+    if (data) {
+      const merged = { ...data.state, [key]: id };
+      await supabase.from('games').update({ state: merged, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
     }
-    // clear pending once confirmed in supabase
     pendingChoiceRef.current = null;
-  }, [role, roomCode, updateState]);
+  }, [role, roomCode]);
 
   const confirmCard = useCallback(() => {
     // Selection already pushed to Supabase in selectCard; nothing more needed.
