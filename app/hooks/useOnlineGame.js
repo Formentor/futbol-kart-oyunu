@@ -187,30 +187,45 @@ export function useOnlineGame(allPlayers) {
 
   // ── Round navigation ─────────────────────────────────────────────────────────
   const nextRound = useCallback(async () => {
-    if (!gs) return;
-    const nextQIndex = gs.question_index + 1;
-    const allUsed = gs.used_a.length >= HAND_SIZE;
-    const outOfQ = nextQIndex >= gs.questions.length;
+    // Fresh read to get the latest state (used_a/b, question_index may have just been written)
+    const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+    if (!data) return;
+    const latest = data.state;
+    const nextQIndex = latest.question_index + 1;
+    const allUsed = latest.used_a.length >= HAND_SIZE;
+    const outOfQ = nextQIndex >= latest.questions.length;
+    const patch = allUsed || outOfQ
+      ? { phase: 'gameover', chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false }
+      : { phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false };
+    await supabase.from('games').update({ state: { ...latest, ...patch }, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
+  }, [roomCode]);
 
-    if (allUsed || outOfQ) {
-      await updateState({ phase: 'gameover', chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false });
-    } else {
-      await updateState({ phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false });
-    }
-  }, [gs, updateState]);
+  // ── Ready-next coordination ──────────────────────────────────────────────────
+  const readyNextRef = useRef(false); // prevent double nextRound call
 
-  // ── Ready-next coordination (both players must confirm to advance) ───────────
   const readyNext = useCallback(async () => {
-    if (!gs) return;
+    if (!roomCode) return;
     const key = role === 'A' ? 'ready_next_a' : 'ready_next_b';
-    await updateState({ [key]: true });
-  }, [gs, role, updateState]);
+    // Always fresh-read to avoid overwriting the other player's flag
+    const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+    if (!data) return;
+    const merged = { ...data.state, [key]: true };
+    await supabase.from('games').update({ state: merged, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
+  }, [role, roomCode]);
 
   // Role A: advance when both ready
   useEffect(() => {
     if (role !== 'A' || !gs) return;
-    if (gs.ready_next_a && gs.ready_next_b) nextRound();
+    if (!gs.ready_next_a || !gs.ready_next_b) return;
+    if (readyNextRef.current) return;
+    readyNextRef.current = true;
+    nextRound();
   }, [gs?.ready_next_a, gs?.ready_next_b, role]);
+
+  // Reset readyNextRef when entering new round
+  useEffect(() => {
+    if (gs?.phase === 'play' || gs?.phase === 'gameover') readyNextRef.current = false;
+  }, [gs?.phase]);
 
   const goToGameOver = useCallback(() => updateState({ phase: 'gameover' }), [updateState]);
   const resetGame = useCallback(() => { setGs(null); setRoomCode(null); setRole(null); }, []);
