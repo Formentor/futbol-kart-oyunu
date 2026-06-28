@@ -8,7 +8,7 @@ const DRAFT_TIMER = 30;
 export default function DraftScreen({ game, nameA, nameB }) {
   const { phase, poolA, poolB, draftSelA, draftSelB,
     toggleDraftA, toggleDraftB, confirmDraftA, confirmDraftB, HAND_SIZE,
-    isOnline, oppDraftDone, playerA, playerB, role } = game;
+    isOnline, oppDraftDone, playerA, playerB, role, draftStartedAt } = game;
 
   const isA = phase === 'draft-A';
   const pool = isA ? poolA : poolB;
@@ -20,7 +20,15 @@ export default function DraftScreen({ game, nameA, nameB }) {
     ? { text: 'text-blue-400', border: 'border-blue-800', bg: 'bg-blue-950/40', btn: 'bg-blue-600 hover:bg-blue-500', timerBar: 'bg-blue-500' }
     : { text: 'text-red-400', border: 'border-red-800', bg: 'bg-red-950/40', btn: 'bg-red-600 hover:bg-red-500', timerBar: 'bg-red-500' };
 
-  const [timeLeft, setTimeLeft] = useState(DRAFT_TIMER);
+  const getInitialDraftTime = () => {
+    if (isOnline && draftStartedAt) {
+      const elapsed = Math.floor((Date.now() - new Date(draftStartedAt).getTime()) / 1000);
+      return Math.max(0, DRAFT_TIMER - elapsed);
+    }
+    return DRAFT_TIMER;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(getInitialDraftTime);
   const intervalRef = useRef(null);
   const selectedRef = useRef(selected);
   useEffect(() => { selectedRef.current = selected; }, [selected]);
@@ -42,7 +50,7 @@ export default function DraftScreen({ game, nameA, nameB }) {
 
   useEffect(() => {
     autoConfirm.current = false;
-    setTimeLeft(DRAFT_TIMER);
+    setTimeLeft(getInitialDraftTime());
     intervalRef.current = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {

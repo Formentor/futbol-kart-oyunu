@@ -136,6 +136,68 @@ export function useOnlineGame(allPlayers) {
     return () => clearInterval(poll);
   }, [gs?.phase, gs?.chosen_a, gs?.chosen_b, gs?.round_result, roomCode, role, doResolve]);
 
+  // ── Role A: server-side timeout — auto-select for any player who disconnected ──
+  const PLAY_TIMEOUT_MS  = 21000; // 1s grace after the 20s client timer
+  const DRAFT_TIMEOUT_MS = 31000;
+
+  useEffect(() => {
+    if (role !== 'A' || !roomCode || !gs) return;
+
+    // Play phase: auto-select for both players after timeout
+    if (gs.phase === 'play' && gs.play_started_at && !gs.round_result) {
+      const elapsed = Date.now() - new Date(gs.play_started_at).getTime();
+      const delay = Math.max(0, PLAY_TIMEOUT_MS - elapsed);
+      const t = setTimeout(async () => {
+        const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+        if (!data) return;
+        const s = data.state;
+        if (s.round_result || s.phase !== 'play') return;
+        if (!s.chosen_a) {
+          const avail = s.hand_a.filter(p => !s.used_a.includes(p.id));
+          if (avail.length) await supabase.rpc('set_game_choice', { p_room_code: roomCode, p_key: 'chosen_a', p_value: avail[Math.floor(Math.random() * avail.length)].id });
+        }
+        if (!s.chosen_b) {
+          const avail = s.hand_b.filter(p => !s.used_b.includes(p.id));
+          if (avail.length) await supabase.rpc('set_game_choice', { p_room_code: roomCode, p_key: 'chosen_b', p_value: avail[Math.floor(Math.random() * avail.length)].id });
+        }
+      }, delay);
+      return () => clearTimeout(t);
+    }
+
+    // Draft phase: auto-confirm for any player who hasn't after timeout
+    if (gs.phase === 'draft' && gs.draft_started_at) {
+      const elapsed = Date.now() - new Date(gs.draft_started_at).getTime();
+      const delay = Math.max(0, DRAFT_TIMEOUT_MS - elapsed);
+      const t = setTimeout(async () => {
+        const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+        if (!data) return;
+        const s = data.state;
+        if (s.phase !== 'draft') return;
+        const patches = {};
+        if (!s.draft_confirmed_a) {
+          const sel = s.draft_sel_a.length === HAND_SIZE ? s.draft_sel_a
+            : [...s.draft_sel_a, ...s.pool_a.filter(p => !s.draft_sel_a.includes(p.id)).sort(() => Math.random() - 0.5).slice(0, HAND_SIZE - s.draft_sel_a.length).map(p => p.id)];
+          patches.draft_sel_a = sel;
+          patches.draft_confirmed_a = true;
+          patches.hand_a = sel.map((id, idx) => ({ ...s.pool_a.find(p => p.id === id), selectionNumber: idx + 1 }));
+        }
+        if (!s.draft_confirmed_b) {
+          const sel = s.draft_sel_b.length === HAND_SIZE ? s.draft_sel_b
+            : [...s.draft_sel_b, ...s.pool_b.filter(p => !s.draft_sel_b.includes(p.id)).sort(() => Math.random() - 0.5).slice(0, HAND_SIZE - s.draft_sel_b.length).map(p => p.id)];
+          patches.draft_sel_b = sel;
+          patches.draft_confirmed_b = true;
+          patches.hand_b = sel.map((id, idx) => ({ ...s.pool_b.find(p => p.id === id), selectionNumber: idx + 1 }));
+        }
+        if (Object.keys(patches).length) {
+          patches.phase = 'play';
+          patches.play_started_at = new Date().toISOString();
+          await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: patches });
+        }
+      }, delay);
+      return () => clearTimeout(t);
+    }
+  }, [gs?.phase, gs?.play_started_at, gs?.draft_started_at, gs?.round_result, role, roomCode]);
+
   // ── Lobby actions ────────────────────────────────────────────────────────────
   const createGame = useCallback(async (nameA) => {
     if (!allPlayers.length) return;
@@ -157,7 +219,7 @@ export function useOnlineGame(allPlayers) {
       if (error || !data) { setLobbyError('Oda bulunamadı: ' + (error?.message || 'Kod yanlış olabilir')); return; }
       if (data.state.player_b) { setLobbyError('Bu oda dolu.'); return; }
       if (data.state.phase !== 'waiting-for-b') { setLobbyError('Oyun zaten başlamış.'); return; }
-      const newState = { ...data.state, player_b: nameB, phase: 'draft' };
+      const newState = { ...data.state, player_b: nameB, phase: 'draft', draft_started_at: new Date().toISOString() };
       const { error: writeErr } = await supabase.from('games')
         .update({ state: newState, updated_at: new Date().toISOString() })
         .eq('room_code', rc);
@@ -211,6 +273,7 @@ export function useOnlineGame(allPlayers) {
       [confKey]: true,
       [handKey]: hand,
       phase: otherConfirmed ? 'play' : 'draft',
+      ...(otherConfirmed ? { play_started_at: new Date().toISOString() } : {}),
     };
     await updateState(patch);
   }, [gs, role, roomCode, updateState]);
@@ -266,7 +329,7 @@ export function useOnlineGame(allPlayers) {
     const outOfQ = nextQIndex >= latest.questions.length;
     const patch = allUsed || outOfQ
       ? { phase: 'gameover', chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false }
-      : { phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false };
+      : { phase: 'play', question_index: nextQIndex, chosen_a: null, chosen_b: null, round_result: null, ready_next_a: false, ready_next_b: false, play_started_at: new Date().toISOString() };
     // Use atomic patch — merges only these fields without touching anything else
     await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: patch });
   }, [roomCode]);
@@ -357,6 +420,8 @@ export function useOnlineGame(allPlayers) {
     chosenB: role === 'B' ? gs?.chosen_a : gs?.chosen_b,
     roundResult: gs?.round_result ?? null,
     roundHistory: gs?.round_history ?? [],
+    playStartedAt: gs?.play_started_at ?? null,
+    draftStartedAt: gs?.draft_started_at ?? null,
 
     // actions
     toggleDraftA: toggleDraft,

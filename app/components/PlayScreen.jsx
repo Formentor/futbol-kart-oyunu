@@ -15,6 +15,7 @@ export default function PlayScreen({ game, nameA, nameB }) {
     selectCardB, confirmCardB,
     autoPlayCard,
     isOnline, oppCardSelected, playerA, playerB, role,
+    playStartedAt,
   } = game;
 
   const isA = phase === 'play-select-A';
@@ -29,14 +30,22 @@ export default function PlayScreen({ game, nameA, nameB }) {
     ? { text: 'text-blue-400', border: 'border-blue-800', bg: 'bg-blue-950/40', btn: 'bg-blue-600 hover:bg-blue-500', timerBg: 'bg-blue-900/40', timerBar: 'bg-blue-500' }
     : { text: 'text-red-400', border: 'border-red-800', bg: 'bg-red-950/40', btn: 'bg-red-600 hover:bg-red-500', timerBg: 'bg-red-900/40', timerBar: 'bg-red-500' };
 
-  // Timer
-  const [timeLeft, setTimeLeft] = useState(TIMER_SECONDS);
+  // Timer — synced to server timestamp so rejoining shows correct remaining time
+  const getInitialTime = () => {
+    if (isOnline && playStartedAt) {
+      const elapsed = Math.floor((Date.now() - new Date(playStartedAt).getTime()) / 1000);
+      return Math.max(0, TIMER_SECONDS - elapsed);
+    }
+    return TIMER_SECONDS;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(getInitialTime);
   const intervalRef = useRef(null);
   const autoPlayCardRef = useRef(autoPlayCard);
   useEffect(() => { autoPlayCardRef.current = autoPlayCard; }, [autoPlayCard]);
 
   useEffect(() => {
-    setTimeLeft(TIMER_SECONDS);
+    setTimeLeft(getInitialTime());
     intervalRef.current = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
