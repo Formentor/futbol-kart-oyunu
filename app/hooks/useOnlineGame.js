@@ -136,67 +136,83 @@ export function useOnlineGame(allPlayers) {
     return () => clearInterval(poll);
   }, [gs?.phase, gs?.chosen_a, gs?.chosen_b, gs?.round_result, roomCode, role, doResolve]);
 
-  // ── Role A: server-side timeout — auto-select for any player who disconnected ──
-  const PLAY_TIMEOUT_MS  = 21000; // 1s grace after the 20s client timer
+  // ── Role A: timeout enforcer — runs on an interval + on visibilitychange ──────
+  // setTimeout is throttled/paused in background tabs, so we use setInterval
+  // polling + an immediate check when the page becomes visible again.
+  const PLAY_TIMEOUT_MS  = 21000;
   const DRAFT_TIMEOUT_MS = 31000;
+  const roomCodeRef = useRef(roomCode);
+  useEffect(() => { roomCodeRef.current = roomCode; }, [roomCode]);
 
-  useEffect(() => {
-    if (role !== 'A' || !roomCode || !gs) return;
+  const enforceTimeouts = useCallback(async () => {
+    const rc = roomCodeRef.current;
+    if (!rc) return;
+    const { data } = await supabase.from('games').select('state').eq('room_code', rc).single();
+    if (!data) return;
+    const s = data.state;
 
-    // Play phase: auto-select for both players after timeout
-    if (gs.phase === 'play' && gs.play_started_at && !gs.round_result) {
-      const elapsed = Date.now() - new Date(gs.play_started_at).getTime();
-      const delay = Math.max(0, PLAY_TIMEOUT_MS - elapsed);
-      const t = setTimeout(async () => {
-        const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
-        if (!data) return;
-        const s = data.state;
-        if (s.round_result || s.phase !== 'play') return;
+    // Play timeout
+    if (s.phase === 'play' && s.play_started_at && !s.round_result) {
+      const elapsed = Date.now() - new Date(s.play_started_at).getTime();
+      if (elapsed >= PLAY_TIMEOUT_MS) {
         if (!s.chosen_a) {
           const avail = s.hand_a.filter(p => !s.used_a.includes(p.id));
-          if (avail.length) await supabase.rpc('set_game_choice', { p_room_code: roomCode, p_key: 'chosen_a', p_value: avail[Math.floor(Math.random() * avail.length)].id });
+          if (avail.length) await supabase.rpc('set_game_choice', { p_room_code: rc, p_key: 'chosen_a', p_value: avail[Math.floor(Math.random() * avail.length)].id });
         }
         if (!s.chosen_b) {
           const avail = s.hand_b.filter(p => !s.used_b.includes(p.id));
-          if (avail.length) await supabase.rpc('set_game_choice', { p_room_code: roomCode, p_key: 'chosen_b', p_value: avail[Math.floor(Math.random() * avail.length)].id });
+          if (avail.length) await supabase.rpc('set_game_choice', { p_room_code: rc, p_key: 'chosen_b', p_value: avail[Math.floor(Math.random() * avail.length)].id });
         }
-      }, delay);
-      return () => clearTimeout(t);
+      }
+      return;
     }
 
-    // Draft phase: auto-confirm for any player who hasn't after timeout
-    if (gs.phase === 'draft' && gs.draft_started_at) {
-      const elapsed = Date.now() - new Date(gs.draft_started_at).getTime();
-      const delay = Math.max(0, DRAFT_TIMEOUT_MS - elapsed);
-      const t = setTimeout(async () => {
-        const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
-        if (!data) return;
-        const s = data.state;
-        if (s.phase !== 'draft') return;
-        const patches = {};
-        if (!s.draft_confirmed_a) {
-          const sel = s.draft_sel_a.length === HAND_SIZE ? s.draft_sel_a
-            : [...s.draft_sel_a, ...s.pool_a.filter(p => !s.draft_sel_a.includes(p.id)).sort(() => Math.random() - 0.5).slice(0, HAND_SIZE - s.draft_sel_a.length).map(p => p.id)];
-          patches.draft_sel_a = sel;
-          patches.draft_confirmed_a = true;
-          patches.hand_a = sel.map((id, idx) => ({ ...s.pool_a.find(p => p.id === id), selectionNumber: idx + 1 }));
-        }
-        if (!s.draft_confirmed_b) {
-          const sel = s.draft_sel_b.length === HAND_SIZE ? s.draft_sel_b
-            : [...s.draft_sel_b, ...s.pool_b.filter(p => !s.draft_sel_b.includes(p.id)).sort(() => Math.random() - 0.5).slice(0, HAND_SIZE - s.draft_sel_b.length).map(p => p.id)];
-          patches.draft_sel_b = sel;
-          patches.draft_confirmed_b = true;
-          patches.hand_b = sel.map((id, idx) => ({ ...s.pool_b.find(p => p.id === id), selectionNumber: idx + 1 }));
-        }
-        if (Object.keys(patches).length) {
-          patches.phase = 'play';
-          patches.play_started_at = new Date().toISOString();
-          await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: patches });
-        }
-      }, delay);
-      return () => clearTimeout(t);
+    // Draft timeout
+    if (s.phase === 'draft' && s.draft_started_at) {
+      const elapsed = Date.now() - new Date(s.draft_started_at).getTime();
+      if (elapsed < DRAFT_TIMEOUT_MS) return;
+      const patches = {};
+      if (!s.draft_confirmed_a) {
+        const need = HAND_SIZE - s.draft_sel_a.length;
+        const extra = s.pool_a.filter(p => !s.draft_sel_a.includes(p.id)).sort(() => Math.random() - 0.5).slice(0, need).map(p => p.id);
+        const sel = [...s.draft_sel_a, ...extra];
+        patches.draft_sel_a = sel;
+        patches.draft_confirmed_a = true;
+        patches.hand_a = sel.map((id, idx) => ({ ...s.pool_a.find(p => p.id === id), selectionNumber: idx + 1 }));
+      }
+      if (!s.draft_confirmed_b) {
+        const need = HAND_SIZE - s.draft_sel_b.length;
+        const extra = s.pool_b.filter(p => !s.draft_sel_b.includes(p.id)).sort(() => Math.random() - 0.5).slice(0, need).map(p => p.id);
+        const sel = [...s.draft_sel_b, ...extra];
+        patches.draft_sel_b = sel;
+        patches.draft_confirmed_b = true;
+        patches.hand_b = sel.map((id, idx) => ({ ...s.pool_b.find(p => p.id === id), selectionNumber: idx + 1 }));
+      }
+      if (Object.keys(patches).length) {
+        patches.phase = 'play';
+        patches.play_started_at = new Date().toISOString();
+        await supabase.rpc('patch_game_state', { p_room_code: rc, p_patch: patches });
+      }
     }
-  }, [gs?.phase, gs?.play_started_at, gs?.draft_started_at, gs?.round_result, role, roomCode]);
+  }, []);
+
+  useEffect(() => {
+    if (role !== 'A' || !roomCode) return;
+    const inTimedPhase = gs?.phase === 'play' || gs?.phase === 'draft';
+    if (!inTimedPhase) return;
+
+    // Poll every 2s so the timeout fires even when the tab is in the background
+    const interval = setInterval(enforceTimeouts, 2000);
+
+    // Also fire immediately when the user returns to this tab
+    const onVisible = () => { if (document.visibilityState === 'visible') enforceTimeouts(); };
+    document.addEventListener('visibilitychange', onVisible);
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
+  }, [gs?.phase, role, roomCode, enforceTimeouts]);
 
   // ── Lobby actions ────────────────────────────────────────────────────────────
   const createGame = useCallback(async (nameA) => {
