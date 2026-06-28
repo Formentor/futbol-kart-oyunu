@@ -12,6 +12,7 @@ export function useOnlineGame(allPlayers) {
   const [gs, setGs] = useState(null);     // game state from Supabase
   const [lobbyError, setLobbyError] = useState('');
   const resolvedRef = useRef(false);      // prevent double-resolve
+  const pendingChoiceRef = useRef(null);  // { key, id } — preserve selection against stale realtime events
 
   // ── Supabase helpers ────────────────────────────────────────────────────────
   const gsRef = useRef(null);
@@ -41,7 +42,15 @@ export function useOnlineGame(allPlayers) {
       .channel(`game-${roomCode}`)
       .on('postgres_changes',
         { event: 'UPDATE', schema: 'public', table: 'games', filter: `room_code=eq.${roomCode}` },
-        payload => setGs(payload.new.state))
+        payload => {
+          const incoming = payload.new.state;
+          // If we have a pending choice and it got wiped by a stale event, restore it
+          if (pendingChoiceRef.current) {
+            const { key, id } = pendingChoiceRef.current;
+            if (!incoming[key]) incoming[key] = id;
+          }
+          setGs(incoming);
+        })
       .subscribe();
     return () => { supabase.removeChannel(channel); };
   }, [roomCode]);
@@ -78,9 +87,12 @@ export function useOnlineGame(allPlayers) {
     });
   }, [gs?.chosen_a, gs?.chosen_b, gs?.round_result, role]);
 
-  // ── Reset resolve guard on new round ────────────────────────────────────────
+  // ── Reset guards on new round ────────────────────────────────────────────────
   useEffect(() => {
-    if (gs?.phase === 'play') resolvedRef.current = false;
+    if (gs?.phase === 'play') {
+      resolvedRef.current = false;
+      pendingChoiceRef.current = null;
+    }
   }, [gs?.phase]);
 
   // ── Lobby actions ────────────────────────────────────────────────────────────
@@ -145,15 +157,17 @@ export function useOnlineGame(allPlayers) {
   // ── Play actions ────────────────────────────────────────────────────────────
   const selectCard = useCallback(async (id) => {
     const key = role === 'A' ? 'chosen_a' : 'chosen_b';
+    pendingChoiceRef.current = { key, id };
     setGs(prev => ({ ...prev, [key]: id }));
     const { error } = await supabase.from('games').update({
       state: { ...gsRef.current, [key]: id },
       updated_at: new Date().toISOString(),
     }).eq('room_code', roomCode);
     if (error) {
-      // retry once on failure
       await updateState({ [key]: id });
     }
+    // clear pending once confirmed in supabase
+    pendingChoiceRef.current = null;
   }, [role, roomCode, updateState]);
 
   const confirmCard = useCallback(() => {
