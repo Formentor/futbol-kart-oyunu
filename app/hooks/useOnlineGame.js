@@ -128,19 +128,23 @@ export function useOnlineGame(allPlayers) {
 
   const joinGame = useCallback(async (code, nameB) => {
     setLobbyError('');
-    const rc = code.toUpperCase();
-    const { data, error } = await supabase.from('games').select('state').eq('room_code', rc).single();
-    if (error || !data) { setLobbyError('Oda bulunamadı. Kodu kontrol et.'); return; }
-    if (data.state.player_b) { setLobbyError('Bu oda dolu.'); return; }
-    if (data.state.phase !== 'waiting-for-b') { setLobbyError('Oyun zaten başlamış.'); return; }
-    const newState = { ...data.state, player_b: nameB, phase: 'draft' };
-    const { error: writeErr } = await supabase.from('games')
-      .update({ state: newState, updated_at: new Date().toISOString() })
-      .eq('room_code', rc);
-    if (writeErr) { setLobbyError('Odaya katılınamadı: ' + writeErr.message); return; }
-    setRoomCode(rc);
-    setRole('B');
-    setGs(newState);
+    try {
+      const rc = String(code).trim();
+      const { data, error } = await supabase.from('games').select('state').eq('room_code', rc).single();
+      if (error || !data) { setLobbyError('Oda bulunamadı: ' + (error?.message || 'Kod yanlış olabilir')); return; }
+      if (data.state.player_b) { setLobbyError('Bu oda dolu.'); return; }
+      if (data.state.phase !== 'waiting-for-b') { setLobbyError('Oyun zaten başlamış.'); return; }
+      const newState = { ...data.state, player_b: nameB, phase: 'draft' };
+      const { error: writeErr } = await supabase.from('games')
+        .update({ state: newState, updated_at: new Date().toISOString() })
+        .eq('room_code', rc);
+      if (writeErr) { setLobbyError('Odaya katılınamadı: ' + writeErr.message); return; }
+      setRoomCode(rc);
+      setRole('B');
+      setGs(newState);
+    } catch (e) {
+      setLobbyError('Beklenmedik hata: ' + e.message);
+    }
   }, []);
 
   // ── Draft actions ────────────────────────────────────────────────────────────
