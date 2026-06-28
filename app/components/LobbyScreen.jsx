@@ -10,18 +10,21 @@ export default function LobbyScreen({ game, onBack }) {
   const [name, setName] = useState('');
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
+  const [localError, setLocalError] = useState('');
 
   const handleCreate = async () => {
     if (!name) return;
+    setLocalError('');
     setLoading(true);
-    await game.createGame(name);
+    try { await game.createGame(name); } catch (e) { setLocalError('Hata: ' + e.message); }
     setLoading(false);
   };
 
   const handleJoin = async () => {
     if (!name || code.length < 4) return;
+    setLocalError('');
     setLoading(true);
-    await game.joinGame(code, name);
+    try { await game.joinGame(code, name); } catch (e) { setLocalError('Hata: ' + e.message); }
     setLoading(false);
   };
 
@@ -96,8 +99,8 @@ export default function LobbyScreen({ game, onBack }) {
             </div>
           )}
 
-          {game.lobbyError && (
-            <p className="text-red-400 text-sm font-bold text-center">{game.lobbyError}</p>
+          {(localError || game.lobbyError) && (
+            <p className="text-red-400 text-sm font-bold text-center">{localError || game.lobbyError}</p>
           )}
 
           <button
