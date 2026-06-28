@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "futbol-kart",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/mervenurcoban/Futbol Kart Oyunu/futbol-kart",
+      "port": 3000
+    }
+  ]
+}

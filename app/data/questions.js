@@ -1,0 +1,36 @@
+export const QUESTIONS = [
+  { id:'S1',  text:'Hangi futbolcu milli takımında daha fazla gol atmıştır?',              field:'international_goals',      higher_wins:true,  unit:'gol' },
+  { id:'S2',  text:'Hangi futbolcunun doğduğu şehrin nüfusu daha fazladır?',               field:'birthplace_population',    higher_wins:true,  unit:'kişi' },
+  { id:'S3',  text:'Hangi futbolcu kariyerinde daha fazla kart görmüştür?',                field:'career_cards_total',       higher_wins:true,  unit:'kart' },
+  { id:'S4',  text:'Hangi futbolcu bir takımda daha uzun süre oynamıştır?',                field:'longest_club_tenure_years',higher_wins:true,  unit:'yıl' },
+  { id:'S5',  text:'Hangi futbolcu kariyerinde daha fazla gol atmıştır?',                  field:'career_goals_total',       higher_wins:true,  unit:'gol' },
+  { id:'S6',  text:'Hangi futbolcu daha genç yaşta profesyonel kariyerine başlamıştır?',   field:'pro_debut_age',            higher_wins:false, unit:'yaş' },
+  { id:'S7',  text:'Hangi futbolcu daha fazla ülkede oynamıştır?',                         field:'countries_played_count',   higher_wins:true,  unit:'ülke' },
+  { id:'S8',  text:'Hangi futbolcu kariyerinde daha fazla asist yapmıştır?',               field:'career_assists_total',     higher_wins:true,  unit:'asist' },
+  { id:'S9',  text:'Hangi futbolcunun kariyerindeki en pahalı transferi daha yüksektir?',  field:'highest_transfer_fee_m',   higher_wins:true,  unit:'M€' },
+  { id:'S10', text:'Hangi futbolcu daha fazla kulüp şampiyonluğu kazanmıştır?',            field:'club_titles_total',        higher_wins:true,  unit:'kupa' },
+  { id:'S11', text:'Hangi futbolcu daha uzun boyludur?',                                    field:'height_cm',                higher_wins:true,  unit:'cm' },
+  { id:'S12', text:'Hangi futbolcu daha fazla milli maç oynamıştır?',                      field:'international_caps',       higher_wins:true,  unit:'maç' },
+  { id:'S13', text:'Hangi futbolcu Şampiyonlar Ligi\'nde daha fazla gol atmıştır?',        field:'ucl_goals',                higher_wins:true,  unit:'gol' },
+  { id:'S14', text:'Hangi futbolcu daha fazla Ballon d\'Or ödülü kazanmıştır?',            field:'ballon_dor_wins',          higher_wins:true,  unit:'ödül' },
+  { id:'S15', text:'Hangi futbolcunun kariyer piyasa değeri zirvesi daha yüksektir?',      field:'peak_market_value_m',      higher_wins:true,  unit:'M€' },
+  { id:'S16', text:'Hangi futbolcu kariyerinde daha fazla hat-trick yapmıştır?',           field:'career_hat_tricks',        higher_wins:true,  unit:'ht' },
+  { id:'S17', text:'Hangi futbolcu daha yaşlıdır?',                                        field:'age',                      higher_wins:true,  unit:'yaş' },
+  { id:'S18', text:'Hangi futbolcu kariyerinde daha fazla kulüpte oynamıştır?',            field:'clubs_count',              higher_wins:true,  unit:'kulüp' },
+  { id:'S19', text:'Hangi futbolcunun haftalık maaşı daha yüksektir?',                     field:'weekly_wage_k',            higher_wins:true,  unit:'k€/hf' },
+  { id:'S20', text:'Hangi futbolcu daha önce doğmuştur? (Eski doğum yılı kazanır)',        field:'birth_year',               higher_wins:false, unit:'doğum' },
+  { id:'S21', text:'Hangi futbolcunun forma numarası daha büyüktür?',                      field:'shirt_number',             higher_wins:true,  unit:'no' },
+  { id:'S22', text:'Hangi futbolcu Dünya Kupası\'nda daha fazla gol atmıştır?',            field:'world_cup_goals',          higher_wins:true,  unit:'gol' },
+  { id:'S23', text:'Hangi futbolcu daha ağırdır?',                                         field:'weight_kg',                higher_wins:true,  unit:'kg' },
+  { id:'S24', text:'Hangi futbolcunun kariyerindeki en yüksek FIFA puanı daha büyüktür?',  field:'peak_rating',              higher_wins:true,  unit:'puan' },
+  { id:'S25', text:'Hangi futbolcunun Instagram takipçisi daha fazladır?',                  field:'instagram_m',              higher_wins:true,  unit:'M' },
+  { id:'S26', text:'Hangi futbolcunun tek sezonda attığı en fazla gol sayısı daha yüksektir?', field:'best_season_goals',    higher_wins:true,  unit:'gol' },
+  { id:'S27', text:'Hangi futbolcu kariyerini daha uzun sürdürmüştür?',                    field:'years_pro',                higher_wins:true,  unit:'yıl' },
+  { id:'S28', text:'Hangi futbolcunun hız (PAC) puanı daha yüksektir?',                    field:'pace',                     higher_wins:true,  unit:'puan' },
+  { id:'S29', text:'Hangi futbolcunun şut (SHO) puanı daha yüksektir?',                   field:'shooting',                 higher_wins:true,  unit:'puan' },
+  { id:'S30', text:'Hangi futbolcunun dribling (DRI) puanı daha yüksektir?',              field:'dribbling',                higher_wins:true,  unit:'puan' },
+];
+
+export function pickQuestions(count = 15) {
+  return [...QUESTIONS].sort(() => Math.random() - 0.5).slice(0, count);
+}
