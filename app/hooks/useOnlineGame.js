@@ -171,19 +171,28 @@ export function useOnlineGame(allPlayers) {
   }, []);
 
   // ── Draft actions ────────────────────────────────────────────────────────────
+  // Ref holds the latest selection so rapid clicks don't read stale gs closure.
+  const draftSelRef = useRef([]);
+  useEffect(() => {
+    if (gs && role) {
+      draftSelRef.current = role === 'A' ? gs.draft_sel_a : gs.draft_sel_b;
+    }
+  }, [gs, role]);
+
   const toggleDraft = useCallback((id) => {
-    if (!gs || !role) return;
+    if (!role) return;
     const key = role === 'A' ? 'draft_sel_a' : 'draft_sel_b';
-    const current = gs[key];
+    const current = draftSelRef.current;
     const next = current.includes(id)
       ? current.filter(x => x !== id)
       : current.length < HAND_SIZE ? [...current, id] : current;
+    draftSelRef.current = next; // update immediately so next rapid click sees it
     pendingDraftRef.current = { key, value: next };
     setGs(prev => ({ ...prev, [key]: next }));
     updateState({ [key]: next }).then(() => {
       pendingDraftRef.current = null;
     });
-  }, [gs, role, updateState]);
+  }, [role, updateState]);
 
   const confirmDraft = useCallback(async () => {
     if (!gs || !role) return;
