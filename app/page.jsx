@@ -119,7 +119,9 @@ export default function Home() {
         <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center gap-6 p-6">
           <p className="text-5xl animate-pulse">⏳</p>
           <h2 className="text-2xl font-black text-yellow-400 uppercase tracking-widest">
-            {phase === 'draft-waiting' ? 'Rakip seçimini yapıyor...' : 'Rakip kartını seçiyor...'}
+            {phase === 'draft-waiting'
+            ? `${onlineGame.role === 'A' ? oNameB : oNameA} seçimini yapıyor...`
+            : `${onlineGame.role === 'A' ? oNameB : oNameA} kartını seçiyor...`}
           </h2>
           <p className="text-gray-500 text-sm">Oda: <span className="text-yellow-400 font-black tracking-widest">{onlineGame.roomCode}</span></p>
         </div>

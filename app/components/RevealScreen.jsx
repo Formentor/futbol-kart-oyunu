@@ -69,8 +69,10 @@ function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor
 export default function RevealScreen({ game, nameA, nameB }) {
   const { roundResult, roundHistory, handA, handB, usedA, usedB, scoreA, scoreB, WIN_SCORE,
     nextRound, goToGameOver, phase,
-    readyNext, myReady, oppReady, isOnline,
+    readyNext, myReady, oppReady, isOnline, role,
   } = game;
+  const myName = isOnline ? (role === 'A' ? nameA : nameB) : null;
+  const oppName = isOnline ? (role === 'A' ? nameB : nameA) : null;
 
   const [flipped, setFlipped] = useState(false);
   const [showValues, setShowValues] = useState(false);
@@ -240,7 +242,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
         <div className="flex flex-col items-center gap-2 w-full max-w-xs">
           {isOnline && myReady ? (
             <div className="w-full py-3 rounded-xl bg-gray-800 border border-green-700 text-green-400 font-black text-sm uppercase tracking-widest text-center">
-              ✓ Hazırsın {oppReady ? '— Rakip de hazır!' : '— Rakip bekleniyor...'}
+              ✓ Hazır! {oppReady ? `— ${oppName} de hazır!` : `— ${oppName} bekleniyor...`}
             </div>
           ) : (
             <button
@@ -253,7 +255,7 @@ export default function RevealScreen({ game, nameA, nameB }) {
           )}
           {isOnline && (
             <p className="text-gray-600 text-xs">
-              {myReady && !oppReady ? 'Rakip hazır olunca geçilecek' : !myReady && nextTimer !== null ? `${nextTimer}s sonra otomatik geçilecek` : ''}
+              {myReady && !oppReady ? `${oppName} hazır olunca geçilecek` : !myReady && nextTimer !== null ? `${nextTimer}s sonra otomatik geçilecek` : ''}
             </p>
           )}
         </div>
