@@ -98,7 +98,6 @@ export default function DraftScreen({ game, nameA, nameB }) {
       <div className={`mx-4 mt-4 px-4 py-3 rounded-xl border ${accent.bg} ${accent.border}`}>
         <p className={`font-semibold ${accent.text}`}>
           {playerLabel}, {pool.length} kartınızdan {HAND_SIZE} tanesini seçin.
-          {!isA && ' Oyuncu A ekrandan uzaklaşsın!'}
         </p>
         <p className="text-xs text-gray-400 mt-1">
           Rakibinizin farklı kartları var — seçimleriniz el fazına kadar gizlidir.

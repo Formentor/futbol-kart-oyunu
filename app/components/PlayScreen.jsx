@@ -104,7 +104,6 @@ export default function PlayScreen({ game, nameA, nameB }) {
       <div className={`mx-4 mt-2 px-4 py-2 rounded-xl border ${accent.bg} ${accent.border} flex items-center justify-between`}>
         <p className={`font-bold text-sm ${accent.text}`}>
           {playerLabel} — kartını seç
-          {!isA && ' (Oyuncu A bakmasın!)'}
         </p>
         <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${timeLeft <= 3 ? 'border-red-500 bg-red-900/50' : accent.border + ' ' + accent.bg}`}>
           <span className={`font-black text-lg ${timeLeft <= 3 ? 'text-red-400' : accent.text}`}>{timeLeft}</span>
