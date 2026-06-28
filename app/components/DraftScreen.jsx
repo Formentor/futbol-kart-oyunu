@@ -74,46 +74,41 @@ export default function DraftScreen({ game, nameA, nameB }) {
   const oppName = isOnline ? (role === 'A' ? playerB : playerA) : null;
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+    <div className="h-dvh bg-gray-950 text-white flex flex-col overflow-hidden">
       {isOnline && <Toast message={`✅ ${oppName} kadrosunu seçti!`} trigger={oppDraftDone} />}
+
       {/* Header */}
-      <div className="bg-gray-900 border-b border-gray-700 px-6 py-4 flex items-center justify-between">
+      <div className="bg-gray-900 border-b border-gray-700 px-3 py-2 flex items-center justify-between shrink-0">
         <div>
-          <h1 className="text-2xl font-black tracking-widest uppercase">Futbol Kart Oyunu</h1>
-          <p className="text-sm text-gray-400">Kadro Seçimi</p>
+          <h1 className="text-base font-black tracking-widest uppercase">Futbol Kart</h1>
+          <p className="text-xs text-gray-400">Kadro Seçimi</p>
         </div>
-        <div className="text-right flex items-center gap-3">
-          <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${timeLeft <= 5 ? 'border-red-500 bg-red-900/50' : accent.border + ' ' + accent.bg}`}>
-            <span className={`font-black text-lg ${timeLeft <= 5 ? 'text-red-400' : accent.text}`}>{timeLeft}</span>
+        <div className="flex items-center gap-2">
+          <div className={`w-9 h-9 rounded-full flex items-center justify-center border-2 ${timeLeft <= 5 ? 'border-red-500 bg-red-900/50' : accent.border + ' ' + accent.bg}`}>
+            <span className={`font-black text-base ${timeLeft <= 5 ? 'text-red-400' : accent.text}`}>{timeLeft}</span>
           </div>
-          <div>
-            <p className={`text-xl font-black ${accent.text}`}>{playerLabel}</p>
-            <p className="text-sm text-gray-400">{selected.length}/{HAND_SIZE} kart</p>
+          <div className="text-right">
+            <p className={`text-base font-black ${accent.text}`}>{playerLabel}</p>
+            <p className="text-xs text-gray-400">{selected.length}/{HAND_SIZE} kart</p>
           </div>
         </div>
       </div>
 
       {/* Timer bar */}
-      <div className="h-2 bg-gray-800 w-full">
-        <div
-          className={`h-full transition-all duration-1000 ease-linear ${timerColor}`}
-          style={{ width: `${timerPct}%` }}
-        />
+      <div className="h-1.5 bg-gray-800 w-full shrink-0">
+        <div className={`h-full transition-all duration-1000 ease-linear ${timerColor}`} style={{ width: `${timerPct}%` }} />
       </div>
 
       {/* Instruction */}
-      <div className={`mx-4 mt-4 px-4 py-3 rounded-xl border ${accent.bg} ${accent.border}`}>
-        <p className={`font-semibold ${accent.text}`}>
-          {playerLabel}, {pool.length} kartınızdan {HAND_SIZE} tanesini seçin.
-        </p>
-        <p className="text-xs text-gray-400 mt-1">
-          Rakibinizin farklı kartları var — seçimleriniz el fazına kadar gizlidir.
+      <div className={`mx-3 mt-2 px-3 py-2 rounded-xl border shrink-0 ${accent.bg} ${accent.border}`}>
+        <p className={`text-xs font-semibold ${accent.text}`}>
+          {pool.length} karttan {HAND_SIZE} seç · Rakibin farklı kartlara sahip
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="flex-1 overflow-y-auto px-4 py-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 justify-items-center">
+      {/* Cards — scrollable */}
+      <div className="flex-1 min-h-0 overflow-y-auto px-3 py-2">
+        <div className="grid grid-cols-3 gap-2 justify-items-center">
           {pool.map(p => {
             const idx = selected.indexOf(p.id);
             return (
@@ -123,7 +118,7 @@ export default function DraftScreen({ game, nameA, nameB }) {
                 selected={idx !== -1}
                 selectionNumber={idx !== -1 ? idx + 1 : null}
                 onClick={() => toggle(p.id)}
-                size="md"
+                size="sm"
               />
             );
           })}
@@ -131,11 +126,11 @@ export default function DraftScreen({ game, nameA, nameB }) {
       </div>
 
       {/* Confirm */}
-      <div className="px-4 py-4 bg-gray-900 border-t border-gray-700">
+      <div className="px-3 py-2 bg-gray-900 border-t border-gray-700 shrink-0">
         <button
           onClick={handleConfirm}
           disabled={selected.length !== HAND_SIZE}
-          className={`w-full py-3 rounded-xl font-black text-lg uppercase tracking-widest transition-all
+          className={`w-full py-3 rounded-xl font-black text-base uppercase tracking-widest transition-all
             ${selected.length === HAND_SIZE
               ? `${accent.btn} text-white shadow-lg`
               : 'bg-gray-700 text-gray-500 cursor-not-allowed'}`}

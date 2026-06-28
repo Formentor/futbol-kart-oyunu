@@ -62,7 +62,7 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard, role
   }));
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center gap-5 p-5 pt-8 overflow-hidden relative">
+    <div className="h-dvh bg-gray-950 text-white flex flex-col items-center gap-3 p-4 pt-5 overflow-y-auto relative">
 
       {/* Confetti */}
       {step >= 3 && !isDraw && (
@@ -93,18 +93,16 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard, role
       )}
 
       {/* Scores — slide in */}
-      <div className={`flex items-center gap-6 bg-gray-900 px-10 py-5 rounded-2xl border border-gray-700 transition-all duration-700
-        ${step >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-        style={{ transitionDelay: '0ms' }}
-      >
+      <div className={`flex items-center gap-5 bg-gray-900 px-8 py-4 rounded-2xl border border-gray-700 transition-all duration-700
+        ${step >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className={`text-center transition-transform duration-500 ${step >= 2 && winnerSide === 'A' ? 'scale-125' : step >= 2 && winnerSide === 'B' ? 'scale-75 opacity-40' : ''}`}>
-          <p className={`${getNameCls('A')} text-sm font-bold uppercase tracking-wider mb-1`}>{nameA}</p>
-          <p className={`text-6xl font-black ${step >= 2 ? getScoreCls('A') : 'text-gray-300'}`}>{scoreA}</p>
+          <p className={`${getNameCls('A')} text-xs font-bold uppercase tracking-wider mb-1 truncate max-w-[80px]`}>{nameA}</p>
+          <p className={`text-5xl font-black ${step >= 2 ? getScoreCls('A') : 'text-gray-300'}`}>{scoreA}</p>
         </div>
-        <div className="text-gray-600 font-black text-3xl">—</div>
+        <div className="text-gray-600 font-black text-2xl">—</div>
         <div className={`text-center transition-transform duration-500 ${step >= 2 && winnerSide === 'B' ? 'scale-125' : step >= 2 && winnerSide === 'A' ? 'scale-75 opacity-40' : ''}`}>
-          <p className={`${getNameCls('B')} text-sm font-bold uppercase tracking-wider mb-1`}>{nameB}</p>
-          <p className={`text-6xl font-black ${step >= 2 ? getScoreCls('B') : 'text-gray-300'}`}>{scoreB}</p>
+          <p className={`${getNameCls('B')} text-xs font-bold uppercase tracking-wider mb-1 truncate max-w-[80px]`}>{nameB}</p>
+          <p className={`text-5xl font-black ${step >= 2 ? getScoreCls('B') : 'text-gray-300'}`}>{scoreB}</p>
         </div>
       </div>
 
@@ -116,7 +114,7 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard, role
         <p className={`text-6xl mb-3 ${step >= 3 ? 'animate-bounce' : ''}`}>
           {isDraw ? '🤝' : '🏆'}
         </p>
-        <h2 className={`text-4xl font-black uppercase tracking-widest ${getWinnerCls()}`}>
+        <h2 className={`text-3xl font-black uppercase tracking-widest ${getWinnerCls()}`}>
           {isDraw ? 'Beraberlik!' : `${winnerName} Kazandı!`}
         </h2>
         {!isDraw && (

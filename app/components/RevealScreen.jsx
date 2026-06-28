@@ -15,7 +15,7 @@ const formatVal = (v, q) => {
 
 function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor, winner, question }) {
   return (
-    <div className="flex gap-2 pb-1 justify-center flex-wrap overflow-visible">
+    <div className="flex gap-1.5 pb-1 justify-center flex-wrap overflow-visible">
       {hand.map(card => {
         const isSelected = card.id === selectedId;
         const isPrevUsed = usedSet.has(card.id) && !isSelected;
@@ -27,7 +27,7 @@ function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor
               player={card}
               cardNumber={card.selectionNumber}
               flipped={flipped}
-              size="sm"
+              size="xs"
               playerColor={playerColor}
               winner={winner === (playerColor === 'blue' ? 'A' : 'B')}
               loser={winner !== (playerColor === 'blue' ? 'A' : 'B') && winner !== 'draw'}
@@ -40,7 +40,7 @@ function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor
           const won = outcome === 'win' || outcome === 'draw';
           return (
             <div key={card.id} className="relative shrink-0">
-              <PlayerCard player={card} size="sm" dimmed={!won} winner={won} />
+              <PlayerCard player={card} size="xs" dimmed={!won} winner={won} />
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <span className={`text-2xl ${won ? 'opacity-70' : 'opacity-40 text-white'}`}>
                   {won ? '✓' : '✗'}
@@ -57,7 +57,7 @@ function HandRow({ hand, usedSet, cardOutcomes, selectedId, flipped, playerColor
             player={card}
             cardNumber={card.selectionNumber}
             flipped={false}
-            size="sm"
+            size="xs"
             playerColor={playerColor}
           />
         );
@@ -166,23 +166,23 @@ export default function RevealScreen({ game, nameA, nameB }) {
   const oppScore   = viewerIsB ? scoreA : scoreB;
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center gap-3 p-4 pt-5">
+    <div className="h-dvh bg-gray-950 text-white flex flex-col items-center overflow-y-auto gap-2 p-3 pt-3">
       {isSuddenDeath && (
         <p className="text-yellow-400 font-black text-xs uppercase tracking-widest">⚡ Ani Ölüm Turu</p>
       )}
 
       {/* Question */}
-      <div className="w-full max-w-2xl bg-gray-800 border border-gray-600 rounded-xl px-4 py-2 text-center">
-        <p className="text-xs text-yellow-400 font-bold uppercase tracking-widest mb-0.5">Soru</p>
-        <p className="text-white font-bold text-sm">{question.text}</p>
-        <p className="text-gray-500 text-xs">{question.higher_wins ? '↑ Yüksek değer kazanır' : '↓ Düşük değer kazanır'}</p>
+      <div className="w-full max-w-2xl bg-gray-800 border border-gray-600 rounded-xl px-3 py-1.5 text-center shrink-0">
+        <p className="text-[10px] text-yellow-400 font-bold uppercase tracking-widest">Soru</p>
+        <p className="text-white font-bold text-xs leading-snug">{question.text}</p>
+        <p className="text-gray-500 text-[10px]">{question.higher_wins ? '↑ Yüksek değer kazanır' : '↓ Düşük değer kazanır'}</p>
       </div>
 
-      {!flipped && <p className="text-gray-600 text-xs animate-pulse tracking-widest uppercase">Kartlar açılıyor...</p>}
+      {!flipped && <p className="text-gray-600 text-[10px] animate-pulse tracking-widest uppercase shrink-0">Kartlar açılıyor...</p>}
 
-      {/* Top player (me in online, A in local) */}
-      <div className="w-full max-w-2xl overflow-visible">
-        <p className={`text-xs font-black uppercase tracking-wider mb-2 text-center ${nameColor(top.side, 'top')}`}>
+      {/* Top player */}
+      <div className="w-full max-w-2xl overflow-visible shrink-0">
+        <p className={`text-[10px] font-black uppercase tracking-wider mb-1 text-center ${nameColor(top.side, 'top')}`}>
           {top.name} {showResult && winner === top.side ? '⭐' : ''}
         </p>
         <HandRow
@@ -196,21 +196,21 @@ export default function RevealScreen({ game, nameA, nameB }) {
           question={question}
         />
         <div className="flex justify-center mt-1">
-          <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px] ${valBg(top.side)}`}>
-            <p className="text-[10px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
-            <p className={`text-lg font-black ${valText(top.side)}`}>{formatVal(top.val, question)}</p>
+          <div className={`transition-all duration-500 px-2 py-0.5 rounded-lg text-center border min-w-[80px] ${valBg(top.side)}`}>
+            <p className="text-[9px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
+            <p className={`text-sm font-black ${valText(top.side)}`}>{formatVal(top.val, question)}</p>
           </div>
         </div>
       </div>
 
-      <div className={`text-gray-700 font-black text-lg transition-opacity duration-300 ${flipped ? 'opacity-100' : 'opacity-0'}`}>— VS —</div>
+      <div className={`text-gray-700 font-black text-sm transition-opacity duration-300 shrink-0 ${flipped ? 'opacity-100' : 'opacity-0'}`}>— VS —</div>
 
-      {/* Bottom player (opponent in online, B in local) */}
-      <div className="w-full max-w-2xl overflow-visible">
+      {/* Bottom player */}
+      <div className="w-full max-w-2xl overflow-visible shrink-0">
         <div className="flex justify-center mb-1">
-          <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px] ${valBg(bottom.side)}`}>
-            <p className="text-[10px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
-            <p className={`text-lg font-black ${valText(bottom.side)}`}>{formatVal(bottom.val, question)}</p>
+          <div className={`transition-all duration-500 px-2 py-0.5 rounded-lg text-center border min-w-[80px] ${valBg(bottom.side)}`}>
+            <p className="text-[9px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
+            <p className={`text-sm font-black ${valText(bottom.side)}`}>{formatVal(bottom.val, question)}</p>
           </div>
         </div>
         <HandRow
@@ -223,28 +223,28 @@ export default function RevealScreen({ game, nameA, nameB }) {
           winner={showResult ? winner : null}
           question={question}
         />
-        <p className={`text-xs font-black uppercase tracking-wider mt-2 text-center ${nameColor(bottom.side, 'bottom')}`}>
+        <p className={`text-[10px] font-black uppercase tracking-wider mt-1 text-center ${nameColor(bottom.side, 'bottom')}`}>
           {bottom.name} {showResult && winner === bottom.side ? '⭐' : ''}
         </p>
       </div>
 
       {/* Result banner */}
-      <div className={`w-full max-w-2xl px-4 py-2 rounded-xl border text-center transition-all duration-500
+      <div className={`w-full max-w-2xl px-3 py-1.5 rounded-xl border text-center transition-all duration-500 shrink-0
         ${showResult ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'} ${bannerColor}`}>
-        <p className="text-xl font-black">{winnerLabel}</p>
-        {isDraw && <p className="text-yellow-300 text-xs">Yeni soru geliyor...</p>}
+        <p className="text-base font-black">{winnerLabel}</p>
+        {isDraw && <p className="text-yellow-300 text-[10px]">Yeni soru geliyor...</p>}
       </div>
 
       {/* Score */}
-      <div className={`flex items-center gap-6 bg-gray-900 px-6 py-2 rounded-2xl border border-gray-700 transition-opacity duration-500 ${showResult ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`flex items-center gap-4 bg-gray-900 px-5 py-1.5 rounded-2xl border border-gray-700 transition-opacity duration-500 shrink-0 ${showResult ? 'opacity-100' : 'opacity-0'}`}>
         <div className="text-center">
-          <p className="text-green-400 text-xs font-bold truncate max-w-[70px]">{top.name}</p>
-          <p className="text-3xl font-black text-green-300">{myScore}</p>
+          <p className="text-green-400 text-[10px] font-bold truncate max-w-[60px]">{top.name}</p>
+          <p className="text-2xl font-black text-green-300">{myScore}</p>
         </div>
         <p className="text-gray-600 text-xs">/ {WIN_SCORE}</p>
         <div className="text-center">
-          <p className="text-red-400 text-xs font-bold truncate max-w-[70px]">{bottom.name}</p>
-          <p className="text-3xl font-black text-red-300">{oppScore}</p>
+          <p className="text-red-400 text-[10px] font-bold truncate max-w-[60px]">{bottom.name}</p>
+          <p className="text-2xl font-black text-red-300">{oppScore}</p>
         </div>
       </div>
 
@@ -253,28 +253,28 @@ export default function RevealScreen({ game, nameA, nameB }) {
         <button
           onClick={goToGameOver}
           disabled={!showValues}
-          className={`px-8 py-3 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg
+          className={`px-6 py-2 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shrink-0
             ${showValues ? 'bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer' : 'bg-gray-800 text-gray-600 cursor-not-allowed'}`}
         >
           Sonucu Gör →
         </button>
       ) : showResult && (
-        <div className="flex flex-col items-center gap-2 w-full max-w-xs">
+        <div className="flex flex-col items-center gap-1.5 w-full max-w-xs shrink-0">
           {isOnline && myReady ? (
-            <div className="w-full py-3 rounded-xl bg-gray-800 border border-green-700 text-green-400 font-black text-sm uppercase tracking-widest text-center">
+            <div className="w-full py-2 rounded-xl bg-gray-800 border border-green-700 text-green-400 font-black text-xs uppercase tracking-widest text-center">
               ✓ Hazır! {oppReady ? `— ${oppName} de hazır!` : `— ${oppName} bekleniyor...`}
             </div>
           ) : (
             <button
               onClick={handleNext}
-              className="w-full py-3 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer"
+              className="w-full py-2 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg bg-green-600 hover:bg-green-500 hover:scale-105 cursor-pointer"
             >
               {isDraw ? 'Beraberlik Turu →' : 'Sonraki Soru →'}
               {nextTimer !== null && ` (${nextTimer}s)`}
             </button>
           )}
           {isOnline && (
-            <p className="text-gray-600 text-xs">
+            <p className="text-gray-600 text-[10px]">
               {myReady && !oppReady ? `${oppName} hazır olunca geçilecek` : !myReady && nextTimer !== null ? `${nextTimer}s sonra otomatik geçilecek` : ''}
             </p>
           )}

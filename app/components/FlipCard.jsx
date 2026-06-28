@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import PlayerCard from './PlayerCard';
 
 const CARD_SIZES = {
+  xs: { w: 56,  h: 80  },
   sm: { w: 112, h: 160 },
   md: { w: 144, h: 208 },
   lg: { w: 176, h: 256 },

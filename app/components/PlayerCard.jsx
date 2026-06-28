@@ -78,6 +78,7 @@ export default function PlayerCard({
   const r = getCardStyle(player);
 
   const dim = {
+    xs: { card: 'w-14 h-20', rating: 'text-base', pos: 'text-[7px]', name: 'text-[7px]', sub: 'text-[6px]' },
     sm: { card: 'w-28 h-40', rating: 'text-2xl', pos: 'text-[9px]', name: 'text-[9px]', sub: 'text-[8px]' },
     md: { card: 'w-36 h-52', rating: 'text-3xl', pos: 'text-[10px]', name: 'text-[11px]', sub: 'text-[9px]' },
     lg: { card: 'w-44 h-64', rating: 'text-4xl', pos: 'text-xs', name: 'text-xs', sub: 'text-[10px]' },

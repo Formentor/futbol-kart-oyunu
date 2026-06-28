@@ -82,58 +82,54 @@ export default function PlayScreen({ game, nameA, nameB }) {
   const oppName = isOnline ? (role === 'A' ? playerB : playerA) : null;
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+    <div className="h-dvh bg-gray-950 text-white flex flex-col overflow-hidden">
       {isOnline && <Toast message={`⚡ ${oppName} kartını seçti!`} trigger={oppCardSelected} />}
+
       {/* Scoreboard */}
-      <div className="bg-gray-900 border-b border-gray-700 px-4 py-2">
+      <div className="bg-gray-900 border-b border-gray-700 px-3 py-1.5 shrink-0">
         <div className="flex items-center justify-between max-w-sm mx-auto">
           <div className="text-center">
-            <p className={`${aNameCls} font-black text-xs uppercase tracking-wider`}>{nameA}</p>
-            <p className={`text-3xl font-black ${aScoreCls}`}>{scoreA}</p>
+            <p className={`${aNameCls} font-black text-[10px] uppercase tracking-wider truncate max-w-[80px]`}>{nameA}</p>
+            <p className={`text-2xl font-black ${aScoreCls}`}>{scoreA}</p>
           </div>
-          <div className="text-center px-3">
-            <p className="text-gray-500 text-xs">ilk {WIN_SCORE} kazanır</p>
-            <p className="text-gray-600 text-xs">{availableHand.length} kart kaldı</p>
+          <div className="text-center px-2">
+            <p className="text-gray-500 text-[10px]">ilk {WIN_SCORE} kazanır</p>
+            <p className="text-gray-600 text-[10px]">{availableHand.length} kart kaldı</p>
           </div>
           <div className="text-center">
-            <p className={`${bNameCls} font-black text-xs uppercase tracking-wider`}>{nameB}</p>
-            <p className={`text-3xl font-black ${bScoreCls}`}>{scoreB}</p>
+            <p className={`${bNameCls} font-black text-[10px] uppercase tracking-wider truncate max-w-[80px]`}>{nameB}</p>
+            <p className={`text-2xl font-black ${bScoreCls}`}>{scoreB}</p>
           </div>
         </div>
       </div>
 
       {/* Timer bar */}
-      <div className="h-2 bg-gray-800 w-full">
-        <div
-          className={`h-full transition-all duration-1000 ease-linear ${timerColor}`}
-          style={{ width: `${timerPct}%` }}
-        />
+      <div className="h-1.5 bg-gray-800 w-full shrink-0">
+        <div className={`h-full transition-all duration-1000 ease-linear ${timerColor}`} style={{ width: `${timerPct}%` }} />
       </div>
 
       {/* Question */}
       {currentQuestion && (
-        <div className="mx-4 mt-3 px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-center">
-          <p className="text-xs text-yellow-400 font-bold uppercase tracking-widest mb-1">Soru</p>
-          <p className="text-white font-bold text-sm leading-snug">{currentQuestion.text}</p>
-          <p className="text-gray-500 text-xs mt-1">
+        <div className="mx-3 mt-2 px-3 py-2 rounded-xl bg-gray-800 border border-gray-600 text-center shrink-0">
+          <p className="text-[10px] text-yellow-400 font-bold uppercase tracking-widest mb-0.5">Soru</p>
+          <p className="text-white font-bold text-xs leading-snug">{currentQuestion.text}</p>
+          <p className="text-gray-500 text-[10px] mt-0.5">
             {currentQuestion.higher_wins ? '↑ Yüksek değer kazanır' : '↓ Düşük değer kazanır'}
           </p>
         </div>
       )}
 
       {/* Turn + Timer countdown */}
-      <div className={`mx-4 mt-2 px-4 py-2 rounded-xl border ${accent.bg} ${accent.border} flex items-center justify-between`}>
-        <p className={`font-bold text-sm ${accent.text}`}>
-          {playerLabel} — kartını seç
-        </p>
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${timeLeft <= 3 ? 'border-red-500 bg-red-900/50' : accent.border + ' ' + accent.bg}`}>
-          <span className={`font-black text-lg ${timeLeft <= 3 ? 'text-red-400' : accent.text}`}>{timeLeft}</span>
+      <div className={`mx-3 mt-1.5 px-3 py-1.5 rounded-xl border ${accent.bg} ${accent.border} flex items-center justify-between shrink-0`}>
+        <p className={`font-bold text-xs ${accent.text}`}>{playerLabel} — kartını seç</p>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${timeLeft <= 3 ? 'border-red-500 bg-red-900/50' : accent.border + ' ' + accent.bg}`}>
+          <span className={`font-black text-sm ${timeLeft <= 3 ? 'text-red-400' : accent.text}`}>{timeLeft}</span>
         </div>
       </div>
 
-      {/* Hand — all cards, used ones grayed */}
-      <div className="flex-1 overflow-y-auto px-4 py-3">
-        <div className="flex flex-wrap gap-3 justify-center">
+      {/* Hand — xs cards, all visible without scrolling */}
+      <div className="flex-1 min-h-0 flex items-center justify-center px-2 py-2 overflow-visible">
+        <div className="flex flex-wrap gap-2 justify-center content-center">
           {hand.map(p => {
             const isUsed = used.has(p.id);
             const isChosen = chosen === p.id;
@@ -144,12 +140,12 @@ export default function PlayScreen({ game, nameA, nameB }) {
                   selected={isChosen}
                   selectionNumber={isChosen ? p.selectionNumber : null}
                   onClick={isUsed ? undefined : () => select(p.id)}
-                  size="md"
+                  size="xs"
                   dimmed={isUsed}
                 />
                 {isUsed && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-3xl opacity-60">✗</span>
+                    <span className="text-xl opacity-60">✗</span>
                   </div>
                 )}
               </div>
@@ -159,11 +155,11 @@ export default function PlayScreen({ game, nameA, nameB }) {
       </div>
 
       {/* Confirm */}
-      <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
+      <div className="px-3 py-2 bg-gray-900 border-t border-gray-700 shrink-0">
         <button
           onClick={handleConfirm}
           disabled={!chosen}
-          className={`w-full py-3 rounded-xl font-black text-lg uppercase tracking-widest transition-all
+          className={`w-full py-2.5 rounded-xl font-black text-sm uppercase tracking-widest transition-all
             ${chosen ? `${accent.btn} text-white shadow-lg` : 'bg-gray-700 text-gray-500 cursor-not-allowed'}`}
         >
           {chosen ? `Onayla (${timeLeft}s) →` : 'Bir kart seç'}
