@@ -82,7 +82,7 @@ export function useOnlineGame(allPlayers) {
       valB: getVal(cardB, question.field),
     };
     const isFinal = newScoreA >= WIN_SCORE || newScoreB >= WIN_SCORE;
-    updateState({
+    supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: {
       round_result: result,
       round_history: [...gs.round_history, result],
       used_a: [...gs.used_a, gs.chosen_a],
@@ -90,8 +90,10 @@ export function useOnlineGame(allPlayers) {
       score_a: newScoreA,
       score_b: newScoreB,
       phase: isFinal ? 'reveal-final' : 'reveal',
-    });
-  }, [gs?.chosen_a, gs?.chosen_b, gs?.round_result, role]);
+      ready_next_a: false,
+      ready_next_b: false,
+    } });
+  }, [gs?.chosen_a, gs?.chosen_b, gs?.round_result, role, roomCode]);
 
   // ── Reset guards on new round ────────────────────────────────────────────────
   useEffect(() => {
