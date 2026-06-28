@@ -88,9 +88,9 @@ export default function LobbyScreen({ game, onBack }) {
               <input
                 type="text"
                 value={code}
-                onChange={e => setCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))}
-                placeholder="XXXXXX"
-                maxLength={6}
+                onChange={e => setCode(e.target.value.replace(/[^0-9]/g, ''))}
+                placeholder="0000"
+                maxLength={4}
                 className="w-full bg-gray-800 border-2 border-green-800 focus:border-green-400 rounded-xl px-4 py-3 text-white font-black outline-none uppercase tracking-[0.3em] text-center text-xl"
               />
             </div>
@@ -102,9 +102,9 @@ export default function LobbyScreen({ game, onBack }) {
 
           <button
             onClick={mode === 'create' ? handleCreate : handleJoin}
-            disabled={loading || !name || (mode === 'join' && code.length < 6)}
+            disabled={loading || !name || (mode === 'join' && code.length < 4)}
             className={`w-full py-4 rounded-xl font-black text-lg uppercase tracking-widest transition-all
-              ${loading || !name || (mode === 'join' && code.length < 6)
+              ${loading || !name || (mode === 'join' && code.length < 4)
                 ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
                 : 'bg-yellow-500 hover:bg-yellow-400 text-black hover:scale-105'}`}
           >

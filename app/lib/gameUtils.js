@@ -64,7 +64,7 @@ export function buildBalancedPools(allPlayers, poolSize) {
 }
 
 export function generateRoomCode() {
-  return Math.random().toString(36).substring(2, 8).toUpperCase();
+  return String(Math.floor(1000 + Math.random() * 9000));
 }
 
 export function buildInitialState(playerAName, allPlayers) {
