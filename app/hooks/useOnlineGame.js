@@ -128,16 +128,20 @@ export function useOnlineGame(allPlayers) {
 
   const joinGame = useCallback(async (code, nameB) => {
     setLobbyError('');
-    const { data, error } = await supabase.from('games').select('state').eq('room_code', code.toUpperCase()).single();
+    const rc = code.toUpperCase();
+    const { data, error } = await supabase.from('games').select('state').eq('room_code', rc).single();
     if (error || !data) { setLobbyError('Oda bulunamadı. Kodu kontrol et.'); return; }
     if (data.state.player_b) { setLobbyError('Bu oda dolu.'); return; }
     if (data.state.phase !== 'waiting-for-b') { setLobbyError('Oyun zaten başlamış.'); return; }
-    const patch = { player_b: nameB, phase: 'draft' };
-    await updateState(patch, code.toUpperCase());
-    setRoomCode(code.toUpperCase());
+    const newState = { ...data.state, player_b: nameB, phase: 'draft' };
+    const { error: writeErr } = await supabase.from('games')
+      .update({ state: newState, updated_at: new Date().toISOString() })
+      .eq('room_code', rc);
+    if (writeErr) { setLobbyError('Odaya katılınamadı: ' + writeErr.message); return; }
+    setRoomCode(rc);
     setRole('B');
-    setGs({ ...data.state, ...patch });
-  }, [updateState]);
+    setGs(newState);
+  }, []);
 
   // ── Draft actions ────────────────────────────────────────────────────────────
   const toggleDraft = useCallback((id) => {
