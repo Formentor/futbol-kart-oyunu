@@ -184,23 +184,29 @@ export function useOnlineGame(allPlayers) {
   }, [gs, role, roomCode, updateState]);
 
   // ── Play actions ────────────────────────────────────────────────────────────
+  const lastChoiceRef = useRef(null); // remember our card even after pendingChoiceRef clears
+
   const selectCard = useCallback(async (id) => {
     const key = role === 'A' ? 'chosen_a' : 'chosen_b';
     pendingChoiceRef.current = { key, id };
+    lastChoiceRef.current = { key, id };
     setGs(prev => ({ ...prev, [key]: id }));
-
-    // Retry loop: re-read and re-write until our key sticks (guards against overwrite races)
-    for (let attempt = 0; attempt < 4; attempt++) {
-      const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
-      if (!data) break;
-      if (data.state[key] === id) break; // already confirmed
-      const merged = { ...data.state, [key]: id };
-      await supabase.from('games').update({ state: merged, updated_at: new Date().toISOString() }).eq('room_code', roomCode);
-      if (attempt < 3) await new Promise(r => setTimeout(r, 150 + attempt * 100));
-    }
-
+    // Atomic jsonb_set — only updates our field, never touches the other player's field
+    await supabase.rpc('set_game_choice', { p_room_code: roomCode, p_key: key, p_value: id });
     pendingChoiceRef.current = null;
   }, [role, roomCode]);
+
+  // Re-submit if our choice got wiped by a concurrent write
+  useEffect(() => {
+    if (!gs || !roomCode || !lastChoiceRef.current) return;
+    if (gs.phase !== 'play' || gs.round_result) return;
+    const { key, id } = lastChoiceRef.current;
+    if (!gs[key]) {
+      // Our choice is missing — re-submit atomically
+      supabase.rpc('set_game_choice', { p_room_code: roomCode, p_key: key, p_value: id });
+      setGs(prev => ({ ...prev, [key]: id }));
+    }
+  }, [gs?.chosen_a, gs?.chosen_b, gs?.phase, gs?.round_result, roomCode]);
 
   const confirmCard = useCallback(() => {
     // Selection already pushed to Supabase in selectCard; nothing more needed.
