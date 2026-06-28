@@ -32,6 +32,8 @@ export default function PlayScreen({ game, nameA, nameB }) {
   // Timer
   const [timeLeft, setTimeLeft] = useState(TIMER_SECONDS);
   const intervalRef = useRef(null);
+  const autoPlayCardRef = useRef(autoPlayCard);
+  useEffect(() => { autoPlayCardRef.current = autoPlayCard; }, [autoPlayCard]);
 
   useEffect(() => {
     setTimeLeft(TIMER_SECONDS);
@@ -39,8 +41,7 @@ export default function PlayScreen({ game, nameA, nameB }) {
       setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(intervalRef.current);
-          // Auto-play
-          autoPlayCard(phase, chosenA, chosenB);
+          autoPlayCardRef.current();
           return 0;
         }
         return prev - 1;

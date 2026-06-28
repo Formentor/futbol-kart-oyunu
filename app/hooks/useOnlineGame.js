@@ -100,6 +100,7 @@ export function useOnlineGame(allPlayers) {
     if (gs?.phase === 'play') {
       resolvedRef.current = false;
       pendingChoiceRef.current = null;
+      lastChoiceRef.current = null; // clear so re-submit doesn't replay previous round's card
     }
   }, [gs?.phase]);
 
