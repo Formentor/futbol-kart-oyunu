@@ -45,9 +45,9 @@ export default function FlipCard({
   }, [flipped, winner, loser]);
 
   const accent =
-    playerColor === 'blue'
-      ? { border: '#3b82f6', text: '#93c5fd', bg: 'rgba(30,58,138,0.5)', label: 'A' }
-      : { border: '#ef4444', text: '#fca5a5', bg: 'rgba(127,29,29,0.5)', label: 'B' };
+    playerColor === 'blue'  ? { border: '#3b82f6', text: '#93c5fd', bg: 'rgba(30,58,138,0.5)',  label: 'A' } :
+    playerColor === 'green' ? { border: '#22c55e', text: '#86efac', bg: 'rgba(20,83,45,0.5)',   label: 'A' } :
+                              { border: '#ef4444', text: '#fca5a5', bg: 'rgba(127,29,29,0.5)', label: 'B' };
 
   const outerAnim = animate && winner
     ? { animation: 'cardWin 0.7s ease-out forwards' }

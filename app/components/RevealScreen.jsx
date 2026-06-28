@@ -135,10 +135,32 @@ export default function RevealScreen({ game, nameA, nameB }) {
   });
   const isDraw = winner === 'draw';
 
-  const winnerLabel = isDraw ? 'Beraberlik!' : winner === 'A' ? `${nameA} Kazandı!` : `${nameB} Kazandı!`;
+  // Online: viewer's own side on top (green), opponent on bottom (red).
+  // Local (hot-seat): A on top, B on bottom.
+  const viewerIsB = isOnline && role === 'B';
+  const top    = viewerIsB ? { name: nameB, hand: handB, used: usedB, card: cardB, val: valB, side: 'B', color: 'green' } :
+                              { name: nameA, hand: handA, used: usedA, card: cardA, val: valA, side: 'A', color: 'green' };
+  const bottom = viewerIsB ? { name: nameA, hand: handA, used: usedA, card: cardA, val: valA, side: 'A', color: 'red' } :
+                              { name: nameB, hand: handB, used: usedB, card: cardB, val: valB, side: 'B', color: 'red' };
+
+  const nameColor = (side, pos) => {
+    const isWinner = showResult && winner === side;
+    if (pos === 'top')    return isWinner ? 'text-green-400' : 'text-gray-500';
+    if (pos === 'bottom') return isWinner ? 'text-red-400'   : 'text-gray-500';
+    return 'text-gray-500';
+  };
+  const valBg = (side) => showValues
+    ? winner === side ? (side === top.side ? 'opacity-100 bg-green-900/50 border-green-700' : 'opacity-100 bg-red-900/50 border-red-700') : 'opacity-100 bg-gray-800 border-gray-700'
+    : 'opacity-0';
+  const valText = (side) => winner === side ? (side === top.side ? 'text-green-300' : 'text-red-300') : 'text-gray-400';
+
+  const winnerLabel = isDraw ? 'Beraberlik!' : winner === top.side ? `${top.name} Kazandı!` : `${bottom.name} Kazandı!`;
   const bannerColor = isDraw ? 'bg-yellow-950/40 border-yellow-700 text-yellow-400'
-    : winner === 'A' ? 'bg-blue-950/40 border-blue-700 text-blue-400'
+    : winner === top.side ? 'bg-green-950/40 border-green-700 text-green-400'
     : 'bg-red-950/40 border-red-700 text-red-400';
+
+  const myScore    = viewerIsB ? scoreB : scoreA;
+  const oppScore   = viewerIsB ? scoreA : scoreB;
 
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center gap-3 p-4 pt-5">
@@ -155,62 +177,51 @@ export default function RevealScreen({ game, nameA, nameB }) {
 
       {!flipped && <p className="text-gray-600 text-xs animate-pulse tracking-widest uppercase">Kartlar açılıyor...</p>}
 
-      {/* Player A hand */}
+      {/* Top player (me in online, A in local) */}
       <div className="w-full max-w-2xl">
-        <p className={`text-xs font-black uppercase tracking-wider mb-2 text-center ${showResult && winner === 'A' ? 'text-blue-400' : 'text-gray-500'}`}>
-          {nameA} {showResult && winner === 'A' ? '⭐' : ''}
+        <p className={`text-xs font-black uppercase tracking-wider mb-2 text-center ${nameColor(top.side, 'top')}`}>
+          {top.name} {showResult && winner === top.side ? '⭐' : ''}
         </p>
         <HandRow
-          hand={handA}
-          usedSet={usedA}
+          hand={top.hand}
+          usedSet={top.used}
           cardOutcomes={cardOutcomes}
-          selectedId={cardA.id}
+          selectedId={top.card.id}
           flipped={flipped}
-          playerColor="blue"
+          playerColor={top.color}
           winner={showResult ? winner : null}
           question={question}
         />
-        {/* Value under selected card */}
         <div className="flex justify-center mt-1">
-          <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px]
-            ${showValues
-              ? winner === 'A' ? 'opacity-100 bg-blue-900/50 border-blue-600' : 'opacity-100 bg-gray-800 border-gray-700'
-              : 'opacity-0'}`}>
+          <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px] ${valBg(top.side)}`}>
             <p className="text-[10px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
-            <p className={`text-lg font-black ${winner === 'A' ? 'text-blue-300' : 'text-gray-400'}`}>
-              {formatVal(valA, question)}
-            </p>
+            <p className={`text-lg font-black ${valText(top.side)}`}>{formatVal(top.val, question)}</p>
           </div>
         </div>
       </div>
 
       <div className={`text-gray-700 font-black text-lg transition-opacity duration-300 ${flipped ? 'opacity-100' : 'opacity-0'}`}>— VS —</div>
 
-      {/* Player B hand */}
+      {/* Bottom player (opponent in online, B in local) */}
       <div className="w-full max-w-2xl">
         <div className="flex justify-center mb-1">
-          <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px]
-            ${showValues
-              ? winner === 'B' ? 'opacity-100 bg-red-900/50 border-red-600' : 'opacity-100 bg-gray-800 border-gray-700'
-              : 'opacity-0'}`}>
+          <div className={`transition-all duration-500 px-3 py-1 rounded-lg text-center border min-w-[100px] ${valBg(bottom.side)}`}>
             <p className="text-[10px] text-gray-400 uppercase tracking-wider">{question.unit}</p>
-            <p className={`text-lg font-black ${winner === 'B' ? 'text-red-300' : 'text-gray-400'}`}>
-              {formatVal(valB, question)}
-            </p>
+            <p className={`text-lg font-black ${valText(bottom.side)}`}>{formatVal(bottom.val, question)}</p>
           </div>
         </div>
         <HandRow
-          hand={handB}
-          usedSet={usedB}
+          hand={bottom.hand}
+          usedSet={bottom.used}
           cardOutcomes={cardOutcomes}
-          selectedId={cardB.id}
+          selectedId={bottom.card.id}
           flipped={flipped}
-          playerColor="red"
+          playerColor={bottom.color}
           winner={showResult ? winner : null}
           question={question}
         />
-        <p className={`text-xs font-black uppercase tracking-wider mt-2 text-center ${showResult && winner === 'B' ? 'text-red-400' : 'text-gray-500'}`}>
-          {nameB} {showResult && winner === 'B' ? '⭐' : ''}
+        <p className={`text-xs font-black uppercase tracking-wider mt-2 text-center ${nameColor(bottom.side, 'bottom')}`}>
+          {bottom.name} {showResult && winner === bottom.side ? '⭐' : ''}
         </p>
       </div>
 
@@ -224,13 +235,13 @@ export default function RevealScreen({ game, nameA, nameB }) {
       {/* Score */}
       <div className={`flex items-center gap-6 bg-gray-900 px-6 py-2 rounded-2xl border border-gray-700 transition-opacity duration-500 ${showResult ? 'opacity-100' : 'opacity-0'}`}>
         <div className="text-center">
-          <p className="text-blue-400 text-xs font-bold truncate max-w-[70px]">{nameA}</p>
-          <p className="text-3xl font-black text-blue-300">{scoreA}</p>
+          <p className="text-green-400 text-xs font-bold truncate max-w-[70px]">{top.name}</p>
+          <p className="text-3xl font-black text-green-300">{myScore}</p>
         </div>
         <p className="text-gray-600 text-xs">/ {WIN_SCORE}</p>
         <div className="text-center">
-          <p className="text-red-400 text-xs font-bold truncate max-w-[70px]">{nameB}</p>
-          <p className="text-3xl font-black text-red-300">{scoreB}</p>
+          <p className="text-red-400 text-xs font-bold truncate max-w-[70px]">{bottom.name}</p>
+          <p className="text-3xl font-black text-red-300">{oppScore}</p>
         </div>
       </div>
 
