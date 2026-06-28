@@ -19,7 +19,7 @@ export default function LobbyScreen({ game, onBack }) {
   };
 
   const handleJoin = async () => {
-    if (!name || code.length < 6) return;
+    if (!name || code.length < 4) return;
     setLoading(true);
     await game.joinGame(code, name);
     setLoading(false);
