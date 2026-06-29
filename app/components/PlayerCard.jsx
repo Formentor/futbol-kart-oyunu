@@ -18,6 +18,17 @@ const RARITY_BORDER = {
   gold:           { border: 'border-white/30',   shine: 'shadow-black/30' },
 };
 
+// Legend (Emekli) — premium siyah kart, tüm pozisyonlar için aynı stil
+const LEGEND_STYLE = {
+  bg:      'from-gray-900 via-neutral-800 to-black',
+  nameBg:  'bg-gradient-to-r from-yellow-900/90 to-yellow-800/80',
+  footBg:  'bg-black/40',
+  border:  'border-yellow-500',
+  shine:   'shadow-yellow-500/40',
+  textDark:  'text-yellow-300',
+  textLight: 'text-yellow-200',
+};
+
 const DEF_POSITIONS = new Set(['CB','LB','RB','LWB','RWB']);
 const MID_POSITIONS = new Set(['CM','CDM','CAM','AM']);
 
@@ -30,6 +41,7 @@ function getPosGroup(position) {
 }
 
 function getCardStyle(player) {
+  if (player.current_club === 'Emekli') return LEGEND_STYLE;
   const base = BASE_RARITY[player.rarity] || BASE_RARITY.gold;
   const posStyle = POS_STYLES[getPosGroup(player.position)];
   const rarityBorder = RARITY_BORDER[player.rarity] || RARITY_BORDER.gold;
@@ -136,6 +148,11 @@ export default function PlayerCard({
         <div className="absolute top-1.5 right-1.5 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md z-10 border-2 border-green-400">
           <span className="text-green-700 text-xs font-black leading-none">{selectionNumber}</span>
         </div>
+      )}
+
+      {/* Legend altın şerit */}
+      {player.current_club === 'Emekli' && (
+        <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent z-10" />
       )}
 
       {/* Winner star */}
