@@ -50,12 +50,14 @@ function Silhouette() {
   );
 }
 
-function PlayerImage({ playerId, name }) {
+function PlayerImage({ player }) {
+  if (!player) return null;
+  const src = player.image || `/player-images/${player.id}.jpg`;
   return (
     <img
-      src={`/player-images/${playerId}.png`}
-      alt={name}
-      className="w-full h-full object-contain object-bottom drop-shadow-lg"
+      src={src}
+      alt={player.name}
+      className="w-full h-full object-cover object-top drop-shadow-lg"
       onError={e => {
         e.target.style.display = 'none';
         const fb = e.target.parentNode.querySelector('.sil-fb');
@@ -106,7 +108,7 @@ export default function PlayerCard({
 
       {/* Player image — fills remaining space */}
       <div className="flex-1 flex items-end justify-center px-1 pb-1 min-h-0 overflow-hidden">
-        <PlayerImage playerId={player.id} name={player.name} />
+        <PlayerImage player={player} />
         <div className="sil-fb w-full h-full items-end justify-center" style={{ display: 'none' }}>
           <Silhouette />
         </div>
