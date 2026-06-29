@@ -7,10 +7,18 @@ const NEXT_TIMER = 10;
 const FINAL_TIMER = 10;
 
 const formatVal = (v, q) => {
+  if (v === null || v === undefined) return '—';
   if (!q) return v;
-  if (q.field === 'birthplace_population') return Number(v).toLocaleString('tr-TR');
-  if (q.field === 'highest_transfer_fee_m' || q.field === 'peak_market_value_m' || q.field === 'weekly_wage_k') return `${v}${q.unit}`;
-  if (q.field === 'instagram_m') return `${v}M`;
+  const n = Number(v);
+  // Büyük sayılar → yerel format
+  if (q.unit === 'kişi' || q.unit === 'km²') return n.toLocaleString('tr-TR');
+  // Milyonluk sosyal medya
+  if (q.unit === 'M' || q.unit === 'M kişi') return `${v}M`;
+  // Para birimleri
+  if (q.unit === 'M€' || q.unit === 'k€/hf') return `${v} ${q.unit}`;
+  // Oran / ondalıklı
+  if (q.unit === 'gol/maç' || q.unit === 'ast/maç' || q.unit === 'kart/maç' || q.unit === 'gol/sezon') return n.toFixed(2);
+  if (q.unit === '%') return `${v}%`;
   return `${v} ${q.unit}`;
 };
 

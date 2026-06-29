@@ -1,27 +1,43 @@
 'use client';
-import { pickQuestions } from '../data/questions';
+import { QUESTIONS } from '../data/questions';
 
 export const WIN_SCORE = 3;
 export const POOL_SIZE = 10;
 export const HAND_SIZE = 5;
 
-export function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+// ── Hesaplanmış alanlar ──────────────────────────────────────────────────────
+// (card, stats) → sayısal değer | null
+const COMPUTED = {
+  career_goals_assists:    (p, s) => (s.career_goals_total  || 0) + (s.career_assists_total  || 0),
+  intl_goals_assists:      (p, s) => (s.international_goals  || 0) + (s.international_assists || 0),
+  goals_per_game:          (p, s) => s.career_appearances > 0 ? +(s.career_goals_total  / s.career_appearances).toFixed(3) : null,
+  assists_per_game:        (p, s) => s.career_appearances > 0 ? +(s.career_assists_total / s.career_appearances).toFixed(3) : null,
+  intl_goals_per_cap:      (p, s) => s.international_caps  > 0 ? +(s.international_goals  / s.international_caps).toFixed(3)  : null,
+  goals_per_season:        (p, s) => s.years_pro            > 0 ? +(s.career_goals_total  / s.years_pro).toFixed(2)           : null,
+  cards_per_game:          (p, s) => s.career_appearances > 0 ? +(s.career_cards_total   / s.career_appearances).toFixed(3) : null,
+  european_goals:          (p, s) => (s.ucl_goals || 0) + (s.europa_league_goals || 0),
+  career_earnings_m:       (p, s) => (s.years_pro && s.weekly_wage_k) ? Math.round(s.years_pro * s.weekly_wage_k * 52 / 1000) : null,
+  social_media_total:      (p, s) => (s.instagram_m || 0) + (s.twitter_m || 0) + (s.tiktok_m || 0),
+  full_name_length:        (p)    => (p.full_name || p.name || '').length,
+};
 
 export function getVal(card, field) {
-  if (card.stats && field in card.stats) return card.stats[field];
-  return card[field];
+  const fn = COMPUTED[field];
+  if (fn) {
+    const val = fn(card, card.stats || {});
+    return val ?? null;
+  }
+  const s = card.stats || {};
+  if (field in s) return s[field] ?? null;
+  return card[field] ?? null;
 }
 
 export function compareCards(cardA, cardB, question) {
   const a = getVal(cardA, question.field);
   const b = getVal(cardB, question.field);
+  if (a === null && b === null) return 'draw';
+  if (a === null) return 'B';
+  if (b === null) return 'A';
   if (question.higher_wins) {
     if (a > b) return 'A';
     if (b > a) return 'B';
@@ -30,6 +46,45 @@ export function compareCards(cardA, cardB, question) {
     if (b < a) return 'B';
   }
   return 'draw';
+}
+
+// ── Akıllı soru seçimi ───────────────────────────────────────────────────────
+// Havuzdaki oyuncuların en az %30'unun verisi olan soruları filtreler.
+// Aynı field+higher_wins çiftini aynı oyunda iki kez seçmez.
+export function pickQuestions(count = 10, poolPlayers = []) {
+  let candidates = QUESTIONS;
+
+  if (poolPlayers.length > 0) {
+    candidates = QUESTIONS.filter(q => {
+      const withData = poolPlayers.filter(p => {
+        const v = getVal(p, q.field);
+        return v !== null && v !== undefined && v > 0;
+      });
+      return withData.length >= poolPlayers.length * 0.3;
+    });
+  }
+
+  // Aynı field+yön ikili birden seçilmesin
+  const shuffled = [...candidates].sort(() => Math.random() - 0.5);
+  const picked = [];
+  const usedKeys = new Set();
+  for (const q of shuffled) {
+    if (picked.length >= count) break;
+    const key = `${q.field}|${q.higher_wins}`;
+    if (usedKeys.has(key)) continue;
+    usedKeys.add(key);
+    picked.push(q);
+  }
+  return picked;
+}
+
+export function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 const DEF_POS = new Set(['CB', 'LB', 'RB', 'LWB', 'RWB']);
@@ -69,6 +124,7 @@ export function generateRoomCode() {
 
 export function buildInitialState(playerAName, allPlayers) {
   const [poolA, poolB] = buildBalancedPools(allPlayers, POOL_SIZE);
+  const poolPlayers = [...poolA, ...poolB];
   return {
     phase: 'waiting-for-b',
     player_a: playerAName,
@@ -81,7 +137,7 @@ export function buildInitialState(playerAName, allPlayers) {
     draft_sel_b: [],
     draft_confirmed_a: false,
     draft_confirmed_b: false,
-    questions: pickQuestions(10),
+    questions: pickQuestions(10, poolPlayers),
     question_index: 0,
     score_a: 0,
     score_b: 0,
