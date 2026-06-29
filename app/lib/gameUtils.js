@@ -64,9 +64,9 @@ export function compareCards(cardA, cardB, question) {
 }
 
 // ── Akıllı soru seçimi ───────────────────────────────────────────────────────
+// Her oyunda tam 5 soru: 3 "fazla olan kazanır" + 2 "az olan kazanır"
 // Havuzdaki oyuncuların en az %30'unun verisi olan soruları filtreler.
-// Aynı field+higher_wins çiftini aynı oyunda iki kez seçmez.
-export function pickQuestions(count = 10, poolPlayers = []) {
+export function pickQuestions(count = 5, poolPlayers = []) {
   let candidates = QUESTIONS.filter(q => !q.disabled);
 
   if (poolPlayers.length > 0) {
@@ -80,18 +80,26 @@ export function pickQuestions(count = 10, poolPlayers = []) {
     });
   }
 
-  // Aynı field+yön ikili birden seçilmesin
-  const shuffled = [...candidates].sort(() => Math.random() - 0.5);
-  const picked = [];
-  const usedKeys = new Set();
-  for (const q of shuffled) {
-    if (picked.length >= count) break;
-    const key = `${q.field}|${q.higher_wins}`;
-    if (usedKeys.has(key)) continue;
-    usedKeys.add(key);
-    picked.push(q);
-  }
-  return picked;
+  const higher = shuffle(candidates.filter(q =>  q.higher_wins));
+  const lower  = shuffle(candidates.filter(q => !q.higher_wins));
+
+  // Aynı field iki kez seçilmesin
+  const pick = (pool, n) => {
+    const result = [];
+    const usedFields = new Set();
+    for (const q of pool) {
+      if (result.length >= n) break;
+      if (usedFields.has(q.field)) continue;
+      usedFields.add(q.field);
+      result.push(q);
+    }
+    return result;
+  };
+
+  const higherCount = Math.ceil(count * 0.6); // 3 for count=5
+  const lowerCount  = count - higherCount;     // 2 for count=5
+
+  return shuffle([...pick(higher, higherCount), ...pick(lower, lowerCount)]);
 }
 
 export function shuffle(arr) {
@@ -166,7 +174,7 @@ export function buildInitialState(playerAName, allPlayers) {
     draft_sel_b: [],
     draft_confirmed_a: false,
     draft_confirmed_b: false,
-    questions: pickQuestions(10, poolPlayers),
+    questions: pickQuestions(5, poolPlayers),
     question_index: 0,
     score_a: 0,
     score_b: 0,

@@ -36,7 +36,7 @@ export function useGameState(allPlayers) {
     const [pA, pB] = buildBalancedPools(allPlayers, POOL_SIZE);
     setPoolA(pA);
     setPoolB(pB);
-    setQuestions(pickQuestions(10, [...pA, ...pB]));
+    setQuestions(pickQuestions(5, [...pA, ...pB]));
     setQuestionIndex(0);
     setHandA([]); setHandB([]);
     setUsedA(new Set()); setUsedB(new Set());
