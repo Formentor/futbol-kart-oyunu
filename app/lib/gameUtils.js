@@ -70,7 +70,7 @@ export function pickQuestions(count = 10, poolPlayers = []) {
   let candidates = QUESTIONS.filter(q => !q.disabled);
 
   if (poolPlayers.length > 0) {
-    candidates = QUESTIONS.filter(q => {
+    candidates = candidates.filter(q => {
       const withData = poolPlayers.filter(p => {
         const v = getVal(p, q.field);
         if (q.zero_valid) return v !== null && v !== undefined;
