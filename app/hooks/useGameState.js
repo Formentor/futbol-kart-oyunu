@@ -1,6 +1,6 @@
 'use client';
 import { useState, useCallback } from 'react';
-import { pickQuestions } from '../lib/gameUtils';
+import { pickQuestions, getVal, compareCards } from '../lib/gameUtils';
 
 const WIN_SCORE = 3;
 const POOL_SIZE = 10;
@@ -47,23 +47,7 @@ function buildBalancedPools(allPlayers, poolSize) {
   return [shuffle(poolA), shuffle(poolB)];
 }
 
-function getVal(card, field) {
-  if (card.stats && field in card.stats) return card.stats[field];
-  return card[field];
-}
 
-function compareCards(cardA, cardB, question) {
-  const a = getVal(cardA, question.field);
-  const b = getVal(cardB, question.field);
-  if (question.higher_wins) {
-    if (a > b) return 'A';
-    if (b > a) return 'B';
-  } else {
-    if (a < b) return 'A';
-    if (b < a) return 'B';
-  }
-  return 'draw';
-}
 
 export function useGameState(allPlayers) {
   const [phase, setPhase] = useState('loading');
