@@ -85,15 +85,15 @@ export const QUESTIONS = [
   { id: 'S66',  text: 'Hangi futbolcu daha ağırdır?',                                                     field: 'weight_kg',                    higher_wins: true,  unit: 'kg' },
 
   // ── SOSYAL MEDYA ─────────────────────────────────────────────────────────────
-  { id: 'S69',  text: 'Hangi futbolcunun Instagram takipçisi daha fazladır? (2024)',                      field: 'instagram_m',                  higher_wins: true,  unit: 'M' },
+  { id: 'S69',  text: 'Hangi futbolcunun Instagram takipçisi daha fazladır? (2026)',                      field: 'instagram_m',                  higher_wins: true,  unit: 'M' },
   { id: 'S70',  text: 'Hangi futbolcunun Twitter/X takipçisi daha fazladır?',                             field: 'twitter_m',                    higher_wins: true,  unit: 'M',    disabled: true },
   { id: 'S71',  text: 'Hangi futbolcunun TikTok takipçisi daha fazladır?',                                field: 'tiktok_m',                     higher_wins: true,  unit: 'M',    disabled: true },
-  { id: 'S72',  text: 'Hangi futbolcunun toplam sosyal medya takipçisi daha fazladır? (2024)',             field: 'social_media_total',           higher_wins: true,  unit: 'M' },
+  { id: 'S72',  text: 'Hangi futbolcunun toplam sosyal medya takipçisi daha fazladır? (2026)',             field: 'social_media_total',           higher_wins: true,  unit: 'M' },
 
   // ── EĞLENCELİ & FARKLI ───────────────────────────────────────────────────────
   { id: 'S73',  text: 'Hangi futbolcunun doğduğu şehrin nüfusu daha fazladır? (yaklaşık)',               field: 'birthplace_population',        higher_wins: true,  unit: 'kişi' },
   { id: 'S74',  text: 'Hangi futbolcunun ikonik forma numarası daha büyüktür?',                           field: 'shirt_number',                 higher_wins: true,  unit: 'no' },
-  { id: 'S78',  text: 'Hangi futbolcunun ülkesinin FIFA dünya sıralaması daha iyidir? (2024)',            field: 'country_fifa_rank',            higher_wins: false, unit: 'sıra' },
+  { id: 'S78',  text: 'Hangi futbolcunun ülkesinin FIFA dünya sıralaması daha iyidir? (2026)',            field: 'country_fifa_rank',            higher_wins: false, unit: 'sıra' },
   { id: 'S79',  text: 'Hangi futbolcunun tam adı daha uzundur?',                                          field: 'full_name_length',             higher_wins: true,  unit: 'harf' },
   { id: 'S80',  text: 'Hangi futbolcunun doğduğu ülkenin nüfusu daha fazladır? (yaklaşık)',              field: 'home_country_population_m',    higher_wins: true,  unit: 'M kişi' },
   { id: 'S86',  text: 'Hangi futbolcu Puskás Ödülü\'ne daha fazla aday gösterilmiştir?',                 field: 'puskas_nominations',           higher_wins: true,  unit: 'kez',  disabled: true },
@@ -110,7 +110,7 @@ export const QUESTIONS = [
   { id: 'S103', text: 'Hangi futbolcu daha az kulüpte oynamıştır? (sadık kariyer)',                       field: 'clubs_count',                  higher_wins: false, unit: 'kulüp' },
   { id: 'S104', text: 'Hangi futbolcu kariyerinde daha az ülkede oynamıştır?',                            field: 'countries_played_count',       higher_wins: false, unit: 'ülke' },
   { id: 'S105', text: 'Hangi futbolcu daha hafiftir?',                                                    field: 'weight_kg',                    higher_wins: false, unit: 'kg' },
-  { id: 'S106', text: 'Hangi futbolcunun Instagram takipçisi daha azdır? (2024)',                         field: 'instagram_m',                  higher_wins: false, unit: 'M' },
+  { id: 'S106', text: 'Hangi futbolcunun Instagram takipçisi daha azdır? (2026)',                         field: 'instagram_m',                  higher_wins: false, unit: 'M' },
   { id: 'S107', text: 'Hangi futbolcunun kariyerindeki en yüksek piyasa değeri daha düşüktür?',           field: 'peak_market_value_m',          higher_wins: false, unit: 'M€' },
   { id: 'S108', text: 'Hangi futbolcu kariyerinde daha az resmi maç oynamıştır?',                         field: 'career_appearances',           higher_wins: false, unit: 'maç' },
   { id: 'S109', text: 'Hangi futbolcu kariyerinde daha az hat-trick yapmıştır?',                          field: 'career_hat_tricks',            higher_wins: false, unit: 'ht' },
