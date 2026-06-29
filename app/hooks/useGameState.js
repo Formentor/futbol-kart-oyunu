@@ -1,51 +1,11 @@
 'use client';
 import { useState, useCallback } from 'react';
-import { pickQuestions, getVal, compareCards } from '../lib/gameUtils';
+import { pickQuestions, getVal, compareCards, buildBalancedPools } from '../lib/gameUtils';
 
 const WIN_SCORE = 3;
 const POOL_SIZE = 10;
 const HAND_SIZE = 5;
 
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-const DEF_POS = new Set(['CB','LB','RB','LWB','RWB']);
-const MID_POS = new Set(['CM','CDM','CAM','AM']);
-
-function posGroup(p) {
-  const pos = (p.position || '').toUpperCase();
-  if (pos === 'GK') return 'GK';
-  if (DEF_POS.has(pos)) return 'DEF';
-  if (MID_POS.has(pos)) return 'MID';
-  return 'FWD';
-}
-
-function buildBalancedPools(allPlayers, poolSize) {
-  const groups = { GK: [], DEF: [], MID: [], FWD: [] };
-  allPlayers.forEach(p => groups[posGroup(p)].push(p));
-  Object.keys(groups).forEach(k => { groups[k] = shuffle(groups[k]); });
-
-  const poolA = [], poolB = [];
-  // GK: 1 each (only 2 total), others: 2 each
-  const mins = { GK: 2, DEF: 2, MID: 2, FWD: 2 };
-  const leftover = [];
-  Object.entries(groups).forEach(([k, arr]) => {
-    const n = Math.min(mins[k], Math.floor(arr.length / 2));
-    poolA.push(...arr.splice(0, n));
-    poolB.push(...arr.splice(0, n));
-    leftover.push(...arr);
-  });
-  const rest = shuffle(leftover);
-  while (poolA.length < poolSize && rest.length) poolA.push(rest.pop());
-  while (poolB.length < poolSize && rest.length) poolB.push(rest.pop());
-  return [shuffle(poolA), shuffle(poolB)];
-}
 
 
 
