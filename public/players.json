@@ -52,7 +52,8 @@
       "positions_count": 4,
       "peak_value_date": "06.2009"
     },
-    "sofifa_id": 20801
+    "sofifa_id": 20801,
+    "transfermarkt_id": 8198
   },
   {
     "id": "messi",
@@ -109,7 +110,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2012"
     },
-    "sofifa_id": 158023
+    "sofifa_id": 158023,
+    "transfermarkt_id": 28003
   },
   {
     "id": "mbappe",
@@ -164,7 +166,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 231747
+    "sofifa_id": 231747,
+    "transfermarkt_id": 342229
   },
   {
     "id": "haaland",
@@ -218,7 +221,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 239085
+    "sofifa_id": 239085,
+    "transfermarkt_id": 418560
   },
   {
     "id": "vinicius",
@@ -275,7 +279,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 250070
+    "sofifa_id": 250070,
+    "transfermarkt_id": 371998
   },
   {
     "id": "lewandowski",
@@ -332,7 +337,8 @@
       "positions_count": 1,
       "peak_value_date": "05.2021"
     },
-    "sofifa_id": 188545
+    "sofifa_id": 188545,
+    "transfermarkt_id": 38253
   },
   {
     "id": "debruyne",
@@ -387,7 +393,8 @@
       "positions_count": 2,
       "peak_value_date": "03.2023"
     },
-    "sofifa_id": 192985
+    "sofifa_id": 192985,
+    "transfermarkt_id": 88755
   },
   {
     "id": "salah",
@@ -442,7 +449,8 @@
       "positions_count": 3,
       "peak_value_date": "08.2018"
     },
-    "sofifa_id": 209331
+    "sofifa_id": 209331,
+    "transfermarkt_id": 148455
   },
   {
     "id": "neymar",
@@ -497,7 +505,8 @@
       "positions_count": 3,
       "peak_value_date": "08.2017"
     },
-    "sofifa_id": 190871
+    "sofifa_id": 190871,
+    "transfermarkt_id": 68290
   },
   {
     "id": "modric",
@@ -552,7 +561,8 @@
       "positions_count": 3,
       "peak_value_date": "04.2019"
     },
-    "sofifa_id": 177003
+    "sofifa_id": 177003,
+    "transfermarkt_id": 27992
   },
   {
     "id": "kane",
@@ -607,7 +617,8 @@
       "positions_count": 2,
       "peak_value_date": "03.2023"
     },
-    "sofifa_id": 202126
+    "sofifa_id": 202126,
+    "transfermarkt_id": 132098
   },
   {
     "id": "vandijk",
@@ -661,7 +672,8 @@
       "positions_count": 1,
       "peak_value_date": "07.2019"
     },
-    "sofifa_id": 203376
+    "sofifa_id": 203376,
+    "transfermarkt_id": 139208
   },
   {
     "id": "courtois",
@@ -716,7 +728,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2023"
     },
-    "sofifa_id": 192119
+    "sofifa_id": 192119,
+    "transfermarkt_id": 108390
   },
   {
     "id": "pedri",
@@ -773,7 +786,8 @@
       "positions_count": 2,
       "peak_value_date": "08.2022"
     },
-    "sofifa_id": 253226
+    "sofifa_id": 253226,
+    "transfermarkt_id": 683840
   },
   {
     "id": "bellingham",
@@ -828,7 +842,8 @@
       "positions_count": 4,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 246669
+    "sofifa_id": 246669,
+    "transfermarkt_id": 581678
   },
   {
     "id": "griezmann",
@@ -885,7 +900,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2019"
     },
-    "sofifa_id": 194765
+    "sofifa_id": 194765,
+    "transfermarkt_id": 125781
   },
   {
     "id": "foden",
@@ -940,7 +956,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 237692
+    "sofifa_id": 237692,
+    "transfermarkt_id": 406635
   },
   {
     "id": "bernardo",
@@ -995,7 +1012,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2023"
     },
-    "sofifa_id": 211117
+    "sofifa_id": 211117,
+    "transfermarkt_id": 241641
   },
   {
     "id": "rodri",
@@ -1048,7 +1066,8 @@
       "positions_count": 2,
       "peak_value_date": "09.2024"
     },
-    "sofifa_id": 222665
+    "sofifa_id": 222665,
+    "transfermarkt_id": 357565
   },
   {
     "id": "rubendias",
@@ -1103,7 +1122,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 239346
+    "sofifa_id": 239346,
+    "transfermarkt_id": 258004
   },
   {
     "id": "ardaguler",
@@ -1160,7 +1180,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 261592
+    "sofifa_id": 261592,
+    "transfermarkt_id": 861410
   },
   {
     "id": "calhanoglu",
@@ -1217,7 +1238,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 202652
+    "sofifa_id": 202652,
+    "transfermarkt_id": 126414
   },
   {
     "id": "musiala",
@@ -1274,7 +1296,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 258923
+    "sofifa_id": 258923,
+    "transfermarkt_id": 580195
   },
   {
     "id": "wirtz",
@@ -1329,7 +1352,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 260932
+    "sofifa_id": 260932,
+    "transfermarkt_id": 598577
   },
   {
     "id": "declanrice",
@@ -1384,7 +1408,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 226328
+    "sofifa_id": 226328,
+    "transfermarkt_id": 357662
   },
   {
     "id": "odegaard",
@@ -1439,7 +1464,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 231568
+    "sofifa_id": 231568,
+    "transfermarkt_id": 316264
   },
   {
     "id": "gavi",
@@ -1496,7 +1522,8 @@
       "positions_count": 3,
       "peak_value_date": "10.2022"
     },
-    "sofifa_id": 258648
+    "sofifa_id": 258648,
+    "transfermarkt_id": 646740
   },
   {
     "id": "leao",
@@ -1553,7 +1580,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 253306
+    "sofifa_id": 253306,
+    "transfermarkt_id": 357164
   },
   {
     "id": "valverde",
@@ -1610,7 +1638,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 238228
+    "sofifa_id": 238228,
+    "transfermarkt_id": 369081
   },
   {
     "id": "kvara",
@@ -1667,7 +1696,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 263580
+    "sofifa_id": 263580,
+    "transfermarkt_id": 502670
   },
   {
     "id": "osimhen",
@@ -1722,7 +1752,8 @@
       "positions_count": 1,
       "peak_value_date": "09.2023"
     },
-    "sofifa_id": 235243
+    "sofifa_id": 235243,
+    "transfermarkt_id": 401923
   },
   {
     "id": "hojlund",
@@ -1777,7 +1808,8 @@
       "positions_count": 1,
       "peak_value_date": "09.2023"
     },
-    "sofifa_id": 261399
+    "sofifa_id": 261399,
+    "transfermarkt_id": 610442
   },
   {
     "id": "theohernandez",
@@ -1834,7 +1866,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 230521
+    "sofifa_id": 230521,
+    "transfermarkt_id": 339808
   },
   {
     "id": "saka",
@@ -1889,7 +1922,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 243099
+    "sofifa_id": 243099,
+    "transfermarkt_id": 433177
   },
   {
     "id": "yamal",
@@ -1946,7 +1980,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 267907
+    "sofifa_id": 267907,
+    "transfermarkt_id": 937958
   },
   {
     "id": "alisson",
@@ -2001,7 +2036,8 @@
       "positions_count": 1,
       "peak_value_date": "08.2019"
     },
-    "sofifa_id": 212831
+    "sofifa_id": 212831,
+    "transfermarkt_id": 105470
   },
   {
     "id": "taa",
@@ -2056,7 +2092,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 222749
+    "sofifa_id": 222749,
+    "transfermarkt_id": 314353
   },
   {
     "id": "rashford",
@@ -2111,7 +2148,8 @@
       "positions_count": 3,
       "peak_value_date": "01.2023"
     },
-    "sofifa_id": 221345
+    "sofifa_id": 221345,
+    "transfermarkt_id": 258923
   },
   {
     "id": "gakpo",
@@ -2166,7 +2204,8 @@
       "positions_count": 2,
       "peak_value_date": "01.2023"
     },
-    "sofifa_id": 251706
+    "sofifa_id": 251706,
+    "transfermarkt_id": 434675
   },
   {
     "id": "rubenneves",
@@ -2220,7 +2259,8 @@
       "positions_count": 2,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 210508
+    "sofifa_id": 210508,
+    "transfermarkt_id": 225161
   },
   {
     "id": "ederson",
@@ -2273,7 +2313,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2023"
     },
-    "sofifa_id": 213345
+    "sofifa_id": 213345,
+    "transfermarkt_id": 238223
   },
   {
     "id": "donnarumma",
@@ -2328,7 +2369,8 @@
       "positions_count": 1,
       "peak_value_date": "07.2021"
     },
-    "sofifa_id": 230666
+    "sofifa_id": 230666,
+    "transfermarkt_id": 315858
   },
   {
     "id": "benzema",
@@ -2383,7 +2425,8 @@
       "positions_count": 1,
       "peak_value_date": "04.2022"
     },
-    "sofifa_id": 9014
+    "sofifa_id": 9014,
+    "transfermarkt_id": 18922
   },
   {
     "id": "muller",
@@ -2437,7 +2480,8 @@
       "positions_count": 3,
       "peak_value_date": "04.2015"
     },
-    "sofifa_id": 189596
+    "sofifa_id": 189596,
+    "transfermarkt_id": 58358
   },
   {
     "id": "neuer",
@@ -2492,7 +2536,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2014"
     },
-    "sofifa_id": 167495
+    "sofifa_id": 167495,
+    "transfermarkt_id": 17259
   },
   {
     "id": "mane",
@@ -2547,7 +2592,8 @@
       "positions_count": 3,
       "peak_value_date": "04.2019"
     },
-    "sofifa_id": 200145
+    "sofifa_id": 200145,
+    "transfermarkt_id": 200512
   },
   {
     "id": "son",
@@ -2602,7 +2648,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2021"
     },
-    "sofifa_id": 246580
+    "sofifa_id": 246580,
+    "transfermarkt_id": 91845
   },
   {
     "id": "ibrahimovic",
@@ -2655,7 +2702,8 @@
       "intl_debut_age": 20
     },
     "sofifa_id": 45,
-    "twitter_m": 3
+    "twitter_m": 3,
+    "transfermarkt_id": 3455
   },
   {
     "id": "kroos",
@@ -2709,7 +2757,8 @@
       "ucl_appearances": 159,
       "intl_debut_age": 21
     },
-    "sofifa_id": 182521
+    "sofifa_id": 182521,
+    "transfermarkt_id": 31909
   },
   {
     "id": "suarez",
@@ -2761,7 +2810,8 @@
       "home_country_area_km2": 176215,
       "intl_debut_age": 20
     },
-    "sofifa_id": 176580
+    "sofifa_id": 176580,
+    "transfermarkt_id": 44352
   },
   {
     "id": "casemiro",
@@ -2815,7 +2865,8 @@
       "positions_count": 4,
       "peak_value_date": "04.2022"
     },
-    "sofifa_id": 207865
+    "sofifa_id": 207865,
+    "transfermarkt_id": 16306
   },
   {
     "id": "lukaku",
@@ -2870,7 +2921,8 @@
       "positions_count": 1,
       "peak_value_date": "08.2021"
     },
-    "sofifa_id": 192505
+    "sofifa_id": 192505,
+    "transfermarkt_id": 96341
   },
   {
     "id": "palmer",
@@ -2925,7 +2977,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 246804
+    "sofifa_id": 246804,
+    "transfermarkt_id": 568177
   },
   {
     "id": "vlahovic",
@@ -2982,7 +3035,8 @@
       "positions_count": 1,
       "peak_value_date": "01.2022"
     },
-    "sofifa_id": 257229
+    "sofifa_id": 257229,
+    "transfermarkt_id": 357498
   },
   {
     "id": "kimmich",
@@ -3039,7 +3093,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 212622
+    "sofifa_id": 212622,
+    "transfermarkt_id": 161056
   },
   {
     "id": "oblak",
@@ -3094,7 +3149,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2019"
     },
-    "sofifa_id": 200389
+    "sofifa_id": 200389,
+    "transfermarkt_id": 121483
   },
   {
     "id": "havertz",
@@ -3149,7 +3205,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2021"
     },
-    "sofifa_id": 246941
+    "sofifa_id": 246941,
+    "transfermarkt_id": 309400
   },
   {
     "id": "sane",
@@ -3204,7 +3261,8 @@
       "positions_count": 3,
       "peak_value_date": "05.2022"
     },
-    "sofifa_id": 235212
+    "sofifa_id": 235212,
+    "transfermarkt_id": 192565
   },
   {
     "id": "tchouameni",
@@ -3259,7 +3317,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2023"
     },
-    "sofifa_id": 262358
+    "sofifa_id": 262358,
+    "transfermarkt_id": 413112
   },
   {
     "id": "camavinga",
@@ -3314,7 +3373,8 @@
       "positions_count": 3,
       "peak_value_date": "09.2023"
     },
-    "sofifa_id": 263552
+    "sofifa_id": 263552,
+    "transfermarkt_id": 640428
   },
   {
     "id": "alaba",
@@ -3371,7 +3431,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2019"
     },
-    "sofifa_id": 183277
+    "sofifa_id": 183277,
+    "transfermarkt_id": 59016
   },
   {
     "id": "rudiger",
@@ -3426,7 +3487,8 @@
       "positions_count": 1,
       "peak_value_date": "05.2023"
     },
-    "sofifa_id": 206053
+    "sofifa_id": 206053,
+    "transfermarkt_id": 86202
   },
   {
     "id": "gvardiol",
@@ -3481,7 +3543,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 262781
+    "sofifa_id": 262781,
+    "transfermarkt_id": 475959
   },
   {
     "id": "militao",
@@ -3536,7 +3599,8 @@
       "positions_count": 2,
       "peak_value_date": "10.2022"
     },
-    "sofifa_id": 239477
+    "sofifa_id": 239477,
+    "transfermarkt_id": 401530
   },
   {
     "id": "davies",
@@ -3590,7 +3654,8 @@
       "positions_count": 4,
       "peak_value_date": "06.2022"
     },
-    "sofifa_id": 243165
+    "sofifa_id": 243165,
+    "transfermarkt_id": 424204
   },
   {
     "id": "dybala",
@@ -3647,7 +3712,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2017"
     },
-    "sofifa_id": 212730
+    "sofifa_id": 212730,
+    "transfermarkt_id": 206050
   },
   {
     "id": "hazard",
@@ -3699,7 +3765,8 @@
       "home_country_area_km2": 30528,
       "intl_debut_age": 20
     },
-    "sofifa_id": 176580
+    "sofifa_id": 176580,
+    "transfermarkt_id": 50202
   },
   {
     "id": "ronaldinho",
@@ -3751,7 +3818,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 19
     },
-    "sofifa_id": 155
+    "sofifa_id": 155,
+    "transfermarkt_id": 3373
   },
   {
     "id": "zidane",
@@ -3805,7 +3873,8 @@
       "ucl_appearances": 117,
       "intl_debut_age": 22
     },
-    "sofifa_id": 142
+    "sofifa_id": 142,
+    "transfermarkt_id": 3111
   },
   {
     "id": "henry",
@@ -3856,7 +3925,8 @@
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695
     },
-    "sofifa_id": 156
+    "sofifa_id": 156,
+    "transfermarkt_id": 3207
   },
   {
     "id": "kaka",
@@ -3910,7 +3980,8 @@
       "ucl_appearances": 102,
       "intl_debut_age": 20
     },
-    "sofifa_id": 157
+    "sofifa_id": 157,
+    "transfermarkt_id": 3366
   },
   {
     "id": "xavi",
@@ -3960,7 +4031,8 @@
       "home_country_population_m": 47.8,
       "home_country_area_km2": 505990
     },
-    "sofifa_id": 158
+    "sofifa_id": 158,
+    "transfermarkt_id": 7607
   },
   {
     "id": "iniesta",
@@ -4012,7 +4084,8 @@
       "home_country_area_km2": 505990,
       "intl_debut_age": 23
     },
-    "sofifa_id": 159
+    "sofifa_id": 159,
+    "transfermarkt_id": 7600
   },
   {
     "id": "pirlo",
@@ -4066,7 +4139,8 @@
       "ucl_appearances": 136,
       "intl_debut_age": 25
     },
-    "sofifa_id": 160
+    "sofifa_id": 160,
+    "transfermarkt_id": 5817
   },
   {
     "id": "buffon",
@@ -4118,7 +4192,8 @@
       "home_country_area_km2": 301340,
       "intl_debut_age": 19
     },
-    "sofifa_id": 161
+    "sofifa_id": 161,
+    "transfermarkt_id": 5023
   },
   {
     "id": "casillas",
@@ -4171,7 +4246,8 @@
       "ucl_appearances": 183,
       "intl_debut_age": 19
     },
-    "sofifa_id": 162
+    "sofifa_id": 162,
+    "transfermarkt_id": 3979
   },
   {
     "id": "roberto_carlos",
@@ -4223,7 +4299,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 22
     },
-    "sofifa_id": 163
+    "sofifa_id": 163,
+    "transfermarkt_id": 7518
   },
   {
     "id": "maldini",
@@ -4277,7 +4354,8 @@
       "ucl_appearances": 161,
       "intl_debut_age": 25
     },
-    "sofifa_id": 164
+    "sofifa_id": 164,
+    "transfermarkt_id": 5803
   },
   {
     "id": "beckham",
@@ -4329,7 +4407,8 @@
       "home_country_area_km2": 130395,
       "intl_debut_age": 23
     },
-    "sofifa_id": 165
+    "sofifa_id": 165,
+    "transfermarkt_id": 3139
   },
   {
     "id": "gerrard",
@@ -4381,7 +4460,8 @@
       "home_country_area_km2": 130395,
       "intl_debut_age": 21
     },
-    "sofifa_id": 166
+    "sofifa_id": 166,
+    "transfermarkt_id": 3109
   },
   {
     "id": "lampard",
@@ -4433,7 +4513,8 @@
       "home_country_area_km2": 130395,
       "intl_debut_age": 25
     },
-    "sofifa_id": 167
+    "sofifa_id": 167,
+    "transfermarkt_id": 3163
   },
   {
     "id": "rooney",
@@ -4484,7 +4565,8 @@
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395
     },
-    "sofifa_id": 168
+    "sofifa_id": 168,
+    "transfermarkt_id": 3332
   },
   {
     "id": "drogba",
@@ -4536,7 +4618,8 @@
       "home_country_area_km2": 322463,
       "intl_debut_age": 24
     },
-    "sofifa_id": 169
+    "sofifa_id": 169,
+    "transfermarkt_id": 3924
   },
   {
     "id": "figo",
@@ -4590,7 +4673,8 @@
       "ucl_appearances": 136,
       "intl_debut_age": 20
     },
-    "sofifa_id": 170
+    "sofifa_id": 170,
+    "transfermarkt_id": 3446
   },
   {
     "id": "batistuta",
@@ -4644,7 +4728,8 @@
       "ucl_appearances": 61,
       "intl_debut_age": 22
     },
-    "sofifa_id": 171
+    "sofifa_id": 171,
+    "transfermarkt_id": 5959
   },
   {
     "id": "shevchenko",
@@ -4696,7 +4781,8 @@
       "home_country_area_km2": 603628,
       "intl_debut_age": 19
     },
-    "sofifa_id": 172
+    "sofifa_id": 172,
+    "transfermarkt_id": 3522
   },
   {
     "id": "nedved",
@@ -4748,7 +4834,8 @@
       "home_country_area_km2": 78868,
       "intl_debut_age": 24
     },
-    "sofifa_id": 173
+    "sofifa_id": 173,
+    "transfermarkt_id": 3603
   },
   {
     "id": "seedorf",
@@ -4802,7 +4889,8 @@
       "ucl_appearances": 159,
       "intl_debut_age": 18
     },
-    "sofifa_id": 174
+    "sofifa_id": 174,
+    "transfermarkt_id": 4168
   },
   {
     "id": "scholes",
@@ -4854,7 +4942,8 @@
       "home_country_area_km2": 130395,
       "intl_debut_age": 23
     },
-    "sofifa_id": 175
+    "sofifa_id": 175,
+    "transfermarkt_id": 3397
   },
   {
     "id": "raul",
@@ -4908,7 +4997,8 @@
       "ucl_appearances": 160,
       "intl_debut_age": 19
     },
-    "sofifa_id": 176
+    "sofifa_id": 176,
+    "transfermarkt_id": 7349
   },
   {
     "id": "etoo",
@@ -4959,7 +5049,8 @@
       "home_country_population_m": 27.9,
       "home_country_area_km2": 475442
     },
-    "sofifa_id": 177
+    "sofifa_id": 177,
+    "transfermarkt_id": 4257
   },
   {
     "id": "van_persie",
@@ -5010,7 +5101,8 @@
       "home_country_population_m": 17.9,
       "home_country_area_km2": 41543
     },
-    "sofifa_id": 178
+    "sofifa_id": 178,
+    "transfermarkt_id": 4380
   },
   {
     "id": "sneijder",
@@ -5064,7 +5156,8 @@
       "ucl_appearances": 104,
       "intl_debut_age": 19
     },
-    "sofifa_id": 179
+    "sofifa_id": 179,
+    "transfermarkt_id": 4673
   },
   {
     "id": "ribery",
@@ -5118,7 +5211,8 @@
       "ucl_appearances": 116,
       "intl_debut_age": 23
     },
-    "sofifa_id": 180
+    "sofifa_id": 180,
+    "transfermarkt_id": 22068
   },
   {
     "id": "robben",
@@ -5170,7 +5264,8 @@
       "home_country_area_km2": 41543,
       "intl_debut_age": 19
     },
-    "sofifa_id": 181
+    "sofifa_id": 181,
+    "transfermarkt_id": 4360
   },
   {
     "id": "yaya_toure",
@@ -5222,7 +5317,8 @@
       "home_country_area_km2": 322463,
       "intl_debut_age": 23
     },
-    "sofifa_id": 182
+    "sofifa_id": 182,
+    "transfermarkt_id": 13091
   },
   {
     "id": "ozil",
@@ -5274,7 +5370,8 @@
       "home_country_area_km2": 357114,
       "intl_debut_age": 21
     },
-    "sofifa_id": 183
+    "sofifa_id": 183,
+    "transfermarkt_id": 35664
   },
   {
     "id": "puyol",
@@ -5328,7 +5425,8 @@
       "ucl_appearances": 131,
       "intl_debut_age": 24
     },
-    "sofifa_id": 184
+    "sofifa_id": 184,
+    "transfermarkt_id": 7594
   },
   {
     "id": "fabregas",
@@ -5380,7 +5478,8 @@
       "home_country_area_km2": 505990,
       "intl_debut_age": 21
     },
-    "sofifa_id": 185
+    "sofifa_id": 185,
+    "transfermarkt_id": 8806
   },
   {
     "id": "del_piero",
@@ -5434,7 +5533,8 @@
       "ucl_appearances": 127,
       "intl_debut_age": 21
     },
-    "sofifa_id": 186
+    "sofifa_id": 186,
+    "transfermarkt_id": 4289
   },
   {
     "id": "totti",
@@ -5488,7 +5588,8 @@
       "ucl_appearances": 103,
       "intl_debut_age": 24
     },
-    "sofifa_id": 187
+    "sofifa_id": 187,
+    "transfermarkt_id": 5958
   },
   {
     "id": "klose",
@@ -5539,7 +5640,8 @@
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114
     },
-    "sofifa_id": 188
+    "sofifa_id": 188,
+    "transfermarkt_id": 10
   },
   {
     "id": "rivaldo",
@@ -5591,7 +5693,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 21
     },
-    "sofifa_id": 189
+    "sofifa_id": 189,
+    "transfermarkt_id": 3372
   },
   {
     "id": "cantona",
@@ -5643,7 +5746,8 @@
       "home_country_area_km2": 551695,
       "intl_debut_age": 21
     },
-    "sofifa_id": 190
+    "sofifa_id": 190,
+    "transfermarkt_id": 12000
   },
   {
     "id": "vieira",
@@ -5697,7 +5801,8 @@
       "ucl_appearances": 17,
       "intl_debut_age": 25
     },
-    "sofifa_id": 191
+    "sofifa_id": 191,
+    "transfermarkt_id": 3183
   },
   {
     "id": "ballack",
@@ -5749,7 +5854,8 @@
       "home_country_area_km2": 357114,
       "intl_debut_age": 25
     },
-    "sofifa_id": 192
+    "sofifa_id": 192,
+    "transfermarkt_id": 63
   },
   {
     "id": "cafu",
@@ -5801,7 +5907,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 24
     },
-    "sofifa_id": 193
+    "sofifa_id": 193,
+    "transfermarkt_id": 5937
   },
   {
     "id": "pele",
@@ -5853,7 +5960,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 16
     },
-    "sofifa_id": 1
+    "sofifa_id": 1,
+    "transfermarkt_id": 17121
   },
   {
     "id": "maradona",
@@ -5907,7 +6015,8 @@
       "ucl_appearances": 32,
       "intl_debut_age": 17
     },
-    "sofifa_id": 2
+    "sofifa_id": 2,
+    "transfermarkt_id": 8024
   },
   {
     "id": "cruyff",
@@ -5959,7 +6068,8 @@
       "home_country_area_km2": 41543,
       "intl_debut_age": 19
     },
-    "sofifa_id": 3
+    "sofifa_id": 3,
+    "transfermarkt_id": 8021
   },
   {
     "id": "van_basten",
@@ -6013,7 +6123,8 @@
       "ucl_appearances": 47,
       "intl_debut_age": 19
     },
-    "sofifa_id": 4
+    "sofifa_id": 4,
+    "transfermarkt_id": 74471
   },
   {
     "id": "platini",
@@ -6067,7 +6178,8 @@
       "ucl_appearances": 52,
       "intl_debut_age": 21
     },
-    "sofifa_id": 5
+    "sofifa_id": 5,
+    "transfermarkt_id": 88994
   },
   {
     "id": "bergkamp",
@@ -6119,7 +6231,8 @@
       "home_country_area_km2": 41543,
       "intl_debut_age": 21
     },
-    "sofifa_id": 6
+    "sofifa_id": 6,
+    "transfermarkt_id": 3187
   },
   {
     "id": "eusebio",
@@ -6171,7 +6284,8 @@
       "home_country_area_km2": 92212,
       "intl_debut_age": 19
     },
-    "sofifa_id": 7
+    "sofifa_id": 7,
+    "transfermarkt_id": 89230
   },
   {
     "id": "de_gea",
@@ -6226,7 +6340,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2019"
     },
-    "sofifa_id": 193080
+    "sofifa_id": 193080,
+    "transfermarkt_id": 59377
   },
   {
     "id": "lloris",
@@ -6281,7 +6396,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2018"
     },
-    "sofifa_id": 167948
+    "sofifa_id": 167948,
+    "transfermarkt_id": 17965
   },
   {
     "id": "alves",
@@ -6333,7 +6449,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 24
     },
-    "sofifa_id": 155862
+    "sofifa_id": 155862,
+    "transfermarkt_id": 15951
   },
   {
     "id": "marcelo",
@@ -6383,7 +6500,8 @@
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000
     },
-    "sofifa_id": 167542
+    "sofifa_id": 167542,
+    "transfermarkt_id": 44501
   },
   {
     "id": "busquets",
@@ -6439,7 +6557,8 @@
       "positions_count": 1,
       "peak_value_date": "07.2015"
     },
-    "sofifa_id": 177292
+    "sofifa_id": 177292,
+    "transfermarkt_id": 65230
   },
   {
     "id": "modric_backup",
@@ -6490,7 +6609,8 @@
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000
     },
-    "sofifa_id": 192448
+    "sofifa_id": 192448,
+    "transfermarkt_id": 29241
   },
   {
     "id": "nesta",
@@ -6544,7 +6664,8 @@
       "ucl_appearances": 123,
       "intl_debut_age": 20
     },
-    "sofifa_id": 195
+    "sofifa_id": 195,
+    "transfermarkt_id": 4171
   },
   {
     "id": "cannavaro",
@@ -6597,7 +6718,8 @@
       "league_goals": 16,
       "ucl_appearances": 113
     },
-    "sofifa_id": 196
+    "sofifa_id": 196,
+    "transfermarkt_id": 5775
   },
   {
     "id": "lahm",
@@ -6651,7 +6773,8 @@
       "ucl_appearances": 130,
       "intl_debut_age": 21
     },
-    "sofifa_id": 197
+    "sofifa_id": 197,
+    "transfermarkt_id": 2219
   },
   {
     "id": "schweinsteiger",
@@ -6703,7 +6826,8 @@
       "home_country_area_km2": 357114,
       "intl_debut_age": 21
     },
-    "sofifa_id": 198
+    "sofifa_id": 198,
+    "transfermarkt_id": 2514
   },
   {
     "id": "van_nistelrooy",
@@ -6755,7 +6879,8 @@
       "home_country_area_km2": 41543,
       "intl_debut_age": 23
     },
-    "sofifa_id": 199
+    "sofifa_id": 199,
+    "transfermarkt_id": 3407
   },
   {
     "id": "terry",
@@ -6806,7 +6931,8 @@
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395
     },
-    "sofifa_id": 200
+    "sofifa_id": 200,
+    "transfermarkt_id": 3160
   },
   {
     "id": "ferdinand",
@@ -6858,7 +6984,8 @@
       "home_country_area_km2": 130395,
       "intl_debut_age": 24
     },
-    "sofifa_id": 201
+    "sofifa_id": 201,
+    "transfermarkt_id": 3235
   },
   {
     "id": "vidic",
@@ -6910,7 +7037,8 @@
       "home_country_area_km2": 77474,
       "intl_debut_age": 24
     },
-    "sofifa_id": 202
+    "sofifa_id": 202,
+    "transfermarkt_id": 19726
   },
   {
     "id": "romario",
@@ -6962,7 +7090,8 @@
       "home_country_area_km2": 8516000,
       "intl_debut_age": 21
     },
-    "sofifa_id": 203
+    "sofifa_id": 203,
+    "transfermarkt_id": 7942
   },
   {
     "id": "gullit",
@@ -7014,7 +7143,8 @@
       "home_country_area_km2": 41543,
       "intl_debut_age": 20
     },
-    "sofifa_id": 204
+    "sofifa_id": 204,
+    "transfermarkt_id": 101045
   },
   {
     "id": "giggs",
@@ -7065,7 +7195,8 @@
       "home_country_area_km2": 20779,
       "intl_debut_age": 20
     },
-    "sofifa_id": 205
+    "sofifa_id": 205,
+    "transfermarkt_id": 3406
   },
   {
     "id": "beckenbauer",
@@ -7119,7 +7250,8 @@
       "ucl_appearances": 76,
       "intl_debut_age": 21
     },
-    "sofifa_id": 8
+    "sofifa_id": 8,
+    "transfermarkt_id": 72347
   },
   {
     "id": "chiesa",
@@ -7174,7 +7306,8 @@
       "positions_count": 3,
       "peak_value_date": "01.2022"
     },
-    "sofifa_id": 246868
+    "sofifa_id": 246868,
+    "transfermarkt_id": 341092
   },
   {
     "id": "diaz",
@@ -7229,7 +7362,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2024"
     },
-    "sofifa_id": 256457
+    "sofifa_id": 256457,
+    "transfermarkt_id": 480692
   },
   {
     "id": "pulisic",
@@ -7284,7 +7418,8 @@
       "positions_count": 3,
       "peak_value_date": "05.2021"
     },
-    "sofifa_id": 222665
+    "sofifa_id": 222665,
+    "transfermarkt_id": 315779
   },
   {
     "id": "felix",
@@ -7339,7 +7474,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2019"
     },
-    "sofifa_id": 239353
+    "sofifa_id": 239353,
+    "transfermarkt_id": 462250
   },
   {
     "id": "perisic",
@@ -7394,7 +7530,8 @@
       "positions_count": 3,
       "peak_value_date": "08.2018"
     },
-    "sofifa_id": 177003
+    "sofifa_id": 177003,
+    "transfermarkt_id": 42460
   },
   {
     "id": "benzema_backup",
@@ -7449,7 +7586,8 @@
       "positions_count": 4,
       "peak_value_date": "04.2019"
     },
-    "sofifa_id": 200145
+    "sofifa_id": 200145,
+    "transfermarkt_id": 131789
   },
   {
     "id": "goretzka",
@@ -7506,7 +7644,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 215914
+    "sofifa_id": 215914,
+    "transfermarkt_id": 153084
   },
   {
     "id": "dimarco",
@@ -7563,7 +7702,8 @@
       "positions_count": 4,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 230671
+    "sofifa_id": 230671,
+    "transfermarkt_id": 198116
   },
   {
     "id": "sterling",
@@ -7618,7 +7758,8 @@
       "positions_count": 3,
       "peak_value_date": "05.2022"
     },
-    "sofifa_id": 183898
+    "sofifa_id": 183898,
+    "transfermarkt_id": 134425
   },
   {
     "id": "gnabry",
@@ -7673,7 +7814,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2021"
     },
-    "sofifa_id": 215813
+    "sofifa_id": 215813,
+    "transfermarkt_id": 159471
   },
   {
     "id": "lautaro",
@@ -7730,7 +7872,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 241084
+    "sofifa_id": 241084,
+    "transfermarkt_id": 406625
   },
   {
     "id": "saliba",
@@ -7785,7 +7928,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 263245
+    "sofifa_id": 263245,
+    "transfermarkt_id": 495666
   },
   {
     "id": "mount",
@@ -7840,7 +7984,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2023"
     },
-    "sofifa_id": 231747
+    "sofifa_id": 231747,
+    "transfermarkt_id": 346483
   },
   {
     "id": "verratti",
@@ -7895,7 +8040,8 @@
       "positions_count": 2,
       "peak_value_date": "04.2022"
     },
-    "sofifa_id": 193450
+    "sofifa_id": 193450,
+    "transfermarkt_id": 102558
   },
   {
     "id": "coman",
@@ -7952,7 +8098,8 @@
       "positions_count": 2,
       "peak_value_date": "05.2022"
     },
-    "sofifa_id": 216457
+    "sofifa_id": 216457,
+    "transfermarkt_id": 243714
   },
   {
     "id": "nkunku",
@@ -8006,7 +8153,8 @@
       "positions_count": 4,
       "peak_value_date": "11.2022"
     },
-    "sofifa_id": 249249
+    "sofifa_id": 249249,
+    "transfermarkt_id": 344381
   },
   {
     "id": "carvajal",
@@ -8062,7 +8210,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2019"
     },
-    "sofifa_id": 189615
+    "sofifa_id": 189615,
+    "transfermarkt_id": 138927
   },
   {
     "id": "barella",
@@ -8119,7 +8268,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 238812
+    "sofifa_id": 238812,
+    "transfermarkt_id": 255942
   },
   {
     "id": "cancelo",
@@ -8174,7 +8324,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2022"
     },
-    "sofifa_id": 219449
+    "sofifa_id": 219449,
+    "transfermarkt_id": 182712
   },
   {
     "id": "hakimi",
@@ -8231,7 +8382,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2022"
     },
-    "sofifa_id": 241519
+    "sofifa_id": 241519,
+    "transfermarkt_id": 398073
   },
   {
     "id": "raphinha",
@@ -8286,7 +8438,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 246942
+    "sofifa_id": 246942,
+    "transfermarkt_id": 411295
   },
   {
     "id": "maignan",
@@ -8341,7 +8494,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 248057
+    "sofifa_id": 248057,
+    "transfermarkt_id": 182906
   },
   {
     "id": "ramos",
@@ -8398,7 +8552,8 @@
       "positions_count": 2,
       "peak_value_date": "07.2015"
     },
-    "sofifa_id": 155862
+    "sofifa_id": 155862,
+    "transfermarkt_id": 25557
   },
   {
     "id": "brozovic",
@@ -8455,7 +8610,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2022"
     },
-    "sofifa_id": 213563
+    "sofifa_id": 213563,
+    "transfermarkt_id": 156617
   },
   {
     "id": "navas",
@@ -8511,7 +8667,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2018"
     },
-    "sofifa_id": 193586
+    "sofifa_id": 193586,
+    "transfermarkt_id": 79422
   },
   {
     "id": "mkhitaryan",
@@ -8566,7 +8723,8 @@
       "positions_count": 3,
       "peak_value_date": "08.2017"
     },
-    "sofifa_id": 178765
+    "sofifa_id": 178765,
+    "transfermarkt_id": 55735
   },
   {
     "id": "gundogan",
@@ -8621,7 +8779,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 192986
+    "sofifa_id": 192986,
+    "transfermarkt_id": 53622
   },
   {
     "id": "immobile",
@@ -8678,7 +8837,8 @@
       "positions_count": 1,
       "peak_value_date": "04.2021"
     },
-    "sofifa_id": 188545
+    "sofifa_id": 188545,
+    "transfermarkt_id": 105521
   },
   {
     "id": "dembele",
@@ -8733,7 +8893,8 @@
       "positions_count": 3,
       "peak_value_date": "09.2017"
     },
-    "sofifa_id": 246803
+    "sofifa_id": 246803,
+    "transfermarkt_id": 288230
   },
   {
     "id": "rodrygo",
@@ -8788,7 +8949,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 261591
+    "sofifa_id": 261591,
+    "transfermarkt_id": 412363
   },
   {
     "id": "upamecano",
@@ -8845,7 +9007,8 @@
       "positions_count": 1,
       "peak_value_date": "08.2022"
     },
-    "sofifa_id": 240476
+    "sofifa_id": 240476,
+    "transfermarkt_id": 344695
   },
   {
     "id": "trossard",
@@ -8899,7 +9062,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 237492
+    "sofifa_id": 237492,
+    "transfermarkt_id": 144028
   },
   {
     "id": "grimaldo",
@@ -8952,7 +9116,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 248023
+    "sofifa_id": 248023,
+    "transfermarkt_id": 193082
   },
   {
     "id": "saka2",
@@ -9007,7 +9172,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 246803
+    "sofifa_id": 246803,
+    "transfermarkt_id": 433177
   },
   {
     "id": "diaz_col",
@@ -9060,7 +9226,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2024"
     },
-    "sofifa_id": 256457
+    "sofifa_id": 256457,
+    "transfermarkt_id": 480692
   },
   {
     "id": "pedro_acosta",
@@ -9117,7 +9284,8 @@
       "positions_count": 3,
       "peak_value_date": "08.2021"
     },
-    "sofifa_id": 217086
+    "sofifa_id": 217086,
+    "transfermarkt_id": 296622
   },
   {
     "id": "dimarco2",
@@ -9174,7 +9342,8 @@
       "positions_count": 4,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 230671
+    "sofifa_id": 230671,
+    "transfermarkt_id": 198116
   },
   {
     "id": "kounde",
@@ -9229,7 +9398,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2022"
     },
-    "sofifa_id": 244442
+    "sofifa_id": 244442,
+    "transfermarkt_id": 411975
   },
   {
     "id": "thiago_silva2",
@@ -9283,7 +9453,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 192448
+    "sofifa_id": 192448,
+    "transfermarkt_id": 29241
   },
   {
     "id": "firmino",
@@ -9338,7 +9509,8 @@
       "positions_count": 4,
       "peak_value_date": "04.2019"
     },
-    "sofifa_id": 200145
+    "sofifa_id": 200145,
+    "transfermarkt_id": 131789
   },
   {
     "id": "alisson2",
@@ -9393,7 +9565,8 @@
       "positions_count": 1,
       "peak_value_date": "08.2019"
     },
-    "sofifa_id": 212831
+    "sofifa_id": 212831,
+    "transfermarkt_id": 105470
   },
   {
     "id": "konatefr",
@@ -9449,7 +9622,8 @@
       "peak_value_date": "06.2025"
     },
     "sofifa_id": 249,
-    "twitter_m": 0
+    "twitter_m": 0,
+    "transfermarkt_id": 357119
   },
   {
     "id": "thauvin",
@@ -9503,7 +9677,8 @@
       "positions_count": 3,
       "peak_value_date": "04.2019"
     },
-    "sofifa_id": 214043
+    "sofifa_id": 214043,
+    "transfermarkt_id": 184892
   },
   {
     "id": "bynoe_gittens",
@@ -9558,7 +9733,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 252267
+    "sofifa_id": 252267,
+    "transfermarkt_id": 484547
   },
   {
     "id": "zirkzee",
@@ -9613,7 +9789,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 260672
+    "sofifa_id": 260672,
+    "transfermarkt_id": 435648
   },
   {
     "id": "mainoo",
@@ -9667,7 +9844,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 260674
+    "sofifa_id": 260674,
+    "transfermarkt_id": 820374
   },
   {
     "id": "reijnders",
@@ -9721,7 +9899,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 261395
+    "sofifa_id": 261395,
+    "transfermarkt_id": 460939
   },
   {
     "id": "calvert_lewin",
@@ -9776,7 +9955,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2021"
     },
-    "sofifa_id": 235243
+    "sofifa_id": 235243,
+    "transfermarkt_id": 306024
   },
   {
     "id": "mertens",
@@ -9830,7 +10010,8 @@
       "ucl_appearances": 133,
       "intl_debut_age": 25
     },
-    "sofifa_id": 188230
+    "sofifa_id": 188230,
+    "transfermarkt_id": 56416
   },
   {
     "id": "locatelli",
@@ -9887,7 +10068,8 @@
       "positions_count": 2,
       "peak_value_date": "08.2021"
     },
-    "sofifa_id": 230469
+    "sofifa_id": 230469,
+    "transfermarkt_id": 265088
   },
   {
     "id": "pedersen",
@@ -9944,7 +10126,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2024"
     },
-    "sofifa_id": 252518
+    "sofifa_id": 252518,
+    "transfermarkt_id": 540941
   },
   {
     "id": "florenzi",
@@ -9999,7 +10182,8 @@
       "positions_count": 3,
       "peak_value_date": "08.2021"
     },
-    "sofifa_id": 240521
+    "sofifa_id": 240521,
+    "transfermarkt_id": 340456
   },
   {
     "id": "guler2",
@@ -10056,7 +10240,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 271845
+    "sofifa_id": 271845,
+    "transfermarkt_id": 861410
   },
   {
     "id": "schar",
@@ -10113,7 +10298,8 @@
       "positions_count": 1,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 197967
+    "sofifa_id": 197967,
+    "transfermarkt_id": 135343
   },
   {
     "id": "guimaraes",
@@ -10168,7 +10354,8 @@
       "positions_count": 2,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 240480
+    "sofifa_id": 240480,
+    "transfermarkt_id": 520624
   },
   {
     "id": "isak",
@@ -10223,7 +10410,8 @@
       "positions_count": 1,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 240428
+    "sofifa_id": 240428,
+    "transfermarkt_id": 349066
   },
   {
     "id": "ruben_neves2",
@@ -10277,7 +10465,8 @@
       "positions_count": 2,
       "peak_value_date": "03.2022"
     },
-    "sofifa_id": 222847
+    "sofifa_id": 222847,
+    "transfermarkt_id": 225161
   },
   {
     "id": "diallo2",
@@ -10332,7 +10521,8 @@
       "positions_count": 4,
       "peak_value_date": "06.2026"
     },
-    "sofifa_id": 257199
+    "sofifa_id": 257199,
+    "transfermarkt_id": 536835
   },
   {
     "id": "dalot",
@@ -10387,7 +10577,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2024"
     },
-    "sofifa_id": 243165
+    "sofifa_id": 243165,
+    "transfermarkt_id": 357147
   },
   {
     "id": "gallagher",
@@ -10442,7 +10633,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2024"
     },
-    "sofifa_id": 252366
+    "sofifa_id": 252366,
+    "transfermarkt_id": 488362
   },
   {
     "id": "buksa",
@@ -10497,7 +10689,8 @@
       "positions_count": 2,
       "peak_value_date": "07.2022"
     },
-    "sofifa_id": 258667
+    "sofifa_id": 258667,
+    "transfermarkt_id": 546543
   },
   {
     "id": "leao2",
@@ -10554,7 +10747,8 @@
       "positions_count": 3,
       "peak_value_date": "03.2024"
     },
-    "sofifa_id": 254950
+    "sofifa_id": 254950,
+    "transfermarkt_id": 357164
   },
   {
     "id": "grealish2",
@@ -10608,7 +10802,8 @@
       "positions_count": 4,
       "peak_value_date": "08.2021"
     },
-    "sofifa_id": 209658
+    "sofifa_id": 209658,
+    "transfermarkt_id": 203460
   },
   {
     "id": "zaniolo",
@@ -10665,7 +10860,8 @@
       "positions_count": 3,
       "peak_value_date": "07.2022"
     },
-    "sofifa_id": 243187
+    "sofifa_id": 243187,
+    "transfermarkt_id": 392085
   },
   {
     "id": "eriksen",
@@ -10720,7 +10916,8 @@
       "positions_count": 2,
       "peak_value_date": "05.2019"
     },
-    "sofifa_id": 178603
+    "sofifa_id": 178603,
+    "transfermarkt_id": 69633
   },
   {
     "id": "brahim",
@@ -10775,7 +10972,8 @@
       "positions_count": 3,
       "peak_value_date": "06.2025"
     },
-    "sofifa_id": 236501
+    "sofifa_id": 236501,
+    "transfermarkt_id": 314678
   },
   {
     "id": "dumfries2",
@@ -10832,6 +11030,7 @@
       "positions_count": 2,
       "peak_value_date": "08.2022"
     },
-    "sofifa_id": 244912
+    "sofifa_id": 244912,
+    "transfermarkt_id": 321528
   }
 ]
