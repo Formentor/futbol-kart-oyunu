@@ -67,7 +67,19 @@ export default function Home() {
     );
   }
 
-  if (showLeaderboard) return <LeaderboardScreen onBack={() => setShowLeaderboard(false)} />;
+  const HomeButton = () => (
+    <button
+      onClick={() => { setGameMode(null); setShowLeaderboard(false); }}
+      className="fixed top-3 left-3 z-50 flex items-center gap-1.5 bg-black/60 hover:bg-black/80 backdrop-blur text-white px-3 py-1.5 rounded-xl text-sm font-bold transition-all border border-white/10"
+    >
+      ⚽ Ana Sayfa
+    </button>
+  );
+
+  if (showLeaderboard) return <><HomeButton /><LeaderboardScreen onBack={() => setShowLeaderboard(false)} /></>;
+
+  // Ana sayfa dışındaki tüm ekranlarda HomeButton sabit görünür
+  const withHome = (el) => <>{(gameMode) && <HomeButton />}{el}</>;
 
   // ── Mode selection ───────────────────────────────────────────────────────────
   if (!gameMode) {
@@ -118,7 +130,7 @@ export default function Home() {
     const { phase, role } = onlineGame;
 
     if (!onlineGame.roomCode || phase === 'waiting-for-b') {
-      return <LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} />;
+      return withHome(<LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} />);
     }
 
     const oNameA = onlineGame.playerA || 'Oyuncu A';
@@ -128,7 +140,7 @@ export default function Home() {
     const waiting = phase === 'draft-waiting' || phase === 'play-waiting';
 
     if (waiting) {
-      return (
+      return withHome(
         <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center gap-6 p-6">
           <p className="text-5xl animate-pulse">⏳</p>
           <h2 className="text-2xl font-black text-yellow-400 uppercase tracking-widest">
@@ -141,17 +153,11 @@ export default function Home() {
       );
     }
 
-    if (phase === 'draft-A' || phase === 'draft-B') {
-      return <DraftScreen game={onlineGame} nameA={oNameA} nameB={oNameB} isOnline />;
-    }
-    if (phase === 'play-select-A' || phase === 'play-select-B') {
-      return <PlayScreen game={onlineGame} nameA={oNameA} nameB={oNameB} isOnline />;
-    }
-    if (phase === 'reveal' || phase === 'reveal-final') {
-      return <RevealScreen game={onlineGame} nameA={oNameA} nameB={oNameB} />;
-    }
+    if (phase === 'draft-A' || phase === 'draft-B') return withHome(<DraftScreen game={onlineGame} nameA={oNameA} nameB={oNameB} isOnline />);
+    if (phase === 'play-select-A' || phase === 'play-select-B') return withHome(<PlayScreen game={onlineGame} nameA={oNameA} nameB={oNameB} isOnline />);
+    if (phase === 'reveal' || phase === 'reveal-final') return withHome(<RevealScreen game={onlineGame} nameA={oNameA} nameB={oNameB} />);
     if (phase === 'gameover') {
-      return (
+      return withHome(
         <GameOverScreen
           game={onlineGame}
           nameA={oNameA}
@@ -169,24 +175,18 @@ export default function Home() {
   const { phase } = localGame;
 
   if (phase === 'name') {
-    return (
+    return withHome(
       <NameScreen
         onStart={(a, b) => { setNameA(a); setNameB(b); localGame.startGame(); }}
         onLeaderboard={() => setShowLeaderboard(true)}
       />
     );
   }
-  if (phase === 'draft-A' || phase === 'draft-B') {
-    return <DraftScreen game={localGame} nameA={nameA} nameB={nameB} />;
-  }
-  if (phase === 'play-select-A' || phase === 'play-select-B') {
-    return <PlayScreen game={localGame} nameA={nameA} nameB={nameB} />;
-  }
-  if (phase === 'reveal' || phase === 'reveal-final') {
-    return <RevealScreen game={localGame} nameA={nameA} nameB={nameB} />;
-  }
+  if (phase === 'draft-A' || phase === 'draft-B') return withHome(<DraftScreen game={localGame} nameA={nameA} nameB={nameB} />);
+  if (phase === 'play-select-A' || phase === 'play-select-B') return withHome(<PlayScreen game={localGame} nameA={nameA} nameB={nameB} />);
+  if (phase === 'reveal' || phase === 'reveal-final') return withHome(<RevealScreen game={localGame} nameA={nameA} nameB={nameB} />);
   if (phase === 'gameover') {
-    return (
+    return withHome(
       <GameOverScreen
         game={localGame}
         nameA={nameA}
