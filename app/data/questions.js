@@ -132,7 +132,7 @@ export const QUESTIONS = [
   { id: 'S124', text: 'Hangi futbolcunun attığı gollerin daha büyük bölümü milli takımla gelmiştir?',     field: 'intl_goal_ratio',              higher_wins: true,  unit: '%' },
   { id: 'S125', text: 'Hangi futbolcunun vücut kitle endeksi (BMI) daha yüksektir?',                      field: 'bmi',                          higher_wins: true,  unit: 'kg/m²' },
   { id: 'S126', text: 'Hangi futbolcu yılda ortalama daha fazla kulüp değiştirmiştir?',                   field: 'clubs_per_year',               higher_wins: true,  unit: 'kulüp/yıl' },
-  { id: 'S127', text: 'Hangi futbolcunun maç başına düşen piyasa değeri daha yüksektir?',                 field: 'value_per_game',               higher_wins: true,  unit: 'k€/maç' },
+  { id: 'S127', text: 'Hangi futbolcunun kariyer zirvesindeki piyasa değeri, oynadığı maç başına daha yüksektir?', field: 'value_per_game',          higher_wins: true,  unit: 'k€/maç' },
   { id: 'S128', text: 'Hangi futbolcunun oynadığı maçların daha büyük bölümü milli takımla olmuştur?',    field: 'intl_ratio',                   higher_wins: true,  unit: '%' },
   { id: 'S129', text: 'Hangi futbolcu yılda daha fazla milli gol atmıştır?',                              field: 'intl_goals_per_year',          higher_wins: true,  unit: 'gol/yıl' },
   { id: 'S130', text: 'Hangi futbolcunun Dünya Kupası\'ndaki gol oranı (gol/maç) daha yüksektir?',        field: 'wc_goals_per_game',            higher_wins: true,  unit: 'gol/maç', disabled: true },
