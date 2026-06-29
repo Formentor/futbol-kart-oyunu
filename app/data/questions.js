@@ -68,8 +68,8 @@ export const QUESTIONS = [
   // ── EKONOMİ ──────────────────────────────────────────────────────────────────
   { id: 'S52',  text: 'Hangi futbolcunun en yüksek transfer bedeli daha fazladır?',                       field: 'highest_transfer_fee_m',       higher_wins: true,  unit: 'M€' },
   { id: 'S53',  text: 'Hangi futbolcunun kariyerindeki en yüksek piyasa değeri daha fazladır?',           field: 'peak_market_value_m',          higher_wins: true,  unit: 'M€' },
-  { id: 'S54',  text: 'Hangi futbolcunun haftalık maaşı daha yüksektir?',                                 field: 'weekly_wage_k',                higher_wins: true,  unit: 'k€/hf' },
-  { id: 'S55',  text: 'Hangi futbolcu kariyerinde toplamda daha fazla para kazanmıştır?',                 field: 'career_earnings_m',            higher_wins: true,  unit: 'M€' },
+  { id: 'S54',  text: 'Hangi futbolcunun haftalık maaşı daha yüksektir?',                                 field: 'weekly_wage_k',                higher_wins: true,  unit: 'k€/hf',  disabled: true },
+  { id: 'S55',  text: 'Hangi futbolcu kariyerinde toplamda daha fazla para kazanmıştır?',                 field: 'career_earnings_m',            higher_wins: true,  unit: 'M€',     disabled: true },
   { id: 'S56',  text: 'Hangi futbolcunun güncel piyasa değeri daha yüksektir?',                           field: 'current_market_value_m',       higher_wins: true,  unit: 'M€',   disabled: true },
 
   // ── YAŞ & ZAMANLAMA ──────────────────────────────────────────────────────────
@@ -116,7 +116,7 @@ export const QUESTIONS = [
   { id: 'S109', text: 'Hangi futbolcu kariyerinde daha az hat-trick yapmıştır?',                          field: 'career_hat_tricks',            higher_wins: false, unit: 'ht' },
   { id: 'S110', text: 'Hangi futbolcunun doğduğu şehrin nüfusu daha azdır?',                             field: 'birthplace_population',        higher_wins: false, unit: 'kişi' },
   { id: 'S111', text: 'Hangi futbolcu daha az milli maç oynamıştır?',                                     field: 'international_caps',           higher_wins: false, unit: 'maç' },
-  { id: 'S112', text: 'Hangi futbolcunun haftalık maaşı daha düşüktür?',                                  field: 'weekly_wage_k',                higher_wins: false, unit: 'k€/hf' },
+  { id: 'S112', text: 'Hangi futbolcunun haftalık maaşı daha düşüktür?',                                  field: 'weekly_wage_k',                higher_wins: false, unit: 'k€/hf',  disabled: true },
   { id: 'S113', text: 'Hangi futbolcunun en yüksek transfer bedeli daha düşüktür?',                       field: 'highest_transfer_fee_m',       higher_wins: false, unit: 'M€' },
   { id: 'S114', text: 'Hangi futbolcu daha az gol atmıştır?',                                             field: 'career_goals_total',           higher_wins: false, unit: 'gol' },
   { id: 'S115', text: 'Hangi futbolcu daha az asist yapmıştır?',                                          field: 'career_assists_total',         higher_wins: false, unit: 'asist' },
@@ -132,7 +132,7 @@ export const QUESTIONS = [
   { id: 'S124', text: 'Hangi futbolcunun attığı gollerin daha büyük bölümü milli takımla gelmiştir?',     field: 'intl_goal_ratio',              higher_wins: true,  unit: '%' },
   { id: 'S125', text: 'Hangi futbolcunun vücut kitle endeksi (BMI) daha yüksektir?',                      field: 'bmi',                          higher_wins: true,  unit: 'kg/m²' },
   { id: 'S126', text: 'Hangi futbolcu yılda ortalama daha fazla kulüp değiştirmiştir?',                   field: 'clubs_per_year',               higher_wins: true,  unit: 'kulüp/yıl' },
-  { id: 'S127', text: 'Hangi futbolcunun kariyer zirvesindeki piyasa değeri, oynadığı maç başına daha yüksektir?', field: 'value_per_game',          higher_wins: true,  unit: 'k€/maç' },
+  { id: 'S127', text: 'Hangi futbolcunun kariyer zirvesindeki piyasa değeri, oynadığı maç başına daha yüksektir?', field: 'value_per_game',          higher_wins: true,  unit: 'k€/maç', disabled: true },
   { id: 'S128', text: 'Hangi futbolcunun oynadığı maçların daha büyük bölümü milli takımla olmuştur?',    field: 'intl_ratio',                   higher_wins: true,  unit: '%' },
   { id: 'S129', text: 'Hangi futbolcu yılda daha fazla milli gol atmıştır?',                              field: 'intl_goals_per_year',          higher_wins: true,  unit: 'gol/yıl' },
   { id: 'S130', text: 'Hangi futbolcunun Dünya Kupası\'ndaki gol oranı (gol/maç) daha yüksektir?',        field: 'wc_goals_per_game',            higher_wins: true,  unit: 'gol/maç', disabled: true },
