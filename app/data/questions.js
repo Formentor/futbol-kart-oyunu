@@ -136,4 +136,6 @@ export const QUESTIONS = [
   { id: 'S128', text: 'Hangi futbolcunun oynadığı maçların milli takıma düşen oranı daha yüksektir?',     field: 'intl_ratio',                   higher_wins: true,  unit: '%' },
   { id: 'S129', text: 'Hangi futbolcu yılda daha fazla milli gol atmıştır?',                              field: 'intl_goals_per_year',          higher_wins: true,  unit: 'gol/yıl' },
   { id: 'S130', text: 'Hangi futbolcunun Dünya Kupası\'ndaki gol oranı (gol/maç) daha yüksektir?',        field: 'wc_goals_per_game',            higher_wins: true,  unit: 'gol/maç', disabled: true },
+  { id: 'S131', text: 'Hangi futbolcu kariyerinde daha fazla farklı mevkide oynamıştır?',                field: 'positions_count',              higher_wins: true,  unit: 'mevki' },
+  { id: 'S132', text: 'Hangi futbolcunun zirve piyasa değerine ulaşması daha yakın zamandadır?',         field: 'months_since_peak_value',      higher_wins: false, unit: 'ay önce' },
 ];

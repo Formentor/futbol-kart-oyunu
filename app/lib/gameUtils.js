@@ -34,6 +34,14 @@ const COMPUTED = {
   intl_ratio:              (p, s) => (s.career_appearances > 0 && s.international_caps > 0) ? +(s.international_caps / s.career_appearances * 100).toFixed(1) : null,
   intl_goals_per_year:     (p, s) => (s.years_pro > 0 && s.international_goals > 0) ? +(s.international_goals / s.years_pro).toFixed(2) : null,
   wc_goals_per_game:       (p, s) => (s.world_cup_appearances > 0 && s.world_cup_goals > 0) ? +(s.world_cup_goals / s.world_cup_appearances).toFixed(3) : null,
+  // Zirve piyasa değerinden bu yana geçen ay sayısı (sadece aktif oyuncular)
+  months_since_peak_value: (p, s) => {
+    if (!s.peak_value_date || p.current_club === 'Emekli') return null;
+    const [m, y] = s.peak_value_date.split('.');
+    const peak = new Date(+y, +m - 1, 1);
+    const now  = new Date(2026, 5, 29); // Haziran 2026
+    return Math.floor((now - peak) / (1000 * 60 * 60 * 24 * 30.44));
+  },
 };
 
 export function getVal(card, field) {

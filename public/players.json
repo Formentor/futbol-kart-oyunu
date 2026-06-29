@@ -9,7 +9,7 @@
     "position": "ST",
     "rating": 91,
     "rarity": "gold-special",
-    "age": 39,
+    "age": 41,
     "stats": {
       "pace": 83,
       "shooting": 93,
@@ -40,14 +40,17 @@
       "world_cup_goals": 8,
       "weight_kg": 85,
       "peak_rating": 99,
-      "instagram_m": 650.0,
+      "instagram_m": 640,
       "best_season_goals": 60,
       "years_pro": 22,
       "career_appearances": 1099,
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
       "home_country_area_km2": 92212,
-      "intl_debut_age": 16
+      "intl_debut_age": 16,
+      "birth_date": "05.02.1985",
+      "positions_count": 4,
+      "peak_value_date": "06.2009"
     },
     "sofifa_id": 20801
   },
@@ -61,7 +64,7 @@
     "position": "ST",
     "rating": 91,
     "rarity": "gold-special",
-    "age": 37,
+    "age": 39,
     "stats": {
       "pace": 85,
       "shooting": 92,
@@ -92,7 +95,7 @@
       "world_cup_goals": 13,
       "weight_kg": 72,
       "peak_rating": 99,
-      "instagram_m": 510.0,
+      "instagram_m": 500,
       "best_season_goals": 73,
       "years_pro": 21,
       "career_appearances": 989,
@@ -101,7 +104,10 @@
       "home_country_area_km2": 2780400,
       "league_goals": 569,
       "ucl_appearances": 175,
-      "intl_debut_age": 17
+      "intl_debut_age": 17,
+      "birth_date": "24.06.1987",
+      "positions_count": 3,
+      "peak_value_date": "07.2012"
     },
     "sofifa_id": 158023
   },
@@ -115,7 +121,7 @@
     "position": "ST",
     "rating": 93,
     "rarity": "gold-special",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 97,
       "shooting": 90,
@@ -146,14 +152,17 @@
       "world_cup_goals": 12,
       "weight_kg": 73,
       "peak_rating": 93,
-      "instagram_m": 110.0,
+      "instagram_m": 110,
       "best_season_goals": 44,
       "years_pro": 9,
       "career_appearances": 483,
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "20.12.1998",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 231747
   },
@@ -167,7 +176,7 @@
     "position": "ST",
     "rating": 91,
     "rarity": "gold-special",
-    "age": 24,
+    "age": 25,
     "stats": {
       "pace": 89,
       "shooting": 94,
@@ -198,13 +207,16 @@
       "world_cup_goals": 0,
       "weight_kg": 88,
       "peak_rating": 91,
-      "instagram_m": 40.0,
+      "instagram_m": 34,
       "best_season_goals": 52,
       "years_pro": 8,
       "career_appearances": 402,
       "country_fifa_rank": 31,
       "home_country_population_m": 5.5,
-      "home_country_area_km2": 385207
+      "home_country_area_km2": 385207,
+      "birth_date": "21.07.2000",
+      "positions_count": 1,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 239085
   },
@@ -218,7 +230,7 @@
     "position": "LW",
     "rating": 92,
     "rarity": "gold-special",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 96,
       "shooting": 85,
@@ -249,7 +261,7 @@
       "world_cup_goals": 4,
       "weight_kg": 73,
       "peak_rating": 92,
-      "instagram_m": 75.0,
+      "instagram_m": 72,
       "best_season_goals": 24,
       "years_pro": 8,
       "career_appearances": 450,
@@ -258,13 +270,16 @@
       "home_country_area_km2": 8516000,
       "league_goals": 88,
       "ucl_appearances": 94,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "12.07.2000",
+      "positions_count": 2,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 250070
   },
   {
     "id": "lewandowski",
-    "name": "Lewandowski",
+    "name": "R. Lewandowski",
     "full_name": "Robert Lewandowski",
     "nationality": "Polonya",
     "flag_emoji": "🇵🇱",
@@ -272,7 +287,7 @@
     "position": "ST",
     "rating": 90,
     "rarity": "gold-special",
-    "age": 35,
+    "age": 37,
     "stats": {
       "pace": 78,
       "shooting": 92,
@@ -303,7 +318,7 @@
       "world_cup_goals": 2,
       "weight_kg": 80,
       "peak_rating": 92,
-      "instagram_m": 42.0,
+      "instagram_m": 25,
       "best_season_goals": 69,
       "years_pro": 18,
       "career_appearances": 940,
@@ -312,21 +327,24 @@
       "home_country_area_km2": 312696,
       "league_goals": 477,
       "ucl_appearances": 170,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "21.08.1988",
+      "positions_count": 1,
+      "peak_value_date": "05.2021"
     },
     "sofifa_id": 188545
   },
   {
     "id": "debruyne",
-    "name": "De Bruyne",
+    "name": "K. De Bruyne",
     "full_name": "Kevin De Bruyne",
     "nationality": "Belçika",
     "flag_emoji": "🇧🇪",
-    "current_club": "Manchester City",
+    "current_club": "Napoli",
     "position": "CM",
     "rating": 91,
     "rarity": "gold-special",
-    "age": 33,
+    "age": 35,
     "stats": {
       "pace": 76,
       "shooting": 85,
@@ -364,13 +382,16 @@
       "country_fifa_rank": 9,
       "home_country_population_m": 11.6,
       "home_country_area_km2": 30528,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "28.06.1991",
+      "positions_count": 2,
+      "peak_value_date": "03.2023"
     },
     "sofifa_id": 192985
   },
   {
     "id": "salah",
-    "name": "Salah",
+    "name": "M. Salah",
     "full_name": "Mohamed Salah",
     "nationality": "Mısır",
     "flag_emoji": "🇪🇬",
@@ -378,7 +399,7 @@
     "position": "RW",
     "rating": 89,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 92,
       "shooting": 87,
@@ -409,14 +430,17 @@
       "world_cup_goals": 9,
       "weight_kg": 71,
       "peak_rating": 89,
-      "instagram_m": 60.0,
+      "instagram_m": 67,
       "best_season_goals": 44,
       "years_pro": 14,
       "career_appearances": 694,
       "country_fifa_rank": 29,
       "home_country_population_m": 104.3,
       "home_country_area_km2": 1002450,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "15.06.1992",
+      "positions_count": 3,
+      "peak_value_date": "08.2018"
     },
     "sofifa_id": 209331
   },
@@ -426,11 +450,11 @@
     "full_name": "Neymar Jr.",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
-    "current_club": "Al Hilal",
+    "current_club": "Santos",
     "position": "LW",
     "rating": 87,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 90,
       "shooting": 83,
@@ -461,28 +485,31 @@
       "world_cup_goals": 8,
       "weight_kg": 68,
       "peak_rating": 92,
-      "instagram_m": 230.0,
+      "instagram_m": 220,
       "best_season_goals": 43,
       "years_pro": 14,
       "career_appearances": 634,
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "05.02.1992",
+      "positions_count": 3,
+      "peak_value_date": "08.2017"
     },
     "sofifa_id": 190871
   },
   {
     "id": "modric",
-    "name": "Modrić",
+    "name": "L. Modrić",
     "full_name": "Luka Modrić",
     "nationality": "Hırvatistan",
     "flag_emoji": "🇭🇷",
-    "current_club": "Real Madrid",
+    "current_club": "AC Milan",
     "position": "CM",
     "rating": 87,
     "rarity": "gold",
-    "age": 39,
+    "age": 40,
     "stats": {
       "pace": 74,
       "shooting": 76,
@@ -513,20 +540,23 @@
       "world_cup_goals": 3,
       "weight_kg": 66,
       "peak_rating": 91,
-      "instagram_m": 29.0,
+      "instagram_m": 8,
       "best_season_goals": 17,
       "years_pro": 20,
       "career_appearances": 967,
       "country_fifa_rank": 11,
       "home_country_population_m": 3.9,
       "home_country_area_km2": 56594,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "09.09.1985",
+      "positions_count": 3,
+      "peak_value_date": "04.2019"
     },
     "sofifa_id": 177003
   },
   {
     "id": "kane",
-    "name": "Kane",
+    "name": "H. Kane",
     "full_name": "Harry Kane",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -534,7 +564,7 @@
     "position": "ST",
     "rating": 90,
     "rarity": "gold",
-    "age": 31,
+    "age": 32,
     "stats": {
       "pace": 70,
       "shooting": 92,
@@ -565,20 +595,23 @@
       "world_cup_goals": 8,
       "weight_kg": 86,
       "peak_rating": 90,
-      "instagram_m": 18.0,
+      "instagram_m": 10,
       "best_season_goals": 30,
       "years_pro": 14,
       "career_appearances": 647,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "28.07.1993",
+      "positions_count": 2,
+      "peak_value_date": "03.2023"
     },
     "sofifa_id": 202126
   },
   {
     "id": "vandijk",
-    "name": "Van Dijk",
+    "name": "V. van Dijk",
     "full_name": "Virgil van Dijk",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -586,7 +619,7 @@
     "position": "CB",
     "rating": 89,
     "rarity": "gold",
-    "age": 33,
+    "age": 34,
     "stats": {
       "pace": 80,
       "shooting": 58,
@@ -623,13 +656,16 @@
       "career_appearances": 635,
       "country_fifa_rank": 8,
       "home_country_population_m": 17.9,
-      "home_country_area_km2": 41543
+      "home_country_area_km2": 41543,
+      "birth_date": "08.07.1991",
+      "positions_count": 1,
+      "peak_value_date": "07.2019"
     },
     "sofifa_id": 203376
   },
   {
     "id": "courtois",
-    "name": "Courtois",
+    "name": "T. Courtois",
     "full_name": "Thibaut Courtois",
     "nationality": "Belçika",
     "flag_emoji": "🇧🇪",
@@ -637,7 +673,7 @@
     "position": "GK",
     "rating": 90,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 55,
       "shooting": 20,
@@ -668,14 +704,17 @@
       "world_cup_goals": 0,
       "weight_kg": 96,
       "peak_rating": 90,
-      "instagram_m": 20.0,
+      "instagram_m": 11,
       "best_season_goals": 0,
       "years_pro": 15,
       "career_appearances": 689,
       "country_fifa_rank": 9,
       "home_country_population_m": 11.6,
       "home_country_area_km2": 30528,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "11.05.1992",
+      "positions_count": 1,
+      "peak_value_date": "03.2023"
     },
     "sofifa_id": 192119
   },
@@ -689,7 +728,7 @@
     "position": "CM",
     "rating": 87,
     "rarity": "gold",
-    "age": 22,
+    "age": 23,
     "stats": {
       "pace": 79,
       "shooting": 76,
@@ -720,7 +759,7 @@
       "world_cup_goals": 0,
       "weight_kg": 60,
       "peak_rating": 87,
-      "instagram_m": 20.0,
+      "instagram_m": 11,
       "best_season_goals": 10,
       "years_pro": 5,
       "career_appearances": 282,
@@ -729,13 +768,16 @@
       "home_country_area_km2": 505990,
       "league_goals": 26,
       "ucl_appearances": 50,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "25.11.2002",
+      "positions_count": 2,
+      "peak_value_date": "08.2022"
     },
     "sofifa_id": 253226
   },
   {
     "id": "bellingham",
-    "name": "Bellingham",
+    "name": "J. Bellingham",
     "full_name": "Jude Bellingham",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -743,7 +785,7 @@
     "position": "CM",
     "rating": 90,
     "rarity": "gold-special",
-    "age": 21,
+    "age": 23,
     "stats": {
       "pace": 78,
       "shooting": 83,
@@ -774,20 +816,23 @@
       "world_cup_goals": 3,
       "weight_kg": 75,
       "peak_rating": 90,
-      "instagram_m": 26.0,
+      "instagram_m": 18,
       "best_season_goals": 23,
       "years_pro": 6,
       "career_appearances": 316,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "29.06.2003",
+      "positions_count": 4,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 246669
   },
   {
     "id": "griezmann",
-    "name": "Griezmann",
+    "name": "A. Griezmann",
     "full_name": "Antoine Griezmann",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -795,7 +840,7 @@
     "position": "CAM",
     "rating": 87,
     "rarity": "gold",
-    "age": 33,
+    "age": 35,
     "stats": {
       "pace": 80,
       "shooting": 86,
@@ -826,7 +871,7 @@
       "world_cup_goals": 7,
       "weight_kg": 73,
       "peak_rating": 87,
-      "instagram_m": 30.0,
+      "instagram_m": 22,
       "best_season_goals": 35,
       "years_pro": 17,
       "career_appearances": 804,
@@ -835,13 +880,16 @@
       "home_country_area_km2": 551695,
       "league_goals": 211,
       "ucl_appearances": 130,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "21.03.1991",
+      "positions_count": 3,
+      "peak_value_date": "07.2019"
     },
     "sofifa_id": 194765
   },
   {
     "id": "foden",
-    "name": "Foden",
+    "name": "P. Foden",
     "full_name": "Phil Foden",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -849,7 +897,7 @@
     "position": "LW",
     "rating": 88,
     "rarity": "gold",
-    "age": 24,
+    "age": 26,
     "stats": {
       "pace": 83,
       "shooting": 83,
@@ -880,14 +928,17 @@
       "world_cup_goals": 1,
       "weight_kg": 70,
       "peak_rating": 88,
-      "instagram_m": 14.0,
+      "instagram_m": 6,
       "best_season_goals": 27,
       "years_pro": 8,
       "career_appearances": 369,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "28.05.2000",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 237692
   },
@@ -901,7 +952,7 @@
     "position": "CM",
     "rating": 88,
     "rarity": "gold",
-    "age": 30,
+    "age": 31,
     "stats": {
       "pace": 82,
       "shooting": 80,
@@ -939,7 +990,10 @@
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
       "home_country_area_km2": 92212,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "10.08.1994",
+      "positions_count": 3,
+      "peak_value_date": "03.2023"
     },
     "sofifa_id": 211117
   },
@@ -953,7 +1007,7 @@
     "position": "CDM",
     "rating": 91,
     "rarity": "gold-special",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 72,
       "shooting": 76,
@@ -984,12 +1038,15 @@
       "world_cup_goals": 1,
       "weight_kg": 82,
       "peak_rating": 91,
-      "instagram_m": 10.0,
+      "instagram_m": 4,
       "best_season_goals": 8,
       "years_pro": 11,
       "country_fifa_rank": 2,
       "home_country_population_m": 47.8,
-      "home_country_area_km2": 505990
+      "home_country_area_km2": 505990,
+      "birth_date": "22.06.1996",
+      "positions_count": 2,
+      "peak_value_date": "09.2024"
     },
     "sofifa_id": 222665
   },
@@ -1003,7 +1060,7 @@
     "position": "CB",
     "rating": 88,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 76,
       "shooting": 42,
@@ -1041,7 +1098,10 @@
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
       "home_country_area_km2": 92212,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "14.05.1997",
+      "positions_count": 1,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 239346
   },
@@ -1055,7 +1115,7 @@
     "position": "AM",
     "rating": 82,
     "rarity": "gold",
-    "age": 19,
+    "age": 21,
     "stats": {
       "pace": 82,
       "shooting": 80,
@@ -1086,7 +1146,7 @@
       "world_cup_goals": 0,
       "weight_kg": 65,
       "peak_rating": 82,
-      "instagram_m": 10.0,
+      "instagram_m": 10,
       "best_season_goals": 10,
       "years_pro": 4,
       "career_appearances": 163,
@@ -1095,7 +1155,10 @@
       "home_country_area_km2": 783562,
       "league_goals": 20,
       "ucl_appearances": 35,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "25.02.2005",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 261592
   },
@@ -1109,7 +1172,7 @@
     "position": "CM",
     "rating": 85,
     "rarity": "gold",
-    "age": 30,
+    "age": 32,
     "stats": {
       "pace": 72,
       "shooting": 80,
@@ -1140,7 +1203,7 @@
       "world_cup_goals": 0,
       "weight_kg": 76,
       "peak_rating": 85,
-      "instagram_m": 12.0,
+      "instagram_m": 5,
       "best_season_goals": 16,
       "years_pro": 14,
       "career_appearances": 592,
@@ -1149,7 +1212,10 @@
       "home_country_area_km2": 783562,
       "league_goals": 104,
       "ucl_appearances": 94,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "08.02.1994",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 202652
   },
@@ -1163,7 +1229,7 @@
     "position": "AM",
     "rating": 87,
     "rarity": "gold",
-    "age": 21,
+    "age": 23,
     "stats": {
       "pace": 84,
       "shooting": 78,
@@ -1194,7 +1260,7 @@
       "world_cup_goals": 3,
       "weight_kg": 72,
       "peak_rating": 87,
-      "instagram_m": 12.0,
+      "instagram_m": 11,
       "best_season_goals": 23,
       "years_pro": 6,
       "career_appearances": 241,
@@ -1203,7 +1269,10 @@
       "home_country_area_km2": 357114,
       "league_goals": 50,
       "ucl_appearances": 52,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "26.02.2003",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 258923
   },
@@ -1213,11 +1282,11 @@
     "full_name": "Florian Wirtz",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayer Leverkusen",
+    "current_club": "Liverpool",
     "position": "AM",
     "rating": 87,
     "rarity": "gold",
-    "age": 21,
+    "age": 23,
     "stats": {
       "pace": 80,
       "shooting": 79,
@@ -1248,14 +1317,17 @@
       "world_cup_goals": 2,
       "weight_kg": 70,
       "peak_rating": 87,
-      "instagram_m": 8.0,
+      "instagram_m": 5,
       "best_season_goals": 24,
       "years_pro": 5,
       "career_appearances": 246,
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "03.05.2003",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 260932
   },
@@ -1269,7 +1341,7 @@
     "position": "CDM",
     "rating": 86,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 76,
       "shooting": 72,
@@ -1307,13 +1379,16 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "14.01.1999",
+      "positions_count": 2,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 226328
   },
   {
     "id": "odegaard",
-    "name": "Ødegaard",
+    "name": "M. Ødegaard",
     "full_name": "Martin Ødegaard",
     "nationality": "Norveç",
     "flag_emoji": "🇳🇴",
@@ -1321,7 +1396,7 @@
     "position": "CM",
     "rating": 86,
     "rarity": "gold",
-    "age": 26,
+    "age": 27,
     "stats": {
       "pace": 78,
       "shooting": 80,
@@ -1352,14 +1427,17 @@
       "world_cup_goals": 0,
       "weight_kg": 68,
       "peak_rating": 86,
-      "instagram_m": 8.0,
+      "instagram_m": 3,
       "best_season_goals": 22,
       "years_pro": 11,
       "career_appearances": 466,
       "country_fifa_rank": 31,
       "home_country_population_m": 5.5,
       "home_country_area_km2": 385207,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "17.12.1998",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 231568
   },
@@ -1373,7 +1451,7 @@
     "position": "CM",
     "rating": 87,
     "rarity": "gold",
-    "age": 20,
+    "age": 21,
     "stats": {
       "pace": 75,
       "shooting": 72,
@@ -1404,7 +1482,7 @@
       "world_cup_goals": 0,
       "weight_kg": 60,
       "peak_rating": 87,
-      "instagram_m": 14.0,
+      "instagram_m": 9,
       "best_season_goals": 6,
       "years_pro": 5,
       "career_appearances": 169,
@@ -1413,13 +1491,16 @@
       "home_country_area_km2": 505990,
       "league_goals": 6,
       "ucl_appearances": 32,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "05.08.2004",
+      "positions_count": 3,
+      "peak_value_date": "10.2022"
     },
     "sofifa_id": 258648
   },
   {
     "id": "leao",
-    "name": "Leão",
+    "name": "R. Leão",
     "full_name": "Rafael Leão",
     "nationality": "Portekiz",
     "flag_emoji": "🇵🇹",
@@ -1427,7 +1508,7 @@
     "position": "LW",
     "rating": 86,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 92,
       "shooting": 80,
@@ -1458,7 +1539,7 @@
       "world_cup_goals": 1,
       "weight_kg": 80,
       "peak_rating": 86,
-      "instagram_m": 16.0,
+      "instagram_m": 7,
       "best_season_goals": 18,
       "years_pro": 9,
       "career_appearances": 333,
@@ -1467,13 +1548,16 @@
       "home_country_area_km2": 92212,
       "league_goals": 80,
       "ucl_appearances": 45,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "10.06.1999",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 253306
   },
   {
     "id": "valverde",
-    "name": "Valverde",
+    "name": "F. Valverde",
     "full_name": "Federico Valverde",
     "nationality": "Uruguay",
     "flag_emoji": "🇺🇾",
@@ -1481,7 +1565,7 @@
     "position": "CM",
     "rating": 86,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 85,
       "shooting": 78,
@@ -1512,7 +1596,7 @@
       "world_cup_goals": 1,
       "weight_kg": 78,
       "peak_rating": 86,
-      "instagram_m": 13.0,
+      "instagram_m": 5,
       "best_season_goals": 15,
       "years_pro": 9,
       "career_appearances": 440,
@@ -1521,13 +1605,16 @@
       "home_country_area_km2": 176215,
       "league_goals": 28,
       "ucl_appearances": 80,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "22.07.1998",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 238228
   },
   {
     "id": "kvara",
-    "name": "Kvaratskhelia",
+    "name": "K. Kvaratskhelia",
     "full_name": "Khvicha Kvaratskhelia",
     "nationality": "Gürcistan",
     "flag_emoji": "🇬🇪",
@@ -1535,7 +1622,7 @@
     "position": "LW",
     "rating": 87,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 90,
       "shooting": 82,
@@ -1575,13 +1662,16 @@
       "home_country_area_km2": 69700,
       "league_goals": 62,
       "ucl_appearances": 44,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "12.02.2001",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 263580
   },
   {
     "id": "osimhen",
-    "name": "Osimhen",
+    "name": "V. Osimhen",
     "full_name": "Victor Osimhen",
     "nationality": "Nijerya",
     "flag_emoji": "🇳🇬",
@@ -1589,7 +1679,7 @@
     "position": "ST",
     "rating": 86,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 91,
       "shooting": 86,
@@ -1620,28 +1710,31 @@
       "world_cup_goals": 0,
       "weight_kg": 78,
       "peak_rating": 86,
-      "instagram_m": 14.0,
+      "instagram_m": 9,
       "best_season_goals": 31,
       "years_pro": 9,
       "career_appearances": 297,
       "country_fifa_rank": 26,
       "home_country_population_m": 220.0,
       "home_country_area_km2": 923768,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "29.12.1998",
+      "positions_count": 1,
+      "peak_value_date": "09.2023"
     },
     "sofifa_id": 235243
   },
   {
     "id": "hojlund",
-    "name": "Højlund",
+    "name": "R. Højlund",
     "full_name": "Rasmus Højlund",
     "nationality": "Danimarka",
     "flag_emoji": "🇩🇰",
-    "current_club": "Manchester Utd",
+    "current_club": "Napoli",
     "position": "ST",
     "rating": 83,
     "rarity": "gold",
-    "age": 21,
+    "age": 23,
     "stats": {
       "pace": 88,
       "shooting": 80,
@@ -1672,14 +1765,17 @@
       "world_cup_goals": 0,
       "weight_kg": 84,
       "peak_rating": 83,
-      "instagram_m": 8.0,
+      "instagram_m": 2,
       "best_season_goals": 16,
       "years_pro": 5,
       "career_appearances": 226,
       "country_fifa_rank": 21,
       "home_country_population_m": 5.9,
       "home_country_area_km2": 42924,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "04.02.2003",
+      "positions_count": 1,
+      "peak_value_date": "09.2023"
     },
     "sofifa_id": 261399
   },
@@ -1689,11 +1785,11 @@
     "full_name": "Theo Hernández",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "AC Milan",
+    "current_club": "Al Hilal",
     "position": "LB",
     "rating": 85,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 90,
       "shooting": 72,
@@ -1733,7 +1829,10 @@
       "home_country_area_km2": 551695,
       "league_goals": 38,
       "ucl_appearances": 59,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "06.10.1997",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 230521
   },
@@ -1747,7 +1846,7 @@
     "position": "RW",
     "rating": 87,
     "rarity": "gold",
-    "age": 22,
+    "age": 24,
     "stats": {
       "pace": 88,
       "shooting": 82,
@@ -1778,14 +1877,17 @@
       "world_cup_goals": 2,
       "weight_kg": 70,
       "peak_rating": 87,
-      "instagram_m": 18.0,
+      "instagram_m": 11,
       "best_season_goals": 20,
       "years_pro": 7,
       "career_appearances": 316,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "05.09.2001",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 243099
   },
@@ -1799,7 +1901,7 @@
     "position": "RW",
     "rating": 87,
     "rarity": "gold-special",
-    "age": 17,
+    "age": 18,
     "stats": {
       "pace": 91,
       "shooting": 80,
@@ -1839,7 +1941,10 @@
       "home_country_area_km2": 505990,
       "league_goals": 30,
       "ucl_appearances": 33,
-      "intl_debut_age": 16
+      "intl_debut_age": 16,
+      "birth_date": "13.07.2007",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 267907
   },
@@ -1853,7 +1958,7 @@
     "position": "GK",
     "rating": 90,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 55,
       "shooting": 18,
@@ -1884,14 +1989,17 @@
       "world_cup_goals": 0,
       "weight_kg": 91,
       "peak_rating": 90,
-      "instagram_m": 12.0,
+      "instagram_m": 6,
       "best_season_goals": 0,
       "years_pro": 14,
       "career_appearances": 498,
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "02.10.1992",
+      "positions_count": 1,
+      "peak_value_date": "08.2019"
     },
     "sofifa_id": 212831
   },
@@ -1905,7 +2013,7 @@
     "position": "RB",
     "rating": 87,
     "rarity": "gold",
-    "age": 26,
+    "age": 27,
     "stats": {
       "pace": 82,
       "shooting": 72,
@@ -1936,28 +2044,31 @@
       "world_cup_goals": 1,
       "weight_kg": 69,
       "peak_rating": 87,
-      "instagram_m": 6.0,
+      "instagram_m": 8,
       "best_season_goals": 4,
       "years_pro": 9,
       "career_appearances": 389,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "07.10.1998",
+      "positions_count": 1,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 222749
   },
   {
     "id": "rashford",
-    "name": "Rashford",
+    "name": "M. Rashford",
     "full_name": "Marcus Rashford",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "current_club": "Manchester Utd",
+    "current_club": "Barcelona",
     "position": "LW",
     "rating": 84,
     "rarity": "gold",
-    "age": 27,
+    "age": 28,
     "stats": {
       "pace": 90,
       "shooting": 80,
@@ -1988,20 +2099,23 @@
       "world_cup_goals": 2,
       "weight_kg": 70,
       "peak_rating": 85,
-      "instagram_m": 16.0,
+      "instagram_m": 15,
       "best_season_goals": 30,
       "years_pro": 10,
       "career_appearances": 492,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "31.10.1997",
+      "positions_count": 3,
+      "peak_value_date": "01.2023"
     },
     "sofifa_id": 221345
   },
   {
     "id": "gakpo",
-    "name": "Gakpo",
+    "name": "C. Gakpo",
     "full_name": "Cody Gakpo",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -2009,7 +2123,7 @@
     "position": "LW",
     "rating": 83,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 84,
       "shooting": 78,
@@ -2040,14 +2154,17 @@
       "world_cup_goals": 5,
       "weight_kg": 82,
       "peak_rating": 83,
-      "instagram_m": 5.0,
+      "instagram_m": 3,
       "best_season_goals": 23,
       "years_pro": 8,
       "career_appearances": 364,
       "country_fifa_rank": 8,
       "home_country_population_m": 17.9,
       "home_country_area_km2": 41543,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "07.05.1999",
+      "positions_count": 2,
+      "peak_value_date": "01.2023"
     },
     "sofifa_id": 251706
   },
@@ -2061,7 +2178,7 @@
     "position": "CM",
     "rating": 84,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 70,
       "shooting": 78,
@@ -2098,7 +2215,10 @@
       "career_appearances": 486,
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
-      "home_country_area_km2": 92212
+      "home_country_area_km2": 92212,
+      "birth_date": "13.03.1997",
+      "positions_count": 2,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 210508
   },
@@ -2108,11 +2228,11 @@
     "full_name": "Ederson Moraes",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
-    "current_club": "Manchester City",
+    "current_club": "Fenerbahçe",
     "position": "GK",
     "rating": 89,
     "rarity": "gold",
-    "age": 30,
+    "age": 32,
     "stats": {
       "pace": 52,
       "shooting": 16,
@@ -2148,21 +2268,24 @@
       "years_pro": 11,
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
-      "home_country_area_km2": 8516000
+      "home_country_area_km2": 8516000,
+      "birth_date": "17.08.1993",
+      "positions_count": 1,
+      "peak_value_date": "03.2023"
     },
     "sofifa_id": 213345
   },
   {
     "id": "donnarumma",
-    "name": "Donnarumma",
+    "name": "G. Donnarumma",
     "full_name": "Gianluigi Donnarumma",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
-    "current_club": "PSG",
+    "current_club": "Manchester City",
     "position": "GK",
     "rating": 88,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 52,
       "shooting": 14,
@@ -2193,28 +2316,31 @@
       "world_cup_goals": 0,
       "weight_kg": 90,
       "peak_rating": 88,
-      "instagram_m": 14.0,
+      "instagram_m": 4,
       "best_season_goals": 0,
       "years_pro": 10,
       "career_appearances": 455,
       "country_fifa_rank": 12,
       "home_country_population_m": 59.6,
       "home_country_area_km2": 301340,
-      "intl_debut_age": 17
+      "intl_debut_age": 17,
+      "birth_date": "25.02.1999",
+      "positions_count": 1,
+      "peak_value_date": "07.2021"
     },
     "sofifa_id": 230666
   },
   {
     "id": "benzema",
-    "name": "Benzema",
+    "name": "K. Benzema",
     "full_name": "Karim Benzema",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "Al Ittihad",
+    "current_club": "Al Hilal",
     "position": "ST",
     "rating": 91,
     "rarity": "gold-special",
-    "age": 36,
+    "age": 38,
     "stats": {
       "pace": 76,
       "shooting": 89,
@@ -2245,28 +2371,31 @@
       "world_cup_goals": 0,
       "weight_kg": 80,
       "peak_rating": 91,
-      "instagram_m": 70.0,
+      "instagram_m": 50,
       "best_season_goals": 44,
       "years_pro": 19,
       "career_appearances": 916,
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "19.12.1987",
+      "positions_count": 1,
+      "peak_value_date": "04.2022"
     },
     "sofifa_id": 9014
   },
   {
     "id": "muller",
-    "name": "Müller",
+    "name": "T. Müller",
     "full_name": "Thomas Müller",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayern Münih",
+    "current_club": "Vancouver Whitecaps",
     "position": "CAM",
     "rating": 87,
     "rarity": "gold",
-    "age": 34,
+    "age": 36,
     "stats": {
       "pace": 68,
       "shooting": 82,
@@ -2297,27 +2426,30 @@
       "world_cup_goals": 10,
       "weight_kg": 76,
       "peak_rating": 91,
-      "instagram_m": 12.0,
+      "instagram_m": 11,
       "best_season_goals": 23,
       "years_pro": 16,
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "13.09.1989",
+      "positions_count": 3,
+      "peak_value_date": "04.2015"
     },
     "sofifa_id": 189596
   },
   {
     "id": "neuer",
-    "name": "Neuer",
+    "name": "M. Neuer",
     "full_name": "Manuel Neuer",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayern Münih",
+    "current_club": "Bayern München",
     "position": "GK",
     "rating": 89,
     "rarity": "gold-special",
-    "age": 38,
+    "age": 40,
     "stats": {
       "pace": 61,
       "shooting": 18,
@@ -2348,20 +2480,23 @@
       "world_cup_goals": 0,
       "weight_kg": 92,
       "peak_rating": 96,
-      "instagram_m": 18.0,
+      "instagram_m": 10,
       "best_season_goals": 0,
       "years_pro": 19,
       "career_appearances": 827,
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "ucl_appearances": 168
+      "ucl_appearances": 168,
+      "birth_date": "27.03.1986",
+      "positions_count": 1,
+      "peak_value_date": "06.2014"
     },
     "sofifa_id": 167495
   },
   {
     "id": "mane",
-    "name": "Mané",
+    "name": "S. Mané",
     "full_name": "Sadio Mané",
     "nationality": "Senegal",
     "flag_emoji": "🇸🇳",
@@ -2369,7 +2504,7 @@
     "position": "LW",
     "rating": 87,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 95,
       "shooting": 87,
@@ -2407,21 +2542,24 @@
       "country_fifa_rank": 15,
       "home_country_population_m": 17.2,
       "home_country_area_km2": 196722,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "10.04.1992",
+      "positions_count": 3,
+      "peak_value_date": "04.2019"
     },
     "sofifa_id": 200145
   },
   {
     "id": "son",
-    "name": "Son",
+    "name": "H. Son",
     "full_name": "Son Heung-min",
     "nationality": "Güney Kore",
     "flag_emoji": "🇰🇷",
-    "current_club": "Tottenham",
+    "current_club": "Los Angeles FC",
     "position": "LW",
     "rating": 88,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 91,
       "shooting": 87,
@@ -2452,20 +2590,23 @@
       "world_cup_goals": 4,
       "weight_kg": 78,
       "peak_rating": 89,
-      "instagram_m": 36.0,
+      "instagram_m": 20,
       "best_season_goals": 23,
       "years_pro": 13,
       "career_appearances": 659,
       "country_fifa_rank": 25,
       "home_country_population_m": 51.7,
       "home_country_area_km2": 100363,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "08.07.1992",
+      "positions_count": 3,
+      "peak_value_date": "06.2021"
     },
     "sofifa_id": 246580
   },
   {
     "id": "ibrahimovic",
-    "name": "İbrahimoviç",
+    "name": "Z. İbrahimović",
     "full_name": "Zlatan Ibrahimović",
     "nationality": "İsveç",
     "flag_emoji": "🇸🇪",
@@ -2504,7 +2645,7 @@
       "world_cup_goals": 0,
       "weight_kg": 95,
       "peak_rating": 93,
-      "instagram_m": 65.0,
+      "instagram_m": 60,
       "best_season_goals": 38,
       "years_pro": 25,
       "career_appearances": 866,
@@ -2557,7 +2698,7 @@
       "world_cup_goals": 1,
       "weight_kg": 76,
       "peak_rating": 93,
-      "instagram_m": 24.0,
+      "instagram_m": 11,
       "best_season_goals": 14,
       "years_pro": 16,
       "career_appearances": 731,
@@ -2611,7 +2752,7 @@
       "world_cup_goals": 7,
       "weight_kg": 86,
       "peak_rating": 94,
-      "instagram_m": 50.0,
+      "instagram_m": 14,
       "best_season_goals": 40,
       "years_pro": 19,
       "career_appearances": 899,
@@ -2632,7 +2773,7 @@
     "position": "CDM",
     "rating": 88,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 59,
       "shooting": 69,
@@ -2663,27 +2804,30 @@
       "world_cup_goals": 0,
       "weight_kg": 84,
       "peak_rating": 89,
-      "instagram_m": 22.0,
+      "instagram_m": 5,
       "best_season_goals": 6,
       "years_pro": 15,
       "career_appearances": 663,
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
-      "home_country_area_km2": 8516000
+      "home_country_area_km2": 8516000,
+      "birth_date": "23.02.1992",
+      "positions_count": 4,
+      "peak_value_date": "04.2022"
     },
     "sofifa_id": 207865
   },
   {
     "id": "lukaku",
-    "name": "Lukaku",
+    "name": "R. Lukaku",
     "full_name": "Romelu Lukaku",
     "nationality": "Belçika",
     "flag_emoji": "🇧🇪",
-    "current_club": "Roma",
+    "current_club": "Napoli",
     "position": "ST",
     "rating": 86,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 84,
       "shooting": 87,
@@ -2714,20 +2858,23 @@
       "world_cup_goals": 2,
       "weight_kg": 94,
       "peak_rating": 88,
-      "instagram_m": 22.0,
+      "instagram_m": 7,
       "best_season_goals": 32,
       "years_pro": 15,
       "career_appearances": 681,
       "country_fifa_rank": 9,
       "home_country_population_m": 11.6,
       "home_country_area_km2": 30528,
-      "intl_debut_age": 17
+      "intl_debut_age": 17,
+      "birth_date": "13.05.1993",
+      "positions_count": 1,
+      "peak_value_date": "08.2021"
     },
     "sofifa_id": 192505
   },
   {
     "id": "palmer",
-    "name": "Palmer",
+    "name": "C. Palmer",
     "full_name": "Cole Palmer",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -2735,7 +2882,7 @@
     "position": "CAM",
     "rating": 87,
     "rarity": "gold",
-    "age": 22,
+    "age": 24,
     "stats": {
       "pace": 80,
       "shooting": 86,
@@ -2773,13 +2920,16 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "06.05.2002",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 246804
   },
   {
     "id": "vlahovic",
-    "name": "Vlahović",
+    "name": "D. Vlahović",
     "full_name": "Dušan Vlahović",
     "nationality": "Sırbistan",
     "flag_emoji": "🇷🇸",
@@ -2787,7 +2937,7 @@
     "position": "ST",
     "rating": 86,
     "rarity": "gold",
-    "age": 24,
+    "age": 26,
     "stats": {
       "pace": 80,
       "shooting": 89,
@@ -2827,21 +2977,24 @@
       "home_country_area_km2": 77474,
       "league_goals": 95,
       "ucl_appearances": 29,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "28.01.2000",
+      "positions_count": 1,
+      "peak_value_date": "01.2022"
     },
     "sofifa_id": 257229
   },
   {
     "id": "kimmich",
-    "name": "Kimmich",
+    "name": "J. Kimmich",
     "full_name": "Joshua Kimmich",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayern Münih",
+    "current_club": "Bayern München",
     "position": "CM",
     "rating": 89,
     "rarity": "gold-special",
-    "age": 29,
+    "age": 31,
     "stats": {
       "pace": 72,
       "shooting": 76,
@@ -2881,21 +3034,24 @@
       "home_country_area_km2": 357114,
       "league_goals": 33,
       "ucl_appearances": 109,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "08.02.1995",
+      "positions_count": 3,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 212622
   },
   {
     "id": "oblak",
-    "name": "Oblak",
+    "name": "J. Oblak",
     "full_name": "Jan Oblak",
     "nationality": "Slovenya",
     "flag_emoji": "🇸🇮",
-    "current_club": "Atletico Madrid",
+    "current_club": "Atlético Madrid",
     "position": "GK",
     "rating": 90,
     "rarity": "gold-special",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 56,
       "shooting": 15,
@@ -2933,13 +3089,16 @@
       "country_fifa_rank": 59,
       "home_country_population_m": 2.1,
       "home_country_area_km2": 20273,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "07.01.1993",
+      "positions_count": 1,
+      "peak_value_date": "03.2019"
     },
     "sofifa_id": 200389
   },
   {
     "id": "havertz",
-    "name": "Havertz",
+    "name": "K. Havertz",
     "full_name": "Kai Havertz",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -2947,7 +3106,7 @@
     "position": "CAM",
     "rating": 85,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 78,
       "shooting": 82,
@@ -2985,21 +3144,24 @@
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "11.06.1999",
+      "positions_count": 3,
+      "peak_value_date": "03.2021"
     },
     "sofifa_id": 246941
   },
   {
     "id": "sane",
-    "name": "Sané",
+    "name": "L. Sané",
     "full_name": "Leroy Sané",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayern Münih",
+    "current_club": "Galatasaray",
     "position": "LW",
     "rating": 87,
     "rarity": "gold",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 95,
       "shooting": 82,
@@ -3037,13 +3199,16 @@
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "11.01.1996",
+      "positions_count": 3,
+      "peak_value_date": "05.2022"
     },
     "sofifa_id": 235212
   },
   {
     "id": "tchouameni",
-    "name": "Tchouaméni",
+    "name": "A. Tchouaméni",
     "full_name": "Aurélien Tchouaméni",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -3051,7 +3216,7 @@
     "position": "CDM",
     "rating": 86,
     "rarity": "gold",
-    "age": 24,
+    "age": 26,
     "stats": {
       "pace": 71,
       "shooting": 69,
@@ -3089,13 +3254,16 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "27.01.2000",
+      "positions_count": 3,
+      "peak_value_date": "06.2023"
     },
     "sofifa_id": 262358
   },
   {
     "id": "camavinga",
-    "name": "Camavinga",
+    "name": "E. Camavinga",
     "full_name": "Eduardo Camavinga",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -3103,7 +3271,7 @@
     "position": "CM",
     "rating": 85,
     "rarity": "gold",
-    "age": 21,
+    "age": 23,
     "stats": {
       "pace": 81,
       "shooting": 68,
@@ -3141,13 +3309,16 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "10.11.2002",
+      "positions_count": 3,
+      "peak_value_date": "09.2023"
     },
     "sofifa_id": 263552
   },
   {
     "id": "alaba",
-    "name": "Alaba",
+    "name": "D. Alaba",
     "full_name": "David Alaba",
     "nationality": "Avusturya",
     "flag_emoji": "🇦🇹",
@@ -3155,7 +3326,7 @@
     "position": "CB",
     "rating": 86,
     "rarity": "gold",
-    "age": 31,
+    "age": 34,
     "stats": {
       "pace": 73,
       "shooting": 65,
@@ -3195,13 +3366,16 @@
       "home_country_area_km2": 83871,
       "league_goals": 28,
       "ucl_appearances": 126,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "24.06.1992",
+      "positions_count": 3,
+      "peak_value_date": "06.2019"
     },
     "sofifa_id": 183277
   },
   {
     "id": "rudiger",
-    "name": "Rüdiger",
+    "name": "A. Rüdiger",
     "full_name": "Antonio Rüdiger",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -3209,7 +3383,7 @@
     "position": "CB",
     "rating": 86,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 79,
       "shooting": 56,
@@ -3247,13 +3421,16 @@
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "03.03.1993",
+      "positions_count": 1,
+      "peak_value_date": "05.2023"
     },
     "sofifa_id": 206053
   },
   {
     "id": "gvardiol",
-    "name": "Gvardiol",
+    "name": "J. Gvardiol",
     "full_name": "Joško Gvardiol",
     "nationality": "Hırvatistan",
     "flag_emoji": "🇭🇷",
@@ -3261,7 +3438,7 @@
     "position": "CB",
     "rating": 86,
     "rarity": "gold",
-    "age": 22,
+    "age": 24,
     "stats": {
       "pace": 80,
       "shooting": 60,
@@ -3299,13 +3476,16 @@
       "country_fifa_rank": 11,
       "home_country_population_m": 3.9,
       "home_country_area_km2": 56594,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "23.01.2002",
+      "positions_count": 2,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 262781
   },
   {
     "id": "militao",
-    "name": "Militão",
+    "name": "É. Militão",
     "full_name": "Éder Militão",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
@@ -3313,7 +3493,7 @@
     "position": "CB",
     "rating": 86,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 80,
       "shooting": 55,
@@ -3351,21 +3531,24 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "18.01.1998",
+      "positions_count": 2,
+      "peak_value_date": "10.2022"
     },
     "sofifa_id": 239477
   },
   {
     "id": "davies",
-    "name": "Davies",
+    "name": "A. Davies",
     "full_name": "Alphonso Davies",
     "nationality": "Kanada",
     "flag_emoji": "🇨🇦",
-    "current_club": "Bayern Münih",
+    "current_club": "Bayern München",
     "position": "LB",
     "rating": 86,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 97,
       "shooting": 62,
@@ -3402,13 +3585,16 @@
       "country_fifa_rank": 30,
       "home_country_population_m": 38.2,
       "home_country_area_km2": 9984670,
-      "intl_debut_age": 17
+      "intl_debut_age": 17,
+      "birth_date": "02.11.2000",
+      "positions_count": 4,
+      "peak_value_date": "06.2022"
     },
     "sofifa_id": 243165
   },
   {
     "id": "dybala",
-    "name": "Dybala",
+    "name": "P. Dybala",
     "full_name": "Paulo Dybala",
     "nationality": "Arjantin",
     "flag_emoji": "🇦🇷",
@@ -3416,7 +3602,7 @@
     "position": "CAM",
     "rating": 87,
     "rarity": "gold",
-    "age": 30,
+    "age": 32,
     "stats": {
       "pace": 81,
       "shooting": 87,
@@ -3447,7 +3633,7 @@
       "world_cup_goals": 2,
       "weight_kg": 75,
       "peak_rating": 91,
-      "instagram_m": 55.0,
+      "instagram_m": 15,
       "best_season_goals": 26,
       "years_pro": 13,
       "career_appearances": 566,
@@ -3456,13 +3642,16 @@
       "home_country_area_km2": 2780400,
       "league_goals": 153,
       "ucl_appearances": 88,
-      "intl_debut_age": 25
+      "intl_debut_age": 25,
+      "birth_date": "15.11.1993",
+      "positions_count": 3,
+      "peak_value_date": "07.2017"
     },
     "sofifa_id": 212730
   },
   {
     "id": "hazard",
-    "name": "Hazard",
+    "name": "E. Hazard",
     "full_name": "Eden Hazard",
     "nationality": "Belçika",
     "flag_emoji": "🇧🇪",
@@ -3501,7 +3690,7 @@
       "world_cup_goals": 3,
       "weight_kg": 74,
       "peak_rating": 93,
-      "instagram_m": 43.0,
+      "instagram_m": 20,
       "best_season_goals": 20,
       "years_pro": 17,
       "career_appearances": 635,
@@ -3553,7 +3742,7 @@
       "world_cup_goals": 4,
       "weight_kg": 80,
       "peak_rating": 98,
-      "instagram_m": 100.0,
+      "instagram_m": 70,
       "best_season_goals": 26,
       "years_pro": 21,
       "career_appearances": 699,
@@ -3620,7 +3809,7 @@
   },
   {
     "id": "henry",
-    "name": "Henry",
+    "name": "T. Henry",
     "full_name": "Thierry Henry",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -3710,7 +3899,7 @@
       "world_cup_goals": 5,
       "weight_kg": 83,
       "peak_rating": 97,
-      "instagram_m": 41.0,
+      "instagram_m": 28,
       "best_season_goals": 30,
       "years_pro": 16,
       "career_appearances": 654,
@@ -3764,7 +3953,7 @@
       "world_cup_goals": 0,
       "weight_kg": 68,
       "peak_rating": 96,
-      "instagram_m": 16.0,
+      "instagram_m": 5,
       "best_season_goals": 12,
       "years_pro": 20,
       "country_fifa_rank": 2,
@@ -3814,7 +4003,7 @@
       "world_cup_goals": 1,
       "weight_kg": 68,
       "peak_rating": 96,
-      "instagram_m": 40.0,
+      "instagram_m": 22,
       "best_season_goals": 11,
       "years_pro": 20,
       "career_appearances": 885,
@@ -3827,7 +4016,7 @@
   },
   {
     "id": "pirlo",
-    "name": "Pirlo",
+    "name": "A. Pirlo",
     "full_name": "Andrea Pirlo",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -3881,7 +4070,7 @@
   },
   {
     "id": "buffon",
-    "name": "Buffon",
+    "name": "G. Buffon",
     "full_name": "Gianluigi Buffon",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -3933,7 +4122,7 @@
   },
   {
     "id": "casillas",
-    "name": "Casillas",
+    "name": "I. Casillas",
     "full_name": "Iker Casillas Fernández",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
@@ -4038,7 +4227,7 @@
   },
   {
     "id": "maldini",
-    "name": "Maldini",
+    "name": "P. Maldini",
     "full_name": "Paolo Maldini",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -4092,7 +4281,7 @@
   },
   {
     "id": "beckham",
-    "name": "Beckham",
+    "name": "D. Beckham",
     "full_name": "David Beckham",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -4144,7 +4333,7 @@
   },
   {
     "id": "gerrard",
-    "name": "Gerrard",
+    "name": "S. Gerrard",
     "full_name": "Steven Gerrard",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -4196,7 +4385,7 @@
   },
   {
     "id": "lampard",
-    "name": "Lampard",
+    "name": "F. Lampard",
     "full_name": "Frank Lampard",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -4248,7 +4437,7 @@
   },
   {
     "id": "rooney",
-    "name": "Rooney",
+    "name": "W. Rooney",
     "full_name": "Wayne Rooney",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -4299,7 +4488,7 @@
   },
   {
     "id": "drogba",
-    "name": "Drogba",
+    "name": "D. Drogba",
     "full_name": "Didier Drogba",
     "nationality": "Fildişi Sahili",
     "flag_emoji": "🇨🇮",
@@ -4405,7 +4594,7 @@
   },
   {
     "id": "batistuta",
-    "name": "Batistuta",
+    "name": "G. Batistuta",
     "full_name": "Gabriel Batistuta",
     "nationality": "Arjantin",
     "flag_emoji": "🇦🇷",
@@ -4459,7 +4648,7 @@
   },
   {
     "id": "shevchenko",
-    "name": "Shevchenko",
+    "name": "A. Shevchenko",
     "full_name": "Andriy Shevchenko",
     "nationality": "Ukrayna",
     "flag_emoji": "🇺🇦",
@@ -4511,7 +4700,7 @@
   },
   {
     "id": "nedved",
-    "name": "Nedvěd",
+    "name": "P. Nedvěd",
     "full_name": "Pavel Nedvěd",
     "nationality": "Çek Cumhuriyeti",
     "flag_emoji": "🇨🇿",
@@ -4563,7 +4752,7 @@
   },
   {
     "id": "seedorf",
-    "name": "Seedorf",
+    "name": "C. Seedorf",
     "full_name": "Clarence Seedorf",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -4617,7 +4806,7 @@
   },
   {
     "id": "scholes",
-    "name": "Scholes",
+    "name": "P. Scholes",
     "full_name": "Paul Scholes",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -4774,7 +4963,7 @@
   },
   {
     "id": "van_persie",
-    "name": "Van Persie",
+    "name": "R. van Persie",
     "full_name": "Robin van Persie",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -4825,7 +5014,7 @@
   },
   {
     "id": "sneijder",
-    "name": "Sneijder",
+    "name": "W. Sneijder",
     "full_name": "Wesley Sneijder",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -4879,7 +5068,7 @@
   },
   {
     "id": "ribery",
-    "name": "Ribéry",
+    "name": "F. Ribéry",
     "full_name": "Franck Ribéry",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -4933,7 +5122,7 @@
   },
   {
     "id": "robben",
-    "name": "Robben",
+    "name": "A. Robben",
     "full_name": "Arjen Robben",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -5037,7 +5226,7 @@
   },
   {
     "id": "ozil",
-    "name": "Özil",
+    "name": "M. Özil",
     "full_name": "Mesut Özil",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -5089,7 +5278,7 @@
   },
   {
     "id": "puyol",
-    "name": "Puyol",
+    "name": "C. Puyol",
     "full_name": "Carles Puyol",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
@@ -5195,7 +5384,7 @@
   },
   {
     "id": "del_piero",
-    "name": "Del Piero",
+    "name": "A. Del Piero",
     "full_name": "Alessandro Del Piero",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -5249,7 +5438,7 @@
   },
   {
     "id": "totti",
-    "name": "Totti",
+    "name": "F. Totti",
     "full_name": "Francesco Totti",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -5303,7 +5492,7 @@
   },
   {
     "id": "klose",
-    "name": "Klose",
+    "name": "M. Klose",
     "full_name": "Miroslav Klose",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -5406,7 +5595,7 @@
   },
   {
     "id": "cantona",
-    "name": "Cantona",
+    "name": "E. Cantona",
     "full_name": "Eric Cantona",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -5458,7 +5647,7 @@
   },
   {
     "id": "vieira",
-    "name": "Vieira",
+    "name": "P. Vieira",
     "full_name": "Patrick Vieira",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -5512,7 +5701,7 @@
   },
   {
     "id": "ballack",
-    "name": "Ballack",
+    "name": "M. Ballack",
     "full_name": "Michael Ballack",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -5722,7 +5911,7 @@
   },
   {
     "id": "cruyff",
-    "name": "Cruyff",
+    "name": "J. Cruyff",
     "full_name": "Johan Cruyff",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -5774,7 +5963,7 @@
   },
   {
     "id": "van_basten",
-    "name": "Van Basten",
+    "name": "M. van Basten",
     "full_name": "Marco van Basten",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -5882,7 +6071,7 @@
   },
   {
     "id": "bergkamp",
-    "name": "Bergkamp",
+    "name": "D. Bergkamp",
     "full_name": "Dennis Bergkamp",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -5986,15 +6175,15 @@
   },
   {
     "id": "de_gea",
-    "name": "De Gea",
+    "name": "D. De Gea",
     "full_name": "David De Gea",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
-    "current_club": "Serbest",
+    "current_club": "Fiorentina",
     "position": "GK",
     "rating": 87,
     "rarity": "gold",
-    "age": 33,
+    "age": 35,
     "stats": {
       "pace": 52,
       "shooting": 15,
@@ -6032,13 +6221,16 @@
       "country_fifa_rank": 2,
       "home_country_population_m": 47.8,
       "home_country_area_km2": 505990,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "07.11.1990",
+      "positions_count": 1,
+      "peak_value_date": "06.2019"
     },
     "sofifa_id": 193080
   },
   {
     "id": "lloris",
-    "name": "Lloris",
+    "name": "H. Lloris",
     "full_name": "Hugo Lloris",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -6046,7 +6238,7 @@
     "position": "GK",
     "rating": 87,
     "rarity": "gold",
-    "age": 37,
+    "age": 39,
     "stats": {
       "pace": 58,
       "shooting": 16,
@@ -6084,7 +6276,10 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "26.12.1986",
+      "positions_count": 1,
+      "peak_value_date": "03.2018"
     },
     "sofifa_id": 167948
   },
@@ -6192,15 +6387,15 @@
   },
   {
     "id": "busquets",
-    "name": "Busquets",
+    "name": "S. Busquets",
     "full_name": "Sergio Busquets",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
-    "current_club": "Inter Miami",
+    "current_club": "Emekli",
     "position": "CDM",
     "rating": 89,
     "rarity": "gold-special",
-    "age": 35,
+    "age": 37,
     "stats": {
       "pace": 60,
       "shooting": 62,
@@ -6239,13 +6434,16 @@
       "home_country_population_m": 47.8,
       "home_country_area_km2": 505990,
       "league_goals": 14,
-      "ucl_appearances": 147
+      "ucl_appearances": 147,
+      "birth_date": "16.07.1988",
+      "positions_count": 1,
+      "peak_value_date": "07.2015"
     },
     "sofifa_id": 177292
   },
   {
     "id": "modric_backup",
-    "name": "Silva",
+    "name": "T. Silva",
     "full_name": "Thiago Silva",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
@@ -6296,7 +6494,7 @@
   },
   {
     "id": "nesta",
-    "name": "Nesta",
+    "name": "A. Nesta",
     "full_name": "Alessandro Nesta",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -6350,7 +6548,7 @@
   },
   {
     "id": "cannavaro",
-    "name": "Cannavaro",
+    "name": "F. Cannavaro",
     "full_name": "Fabio Cannavaro",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -6403,7 +6601,7 @@
   },
   {
     "id": "lahm",
-    "name": "Lahm",
+    "name": "P. Lahm",
     "full_name": "Philipp Lahm",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -6457,7 +6655,7 @@
   },
   {
     "id": "schweinsteiger",
-    "name": "Schweini",
+    "name": "B. Schweinsteiger",
     "full_name": "Bastian Schweinsteiger",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -6509,7 +6707,7 @@
   },
   {
     "id": "van_nistelrooy",
-    "name": "Van Nistelrooy",
+    "name": "R. van Nistelrooy",
     "full_name": "Ruud van Nistelrooy",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -6561,7 +6759,7 @@
   },
   {
     "id": "terry",
-    "name": "Terry",
+    "name": "J. Terry",
     "full_name": "John Terry",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -6612,7 +6810,7 @@
   },
   {
     "id": "ferdinand",
-    "name": "Ferdinand",
+    "name": "R. Ferdinand",
     "full_name": "Rio Ferdinand",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -6664,7 +6862,7 @@
   },
   {
     "id": "vidic",
-    "name": "Vidić",
+    "name": "N. Vidić",
     "full_name": "Nemanja Vidić",
     "nationality": "Sırbistan",
     "flag_emoji": "🇷🇸",
@@ -6768,7 +6966,7 @@
   },
   {
     "id": "gullit",
-    "name": "Gullit",
+    "name": "R. Gullit",
     "full_name": "Ruud Gullit",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -6820,7 +7018,7 @@
   },
   {
     "id": "giggs",
-    "name": "Giggs",
+    "name": "R. Giggs",
     "full_name": "Ryan Giggs",
     "nationality": "Galler",
     "flag_emoji": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
@@ -6871,7 +7069,7 @@
   },
   {
     "id": "beckenbauer",
-    "name": "Beckenbauer",
+    "name": "F. Beckenbauer",
     "full_name": "Franz Beckenbauer",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
@@ -6925,7 +7123,7 @@
   },
   {
     "id": "chiesa",
-    "name": "Chiesa",
+    "name": "F. Chiesa",
     "full_name": "Federico Chiesa",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -6933,7 +7131,7 @@
     "position": "RW",
     "rating": 86,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 90,
       "shooting": 82,
@@ -6971,7 +7169,10 @@
       "country_fifa_rank": 12,
       "home_country_population_m": 59.6,
       "home_country_area_km2": 301340,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "25.10.1997",
+      "positions_count": 3,
+      "peak_value_date": "01.2022"
     },
     "sofifa_id": 246868
   },
@@ -6981,11 +7182,11 @@
     "full_name": "Luis Díaz",
     "nationality": "Kolombiya",
     "flag_emoji": "🇨🇴",
-    "current_club": "Liverpool",
+    "current_club": "Bayern München",
     "position": "LW",
     "rating": 86,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 93,
       "shooting": 80,
@@ -7023,21 +7224,24 @@
       "country_fifa_rank": 13,
       "home_country_population_m": 51.9,
       "home_country_area_km2": 1141748,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "13.01.1997",
+      "positions_count": 1,
+      "peak_value_date": "06.2024"
     },
     "sofifa_id": 256457
   },
   {
     "id": "diogo_jota",
-    "name": "Jota",
+    "name": "D. Jota",
     "full_name": "Diogo Jota",
     "nationality": "Portekiz",
     "flag_emoji": "🇵🇹",
-    "current_club": "Liverpool",
+    "current_club": "Emekli",
     "position": "LW",
     "rating": 85,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 86,
       "shooting": 84,
@@ -7077,13 +7281,16 @@
       "home_country_area_km2": 92212,
       "league_goals": 102,
       "ucl_appearances": 20,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "04.12.1996",
+      "positions_count": 3,
+      "peak_value_date": "01.2023"
     },
     "sofifa_id": 234396
   },
   {
     "id": "pulisic",
-    "name": "Pulisic",
+    "name": "C. Pulisic",
     "full_name": "Christian Pulisic",
     "nationality": "Amerika Birleşik Devletleri",
     "flag_emoji": "🇺🇸",
@@ -7091,7 +7298,7 @@
     "position": "RW",
     "rating": 84,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 87,
       "shooting": 79,
@@ -7129,21 +7336,24 @@
       "country_fifa_rank": 17,
       "home_country_population_m": 335.0,
       "home_country_area_km2": 9833517,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "18.09.1998",
+      "positions_count": 3,
+      "peak_value_date": "05.2021"
     },
     "sofifa_id": 222665
   },
   {
     "id": "felix",
-    "name": "Félix",
+    "name": "J. Félix",
     "full_name": "João Félix",
     "nationality": "Portekiz",
     "flag_emoji": "🇵🇹",
-    "current_club": "Atletico Madrid",
+    "current_club": "Al Nassr",
     "position": "CAM",
     "rating": 85,
     "rarity": "gold",
-    "age": 24,
+    "age": 26,
     "stats": {
       "pace": 80,
       "shooting": 84,
@@ -7181,21 +7391,24 @@
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
       "home_country_area_km2": 92212,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "10.11.1999",
+      "positions_count": 3,
+      "peak_value_date": "07.2019"
     },
     "sofifa_id": 239353
   },
   {
     "id": "perisic",
-    "name": "Perišić",
+    "name": "I. Perišić",
     "full_name": "Ivan Perišić",
     "nationality": "Hırvatistan",
     "flag_emoji": "🇭🇷",
-    "current_club": "Hajduk Split",
+    "current_club": "PSV Eindhoven",
     "position": "LW",
     "rating": 86,
     "rarity": "gold",
-    "age": 35,
+    "age": 37,
     "stats": {
       "pace": 82,
       "shooting": 80,
@@ -7233,21 +7446,24 @@
       "country_fifa_rank": 11,
       "home_country_population_m": 3.9,
       "home_country_area_km2": 56594,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "02.02.1989",
+      "positions_count": 3,
+      "peak_value_date": "08.2018"
     },
     "sofifa_id": 177003
   },
   {
     "id": "benzema_backup",
-    "name": "Firmino",
+    "name": "R. Firmino",
     "full_name": "Roberto Firmino",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
-    "current_club": "Al Qadsiah",
+    "current_club": "Al Sadd",
     "position": "ST",
     "rating": 85,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 78,
       "shooting": 82,
@@ -7285,21 +7501,24 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "02.10.1991",
+      "positions_count": 4,
+      "peak_value_date": "04.2019"
     },
     "sofifa_id": 200145
   },
   {
     "id": "goretzka",
-    "name": "Goretzka",
+    "name": "L. Goretzka",
     "full_name": "Leon Goretzka",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayern Münih",
+    "current_club": "Bayern München",
     "position": "CM",
     "rating": 86,
     "rarity": "gold",
-    "age": 29,
+    "age": 31,
     "stats": {
       "pace": 74,
       "shooting": 80,
@@ -7339,13 +7558,16 @@
       "home_country_area_km2": 357114,
       "league_goals": 58,
       "ucl_appearances": 90,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "06.02.1995",
+      "positions_count": 3,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 215914
   },
   {
     "id": "dimarco",
-    "name": "Dimarco",
+    "name": "F. Dimarco",
     "full_name": "Federico Dimarco",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -7353,7 +7575,7 @@
     "position": "LB",
     "rating": 84,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 78,
       "shooting": 70,
@@ -7393,21 +7615,24 @@
       "home_country_area_km2": 301340,
       "league_goals": 27,
       "ucl_appearances": 45,
-      "intl_debut_age": 25
+      "intl_debut_age": 25,
+      "birth_date": "10.11.1997",
+      "positions_count": 4,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 230671
   },
   {
     "id": "sterling",
-    "name": "Sterling",
+    "name": "R. Sterling",
     "full_name": "Raheem Sterling",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "current_club": "Arsenal",
+    "current_club": "Feyenoord",
     "position": "LW",
     "rating": 84,
     "rarity": "gold",
-    "age": 29,
+    "age": 31,
     "stats": {
       "pace": 96,
       "shooting": 81,
@@ -7445,21 +7670,24 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "08.12.1994",
+      "positions_count": 3,
+      "peak_value_date": "05.2022"
     },
     "sofifa_id": 183898
   },
   {
     "id": "gnabry",
-    "name": "Gnabry",
+    "name": "S. Gnabry",
     "full_name": "Serge Gnabry",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Bayern Münih",
+    "current_club": "Bayern München",
     "position": "RW",
     "rating": 85,
     "rarity": "gold",
-    "age": 29,
+    "age": 30,
     "stats": {
       "pace": 91,
       "shooting": 82,
@@ -7497,7 +7725,10 @@
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "14.07.1995",
+      "positions_count": 3,
+      "peak_value_date": "07.2021"
     },
     "sofifa_id": 215813
   },
@@ -7511,7 +7742,7 @@
     "position": "ST",
     "rating": 88,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 76,
       "shooting": 87,
@@ -7551,13 +7782,16 @@
       "home_country_area_km2": 2780400,
       "league_goals": 154,
       "ucl_appearances": 85,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "22.08.1997",
+      "positions_count": 2,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 241084
   },
   {
     "id": "saliba",
-    "name": "Saliba",
+    "name": "W. Saliba",
     "full_name": "William Saliba",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -7565,7 +7799,7 @@
     "position": "CB",
     "rating": 86,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 79,
       "shooting": 48,
@@ -7603,13 +7837,16 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "24.03.2001",
+      "positions_count": 1,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 263245
   },
   {
     "id": "mount",
-    "name": "Mount",
+    "name": "M. Mount",
     "full_name": "Mason Mount",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -7617,7 +7854,7 @@
     "position": "CAM",
     "rating": 83,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 76,
       "shooting": 79,
@@ -7655,21 +7892,24 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "10.01.1999",
+      "positions_count": 3,
+      "peak_value_date": "06.2023"
     },
     "sofifa_id": 231747
   },
   {
     "id": "verratti",
-    "name": "Verratti",
+    "name": "M. Verratti",
     "full_name": "Marco Verratti",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
-    "current_club": "Al Arabi",
+    "current_club": "Al Duhail",
     "position": "CM",
     "rating": 87,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 68,
       "shooting": 69,
@@ -7707,21 +7947,24 @@
       "country_fifa_rank": 12,
       "home_country_population_m": 59.6,
       "home_country_area_km2": 301340,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "05.11.1992",
+      "positions_count": 2,
+      "peak_value_date": "04.2022"
     },
     "sofifa_id": 193450
   },
   {
     "id": "coman",
-    "name": "Coman",
+    "name": "K. Coman",
     "full_name": "Kingsley Coman",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "Bayern Münih",
+    "current_club": "Al Nassr",
     "position": "LW",
     "rating": 86,
     "rarity": "gold",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 93,
       "shooting": 79,
@@ -7761,21 +8004,24 @@
       "home_country_area_km2": 551695,
       "league_goals": 56,
       "ucl_appearances": 77,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "13.06.1996",
+      "positions_count": 2,
+      "peak_value_date": "05.2022"
     },
     "sofifa_id": 216457
   },
   {
     "id": "nkunku",
-    "name": "Nkunku",
+    "name": "C. Nkunku",
     "full_name": "Christopher Nkunku",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "Chelsea",
+    "current_club": "AC Milan",
     "position": "CAM",
     "rating": 87,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 84,
       "shooting": 86,
@@ -7812,7 +8058,10 @@
       "career_appearances": 374,
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
-      "home_country_area_km2": 551695
+      "home_country_area_km2": 551695,
+      "birth_date": "14.11.1997",
+      "positions_count": 4,
+      "peak_value_date": "11.2022"
     },
     "sofifa_id": 249249
   },
@@ -7826,7 +8075,7 @@
     "position": "RB",
     "rating": 86,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 77,
       "shooting": 64,
@@ -7865,13 +8114,16 @@
       "home_country_population_m": 47.8,
       "home_country_area_km2": 505990,
       "league_goals": 14,
-      "ucl_appearances": 98
+      "ucl_appearances": 98,
+      "birth_date": "11.01.1992",
+      "positions_count": 1,
+      "peak_value_date": "06.2019"
     },
     "sofifa_id": 189615
   },
   {
     "id": "barella",
-    "name": "Barella",
+    "name": "N. Barella",
     "full_name": "Nicolò Barella",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -7879,7 +8131,7 @@
     "position": "CM",
     "rating": 87,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 75,
       "shooting": 74,
@@ -7919,21 +8171,24 @@
       "home_country_area_km2": 301340,
       "league_goals": 28,
       "ucl_appearances": 63,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "07.02.1997",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 238812
   },
   {
     "id": "cancelo",
-    "name": "Cancelo",
+    "name": "J. Cancelo",
     "full_name": "João Cancelo",
     "nationality": "Portekiz",
     "flag_emoji": "🇵🇹",
-    "current_club": "Barcelona",
+    "current_club": "Al Hilal",
     "position": "RB",
     "rating": 87,
     "rarity": "gold",
-    "age": 30,
+    "age": 32,
     "stats": {
       "pace": 82,
       "shooting": 70,
@@ -7971,21 +8226,24 @@
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
       "home_country_area_km2": 92212,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "27.05.1994",
+      "positions_count": 3,
+      "peak_value_date": "06.2022"
     },
     "sofifa_id": 219449
   },
   {
     "id": "hakimi",
-    "name": "Hakimi",
+    "name": "A. Hakimi",
     "full_name": "Achraf Hakimi",
     "nationality": "Fas",
     "flag_emoji": "🇲🇦",
-    "current_club": "Paris Saint-Germain",
+    "current_club": "PSG",
     "position": "RB",
     "rating": 87,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 92,
       "shooting": 73,
@@ -8025,7 +8283,10 @@
       "home_country_area_km2": 446550,
       "league_goals": 36,
       "ucl_appearances": 77,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "04.11.1998",
+      "positions_count": 3,
+      "peak_value_date": "06.2022"
     },
     "sofifa_id": 241519
   },
@@ -8039,7 +8300,7 @@
     "position": "RW",
     "rating": 85,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 90,
       "shooting": 82,
@@ -8077,13 +8338,16 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 25
+      "intl_debut_age": 25,
+      "birth_date": "14.12.1996",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 246942
   },
   {
     "id": "maignan",
-    "name": "Maignan",
+    "name": "M. Maignan",
     "full_name": "Mike Maignan",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -8091,7 +8355,7 @@
     "position": "GK",
     "rating": 87,
     "rarity": "gold",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 62,
       "shooting": 18,
@@ -8129,21 +8393,24 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 25
+      "intl_debut_age": 25,
+      "birth_date": "03.07.1995",
+      "positions_count": 1,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 248057
   },
   {
     "id": "ramos",
-    "name": "Ramos",
+    "name": "S. Ramos",
     "full_name": "Sergio Ramos",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
-    "current_club": "Monterrey",
+    "current_club": "Serbest",
     "position": "CB",
     "rating": 88,
     "rarity": "gold",
-    "age": 38,
+    "age": 40,
     "stats": {
       "pace": 72,
       "shooting": 68,
@@ -8174,7 +8441,7 @@
       "world_cup_goals": 1,
       "weight_kg": 83,
       "peak_rating": 93,
-      "instagram_m": 60.0,
+      "instagram_m": 50,
       "best_season_goals": 14,
       "years_pro": 21,
       "career_appearances": 876,
@@ -8183,13 +8450,16 @@
       "home_country_area_km2": 505990,
       "league_goals": 89,
       "ucl_appearances": 149,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "30.03.1986",
+      "positions_count": 2,
+      "peak_value_date": "07.2015"
     },
     "sofifa_id": 155862
   },
   {
     "id": "brozovic",
-    "name": "Brozović",
+    "name": "M. Brozović",
     "full_name": "Marcelo Brozović",
     "nationality": "Hırvatistan",
     "flag_emoji": "🇭🇷",
@@ -8197,7 +8467,7 @@
     "position": "CDM",
     "rating": 85,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 68,
       "shooting": 71,
@@ -8237,7 +8507,10 @@
       "home_country_area_km2": 56594,
       "league_goals": 46,
       "ucl_appearances": 97,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "16.11.1992",
+      "positions_count": 3,
+      "peak_value_date": "07.2022"
     },
     "sofifa_id": 213563
   },
@@ -8247,11 +8520,11 @@
     "full_name": "Keylor Navas",
     "nationality": "Kosta Rika",
     "flag_emoji": "🇨🇷",
-    "current_club": "San José FC",
+    "current_club": "UNAM Pumas",
     "position": "GK",
     "rating": 87,
     "rarity": "gold",
-    "age": 37,
+    "age": 39,
     "stats": {
       "pace": 58,
       "shooting": 14,
@@ -8290,13 +8563,16 @@
       "home_country_population_m": 5.2,
       "home_country_area_km2": 51100,
       "ucl_appearances": 86,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "15.12.1986",
+      "positions_count": 1,
+      "peak_value_date": "06.2018"
     },
     "sofifa_id": 193586
   },
   {
     "id": "mkhitaryan",
-    "name": "Mkhitaryan",
+    "name": "H. Mkhitaryan",
     "full_name": "Henrikh Mkhitaryan",
     "nationality": "Ermenistan",
     "flag_emoji": "🇦🇲",
@@ -8304,7 +8580,7 @@
     "position": "CAM",
     "rating": 83,
     "rarity": "gold",
-    "age": 35,
+    "age": 37,
     "stats": {
       "pace": 75,
       "shooting": 77,
@@ -8342,7 +8618,10 @@
       "country_fifa_rank": 107,
       "home_country_population_m": 3.0,
       "home_country_area_km2": 29743,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "21.01.1989",
+      "positions_count": 3,
+      "peak_value_date": "08.2017"
     },
     "sofifa_id": 178765
   },
@@ -8352,11 +8631,11 @@
     "full_name": "İlkay Gündoğan",
     "nationality": "Almanya",
     "flag_emoji": "🇩🇪",
-    "current_club": "Manchester City",
+    "current_club": "Galatasaray",
     "position": "CM",
     "rating": 86,
     "rarity": "gold",
-    "age": 33,
+    "age": 35,
     "stats": {
       "pace": 67,
       "shooting": 79,
@@ -8394,21 +8673,24 @@
       "country_fifa_rank": 10,
       "home_country_population_m": 84.4,
       "home_country_area_km2": 357114,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "24.10.1990",
+      "positions_count": 3,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 192986
   },
   {
     "id": "immobile",
-    "name": "Immobile",
+    "name": "C. Immobile",
     "full_name": "Ciro Immobile",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
-    "current_club": "Beşiktaş",
+    "current_club": "Paris FC",
     "position": "ST",
     "rating": 86,
     "rarity": "gold",
-    "age": 34,
+    "age": 36,
     "stats": {
       "pace": 83,
       "shooting": 90,
@@ -8448,21 +8730,24 @@
       "home_country_area_km2": 301340,
       "league_goals": 253,
       "ucl_appearances": 62,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "20.02.1990",
+      "positions_count": 1,
+      "peak_value_date": "04.2021"
     },
     "sofifa_id": 188545
   },
   {
     "id": "dembele",
-    "name": "Dembélé",
+    "name": "O. Dembélé",
     "full_name": "Ousmane Dembélé",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "Paris Saint-Germain",
+    "current_club": "PSG",
     "position": "RW",
     "rating": 87,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 95,
       "shooting": 82,
@@ -8500,7 +8785,10 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "15.05.1997",
+      "positions_count": 3,
+      "peak_value_date": "09.2017"
     },
     "sofifa_id": 246803
   },
@@ -8514,7 +8802,7 @@
     "position": "RW",
     "rating": 85,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 87,
       "shooting": 80,
@@ -8552,21 +8840,24 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "09.01.2001",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 261591
   },
   {
     "id": "upamecano",
-    "name": "Upamecano",
+    "name": "D. Upamecano",
     "full_name": "Dayot Upamecano",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "Bayern Münih",
+    "current_club": "Bayern München",
     "position": "CB",
     "rating": 85,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 82,
       "shooting": 50,
@@ -8606,13 +8897,16 @@
       "home_country_area_km2": 551695,
       "league_goals": 9,
       "ucl_appearances": 83,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "27.10.1998",
+      "positions_count": 1,
+      "peak_value_date": "08.2022"
     },
     "sofifa_id": 240476
   },
   {
     "id": "trossard",
-    "name": "Trossard",
+    "name": "L. Trossard",
     "full_name": "Leandro Trossard",
     "nationality": "Belçika",
     "flag_emoji": "🇧🇪",
@@ -8620,7 +8914,7 @@
     "position": "LW",
     "rating": 84,
     "rarity": "gold",
-    "age": 29,
+    "age": 31,
     "stats": {
       "pace": 85,
       "shooting": 82,
@@ -8657,13 +8951,16 @@
       "career_appearances": 520,
       "country_fifa_rank": 9,
       "home_country_population_m": 11.6,
-      "home_country_area_km2": 30528
+      "home_country_area_km2": 30528,
+      "birth_date": "04.12.1994",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 237492
   },
   {
     "id": "grimaldo",
-    "name": "Grimaldo",
+    "name": "A. Grimaldo",
     "full_name": "Alejandro Grimaldo",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
@@ -8671,7 +8968,7 @@
     "position": "LB",
     "rating": 85,
     "rarity": "gold",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 82,
       "shooting": 70,
@@ -8707,13 +9004,16 @@
       "years_pro": 12,
       "country_fifa_rank": 2,
       "home_country_population_m": 47.8,
-      "home_country_area_km2": 505990
+      "home_country_area_km2": 505990,
+      "birth_date": "20.09.1995",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 248023
   },
   {
     "id": "saka2",
-    "name": "Saka",
+    "name": "B. Saka",
     "full_name": "Bukayo Saka",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -8721,7 +9021,7 @@
     "position": "RW",
     "rating": 87,
     "rarity": "gold",
-    "age": 22,
+    "age": 24,
     "stats": {
       "pace": 87,
       "shooting": 82,
@@ -8759,7 +9059,10 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "05.09.2001",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 246803
   },
@@ -8769,11 +9072,11 @@
     "full_name": "Luis Díaz",
     "nationality": "Kolombiya",
     "flag_emoji": "🇨🇴",
-    "current_club": "Liverpool",
+    "current_club": "Bayern München",
     "position": "LW",
     "rating": 86,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 93,
       "shooting": 80,
@@ -8809,21 +9112,24 @@
       "years_pro": 8,
       "country_fifa_rank": 13,
       "home_country_population_m": 51.9,
-      "home_country_area_km2": 1141748
+      "home_country_area_km2": 1141748,
+      "birth_date": "13.01.1997",
+      "positions_count": 1,
+      "peak_value_date": "06.2024"
     },
     "sofifa_id": 256457
   },
   {
     "id": "pedro_acosta",
-    "name": "Marcos Asensio",
+    "name": "M. Asensio",
     "full_name": "Marco Asensio",
     "nationality": "İspanya",
     "flag_emoji": "🇪🇸",
-    "current_club": "Aston Villa",
+    "current_club": "Fenerbahçe",
     "position": "CAM",
     "rating": 83,
     "rarity": "gold",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 76,
       "shooting": 82,
@@ -8863,13 +9169,16 @@
       "home_country_area_km2": 505990,
       "league_goals": 71,
       "ucl_appearances": 82,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "21.01.1996",
+      "positions_count": 3,
+      "peak_value_date": "08.2021"
     },
     "sofifa_id": 217086
   },
   {
     "id": "dimarco2",
-    "name": "Dimarco",
+    "name": "F. Dimarco",
     "full_name": "Federico Dimarco",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -8877,7 +9186,7 @@
     "position": "LB",
     "rating": 84,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 78,
       "shooting": 70,
@@ -8917,13 +9226,16 @@
       "home_country_area_km2": 301340,
       "league_goals": 27,
       "ucl_appearances": 45,
-      "intl_debut_age": 25
+      "intl_debut_age": 25,
+      "birth_date": "10.11.1997",
+      "positions_count": 4,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 230671
   },
   {
     "id": "kounde",
-    "name": "Koundé",
+    "name": "J. Koundé",
     "full_name": "Jules Koundé",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -8931,7 +9243,7 @@
     "position": "CB",
     "rating": 86,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 85,
       "shooting": 55,
@@ -8969,7 +9281,10 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "12.11.1998",
+      "positions_count": 2,
+      "peak_value_date": "06.2022"
     },
     "sofifa_id": 244442
   },
@@ -8983,7 +9298,7 @@
     "position": "CB",
     "rating": 88,
     "rarity": "gold",
-    "age": 40,
+    "age": 41,
     "stats": {
       "pace": 69,
       "shooting": 50,
@@ -9020,21 +9335,24 @@
       "career_appearances": 887,
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
-      "home_country_area_km2": 8516000
+      "home_country_area_km2": 8516000,
+      "birth_date": "22.09.1984",
+      "positions_count": 1,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 192448
   },
   {
     "id": "firmino",
-    "name": "Firmino",
+    "name": "R. Firmino",
     "full_name": "Roberto Firmino",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
-    "current_club": "Al Qadsiah",
+    "current_club": "Al Sadd",
     "position": "ST",
     "rating": 85,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 78,
       "shooting": 82,
@@ -9072,7 +9390,10 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "02.10.1991",
+      "positions_count": 4,
+      "peak_value_date": "04.2019"
     },
     "sofifa_id": 200145
   },
@@ -9086,7 +9407,7 @@
     "position": "GK",
     "rating": 90,
     "rarity": "gold-special",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 60,
       "shooting": 18,
@@ -9124,13 +9445,16 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "02.10.1992",
+      "positions_count": 1,
+      "peak_value_date": "08.2019"
     },
     "sofifa_id": 212831
   },
   {
     "id": "konatefr",
-    "name": "Konaté",
+    "name": "I. Konaté",
     "full_name": "Ibrahima Konaté",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
@@ -9138,7 +9462,7 @@
     "position": "CB",
     "rating": 85,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 85,
       "shooting": 48,
@@ -9176,22 +9500,25 @@
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
       "home_country_area_km2": 551695,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "25.05.1999",
+      "positions_count": 1,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 249,
     "twitter_m": 0
   },
   {
     "id": "thauvin",
-    "name": "Thauvin",
+    "name": "F. Thauvin",
     "full_name": "Florian Thauvin",
     "nationality": "Fransa",
     "flag_emoji": "🇫🇷",
-    "current_club": "Udinese",
+    "current_club": "RC Lens",
     "position": "RW",
     "rating": 82,
     "rarity": "gold",
-    "age": 31,
+    "age": 33,
     "stats": {
       "pace": 85,
       "shooting": 81,
@@ -9228,21 +9555,24 @@
       "career_appearances": 498,
       "country_fifa_rank": 3,
       "home_country_population_m": 68.2,
-      "home_country_area_km2": 551695
+      "home_country_area_km2": 551695,
+      "birth_date": "26.01.1993",
+      "positions_count": 3,
+      "peak_value_date": "04.2019"
     },
     "sofifa_id": 214043
   },
   {
     "id": "bynoe_gittens",
-    "name": "Frimpong",
+    "name": "J. Frimpong",
     "full_name": "Jeremie Frimpong",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
-    "current_club": "Bayer Leverkusen",
+    "current_club": "Liverpool",
     "position": "RB",
     "rating": 83,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 95,
       "shooting": 70,
@@ -9280,13 +9610,16 @@
       "country_fifa_rank": 8,
       "home_country_population_m": 17.9,
       "home_country_area_km2": 41543,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "10.12.2000",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 252267
   },
   {
     "id": "zirkzee",
-    "name": "Zirkzee",
+    "name": "J. Zirkzee",
     "full_name": "Joshua Zirkzee",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -9294,7 +9627,7 @@
     "position": "ST",
     "rating": 80,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 71,
       "shooting": 78,
@@ -9332,13 +9665,16 @@
       "country_fifa_rank": 8,
       "home_country_population_m": 17.9,
       "home_country_area_km2": 41543,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "22.05.2001",
+      "positions_count": 2,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 260672
   },
   {
     "id": "mainoo",
-    "name": "Mainoo",
+    "name": "K. Mainoo",
     "full_name": "Kobbie Mainoo",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -9346,7 +9682,7 @@
     "position": "CM",
     "rating": 79,
     "rarity": "gold",
-    "age": 19,
+    "age": 21,
     "stats": {
       "pace": 72,
       "shooting": 68,
@@ -9383,21 +9719,24 @@
       "career_appearances": 106,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
-      "home_country_area_km2": 130395
+      "home_country_area_km2": 130395,
+      "birth_date": "19.04.2005",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 260674
   },
   {
     "id": "reijnders",
-    "name": "Reijnders",
+    "name": "T. Reijnders",
     "full_name": "Tijjani Reijnders",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
-    "current_club": "AC Milan",
+    "current_club": "Manchester City",
     "position": "CM",
     "rating": 84,
     "rarity": "gold",
-    "age": 26,
+    "age": 27,
     "stats": {
       "pace": 77,
       "shooting": 75,
@@ -9434,21 +9773,24 @@
       "career_appearances": 383,
       "country_fifa_rank": 8,
       "home_country_population_m": 17.9,
-      "home_country_area_km2": 41543
+      "home_country_area_km2": 41543,
+      "birth_date": "29.07.1998",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 261395
   },
   {
     "id": "calvert_lewin",
-    "name": "Calvert-Lewin",
+    "name": "D. Calvert-Lewin",
     "full_name": "Dominic Calvert-Lewin",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "current_club": "Everton",
+    "current_club": "Leeds United",
     "position": "ST",
     "rating": 80,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 82,
       "shooting": 82,
@@ -9486,7 +9828,10 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "16.03.1997",
+      "positions_count": 3,
+      "peak_value_date": "03.2021"
     },
     "sofifa_id": 235243
   },
@@ -9546,7 +9891,7 @@
   },
   {
     "id": "locatelli",
-    "name": "Locatelli",
+    "name": "M. Locatelli",
     "full_name": "Manuel Locatelli",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
@@ -9554,7 +9899,7 @@
     "position": "CDM",
     "rating": 83,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 62,
       "shooting": 66,
@@ -9594,13 +9939,16 @@
       "home_country_area_km2": 301340,
       "league_goals": 15,
       "ucl_appearances": 47,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "08.01.1998",
+      "positions_count": 2,
+      "peak_value_date": "08.2021"
     },
     "sofifa_id": 230469
   },
   {
     "id": "pedersen",
-    "name": "M. Pedersen",
+    "name": "M. Damsgaard",
     "full_name": "Mikkel Damsgaard",
     "nationality": "Danimarka",
     "flag_emoji": "🇩🇰",
@@ -9608,7 +9956,7 @@
     "position": "CAM",
     "rating": 80,
     "rarity": "gold",
-    "age": 23,
+    "age": 25,
     "stats": {
       "pace": 78,
       "shooting": 74,
@@ -9648,13 +9996,16 @@
       "home_country_area_km2": 42924,
       "league_goals": 21,
       "ucl_appearances": 8,
-      "intl_debut_age": 21
+      "intl_debut_age": 21,
+      "birth_date": "03.07.2000",
+      "positions_count": 3,
+      "peak_value_date": "06.2024"
     },
     "sofifa_id": 252518
   },
   {
     "id": "florenzi",
-    "name": "Mazraoui",
+    "name": "N. Mazraoui",
     "full_name": "Noussair Mazraoui",
     "nationality": "Fas",
     "flag_emoji": "🇲🇦",
@@ -9662,7 +10013,7 @@
     "position": "RB",
     "rating": 81,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 77,
       "shooting": 62,
@@ -9700,13 +10051,16 @@
       "country_fifa_rank": 7,
       "home_country_population_m": 37.5,
       "home_country_area_km2": 446550,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "14.11.1997",
+      "positions_count": 3,
+      "peak_value_date": "08.2021"
     },
     "sofifa_id": 240521
   },
   {
     "id": "guler2",
-    "name": "Güler",
+    "name": "A. Güler",
     "full_name": "Arda Güler",
     "nationality": "Türkiye",
     "flag_emoji": "🇹🇷",
@@ -9714,7 +10068,7 @@
     "position": "CAM",
     "rating": 82,
     "rarity": "gold",
-    "age": 19,
+    "age": 21,
     "stats": {
       "pace": 79,
       "shooting": 80,
@@ -9754,13 +10108,16 @@
       "home_country_area_km2": 783562,
       "league_goals": 20,
       "ucl_appearances": 35,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "25.02.2005",
+      "positions_count": 3,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 271845
   },
   {
     "id": "schar",
-    "name": "Schär",
+    "name": "F. Schär",
     "full_name": "Fabian Schär",
     "nationality": "İsviçre",
     "flag_emoji": "🇨🇭",
@@ -9768,7 +10125,7 @@
     "position": "CB",
     "rating": 82,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 72,
       "shooting": 65,
@@ -9808,13 +10165,16 @@
       "home_country_area_km2": 41285,
       "league_goals": 39,
       "ucl_appearances": 16,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "20.12.1991",
+      "positions_count": 1,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 197967
   },
   {
     "id": "guimaraes",
-    "name": "Guimarães",
+    "name": "B. Guimarães",
     "full_name": "Bruno Guimarães",
     "nationality": "Brezilya",
     "flag_emoji": "🇧🇷",
@@ -9822,7 +10182,7 @@
     "position": "CDM",
     "rating": 85,
     "rarity": "gold",
-    "age": 26,
+    "age": 28,
     "stats": {
       "pace": 70,
       "shooting": 73,
@@ -9860,21 +10220,24 @@
       "country_fifa_rank": 6,
       "home_country_population_m": 215.3,
       "home_country_area_km2": 8516000,
-      "intl_debut_age": 25
+      "intl_debut_age": 25,
+      "birth_date": "16.11.1997",
+      "positions_count": 2,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 240480
   },
   {
     "id": "isak",
-    "name": "Isak",
+    "name": "A. Isak",
     "full_name": "Alexander Isak",
     "nationality": "İsveç",
     "flag_emoji": "🇸🇪",
-    "current_club": "Newcastle",
+    "current_club": "Liverpool",
     "position": "ST",
     "rating": 85,
     "rarity": "gold",
-    "age": 24,
+    "age": 26,
     "stats": {
       "pace": 87,
       "shooting": 82,
@@ -9912,7 +10275,10 @@
       "country_fifa_rank": 38,
       "home_country_population_m": 10.5,
       "home_country_area_km2": 450295,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "21.09.1999",
+      "positions_count": 1,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 240428
   },
@@ -9926,7 +10292,7 @@
     "position": "CDM",
     "rating": 84,
     "rarity": "gold",
-    "age": 27,
+    "age": 29,
     "stats": {
       "pace": 66,
       "shooting": 73,
@@ -9963,13 +10329,16 @@
       "career_appearances": 486,
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
-      "home_country_area_km2": 92212
+      "home_country_area_km2": 92212,
+      "birth_date": "13.03.1997",
+      "positions_count": 2,
+      "peak_value_date": "03.2022"
     },
     "sofifa_id": 222847
   },
   {
     "id": "diallo2",
-    "name": "Diallo",
+    "name": "A. Diallo",
     "full_name": "Amad Diallo",
     "nationality": "Fildişi Sahili",
     "flag_emoji": "🇨🇮",
@@ -9977,7 +10346,7 @@
     "position": "RW",
     "rating": 79,
     "rarity": "gold",
-    "age": 22,
+    "age": 23,
     "stats": {
       "pace": 83,
       "shooting": 74,
@@ -10015,13 +10384,16 @@
       "country_fifa_rank": 33,
       "home_country_population_m": 27.5,
       "home_country_area_km2": 322463,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "11.07.2002",
+      "positions_count": 4,
+      "peak_value_date": "06.2026"
     },
     "sofifa_id": 257199
   },
   {
     "id": "dalot",
-    "name": "Dalot",
+    "name": "D. Dalot",
     "full_name": "Diogo Dalot",
     "nationality": "Portekiz",
     "flag_emoji": "🇵🇹",
@@ -10029,7 +10401,7 @@
     "position": "RB",
     "rating": 82,
     "rarity": "gold",
-    "age": 25,
+    "age": 27,
     "stats": {
       "pace": 83,
       "shooting": 65,
@@ -10067,21 +10439,24 @@
       "country_fifa_rank": 5,
       "home_country_population_m": 10.3,
       "home_country_area_km2": 92212,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "18.03.1999",
+      "positions_count": 3,
+      "peak_value_date": "06.2024"
     },
     "sofifa_id": 243165
   },
   {
     "id": "gallagher",
-    "name": "Gallagher",
+    "name": "C. Gallagher",
     "full_name": "Conor Gallagher",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "current_club": "Atletico Madrid",
+    "current_club": "Tottenham",
     "position": "CM",
     "rating": 82,
     "rarity": "gold",
-    "age": 24,
+    "age": 26,
     "stats": {
       "pace": 76,
       "shooting": 72,
@@ -10119,21 +10494,24 @@
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
       "home_country_area_km2": 130395,
-      "intl_debut_age": 24
+      "intl_debut_age": 24,
+      "birth_date": "06.02.2000",
+      "positions_count": 3,
+      "peak_value_date": "06.2024"
     },
     "sofifa_id": 252366
   },
   {
     "id": "buksa",
-    "name": "Nunez",
+    "name": "D. Núñez",
     "full_name": "Darwin Núñez",
     "nationality": "Uruguay",
     "flag_emoji": "🇺🇾",
-    "current_club": "Liverpool",
+    "current_club": "Al Hilal",
     "position": "ST",
     "rating": 84,
     "rarity": "gold",
-    "age": 24,
+    "age": 27,
     "stats": {
       "pace": 93,
       "shooting": 84,
@@ -10171,13 +10549,16 @@
       "country_fifa_rank": 16,
       "home_country_population_m": 3.5,
       "home_country_area_km2": 176215,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "24.06.1999",
+      "positions_count": 2,
+      "peak_value_date": "07.2022"
     },
     "sofifa_id": 258667
   },
   {
     "id": "leao2",
-    "name": "Leão",
+    "name": "R. Leão",
     "full_name": "Rafael Leão",
     "nationality": "Portekiz",
     "flag_emoji": "🇵🇹",
@@ -10185,7 +10566,7 @@
     "position": "LW",
     "rating": 87,
     "rarity": "gold",
-    "age": 24,
+    "age": 27,
     "stats": {
       "pace": 91,
       "shooting": 80,
@@ -10225,21 +10606,24 @@
       "home_country_area_km2": 92212,
       "league_goals": 80,
       "ucl_appearances": 45,
-      "intl_debut_age": 23
+      "intl_debut_age": 23,
+      "birth_date": "10.06.1999",
+      "positions_count": 3,
+      "peak_value_date": "03.2024"
     },
     "sofifa_id": 254950
   },
   {
     "id": "grealish2",
-    "name": "Grealish",
+    "name": "J. Grealish",
     "full_name": "Jack Grealish",
     "nationality": "İngiltere",
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "current_club": "Manchester City",
+    "current_club": "Everton",
     "position": "LW",
     "rating": 84,
     "rarity": "gold",
-    "age": 28,
+    "age": 30,
     "stats": {
       "pace": 79,
       "shooting": 73,
@@ -10276,21 +10660,24 @@
       "career_appearances": 431,
       "country_fifa_rank": 4,
       "home_country_population_m": 57.1,
-      "home_country_area_km2": 130395
+      "home_country_area_km2": 130395,
+      "birth_date": "10.09.1995",
+      "positions_count": 4,
+      "peak_value_date": "08.2021"
     },
     "sofifa_id": 209658
   },
   {
     "id": "zaniolo",
-    "name": "Zaniolo",
+    "name": "N. Zaniolo",
     "full_name": "Nicolò Zaniolo",
     "nationality": "İtalya",
     "flag_emoji": "🇮🇹",
-    "current_club": "Galatasaray",
+    "current_club": "Udinese",
     "position": "RW",
     "rating": 82,
     "rarity": "gold",
-    "age": 25,
+    "age": 26,
     "stats": {
       "pace": 78,
       "shooting": 76,
@@ -10330,21 +10717,24 @@
       "home_country_area_km2": 301340,
       "league_goals": 27,
       "ucl_appearances": 51,
-      "intl_debut_age": 20
+      "intl_debut_age": 20,
+      "birth_date": "02.07.1999",
+      "positions_count": 3,
+      "peak_value_date": "07.2022"
     },
     "sofifa_id": 243187
   },
   {
     "id": "eriksen",
-    "name": "Eriksen",
+    "name": "C. Eriksen",
     "full_name": "Christian Eriksen",
     "nationality": "Danimarka",
     "flag_emoji": "🇩🇰",
-    "current_club": "Manchester United",
+    "current_club": "Wolfsburg",
     "position": "CAM",
     "rating": 84,
     "rarity": "gold",
-    "age": 32,
+    "age": 34,
     "stats": {
       "pace": 67,
       "shooting": 77,
@@ -10382,7 +10772,10 @@
       "country_fifa_rank": 21,
       "home_country_population_m": 5.9,
       "home_country_area_km2": 42924,
-      "intl_debut_age": 19
+      "intl_debut_age": 19,
+      "birth_date": "14.02.1992",
+      "positions_count": 2,
+      "peak_value_date": "05.2019"
     },
     "sofifa_id": 178603
   },
@@ -10396,7 +10789,7 @@
     "position": "CAM",
     "rating": 82,
     "rarity": "gold",
-    "age": 25,
+    "age": 26,
     "stats": {
       "pace": 83,
       "shooting": 78,
@@ -10434,13 +10827,16 @@
       "country_fifa_rank": 2,
       "home_country_population_m": 47.8,
       "home_country_area_km2": 505990,
-      "intl_debut_age": 22
+      "intl_debut_age": 22,
+      "birth_date": "03.08.1999",
+      "positions_count": 3,
+      "peak_value_date": "06.2025"
     },
     "sofifa_id": 236501
   },
   {
     "id": "dumfries2",
-    "name": "Dumfries",
+    "name": "D. Dumfries",
     "full_name": "Denzel Dumfries",
     "nationality": "Hollanda",
     "flag_emoji": "🇳🇱",
@@ -10448,7 +10844,7 @@
     "position": "RB",
     "rating": 83,
     "rarity": "gold",
-    "age": 27,
+    "age": 30,
     "stats": {
       "pace": 84,
       "shooting": 70,
@@ -10488,7 +10884,10 @@
       "home_country_area_km2": 41543,
       "league_goals": 38,
       "ucl_appearances": 69,
-      "intl_debut_age": 18
+      "intl_debut_age": 18,
+      "birth_date": "18.04.1996",
+      "positions_count": 2,
+      "peak_value_date": "08.2022"
     },
     "sofifa_id": 244912
   }
