@@ -19,6 +19,21 @@ const COMPUTED = {
   career_earnings_m:       (p, s) => (s.years_pro && s.weekly_wage_k) ? Math.round(s.years_pro * s.weekly_wage_k * 52 / 1000) : null,
   social_media_total:      (p, s) => (s.instagram_m || 0) + (s.twitter_m || 0) + (s.tiktok_m || 0),
   full_name_length:        (p)    => (p.full_name || p.name || '').length,
+  // trophies_total = kulüp kupaları + milli kupalar (varsa)
+  trophies_total:          (p, s) => (s.trophies_total > 0) ? s.trophies_total : ((s.club_titles_total || 0) + (s.national_trophies || 0)) || null,
+  // Yeni hesaplanmış alanlar
+  titles_per_season:       (p, s) => (s.years_pro > 0 && s.club_titles_total > 0) ? +(s.club_titles_total / s.years_pro).toFixed(3) : null,
+  goals_per_club:          (p, s) => (s.clubs_count > 0 && s.career_goals_total > 0) ? +(s.career_goals_total / s.clubs_count).toFixed(2) : null,
+  caps_per_year:           (p, s) => (s.years_pro > 0 && s.international_caps > 0) ? +(s.international_caps / s.years_pro).toFixed(2) : null,
+  ucl_goal_ratio:          (p, s) => (s.career_goals_total > 0 && s.ucl_goals > 0) ? +(s.ucl_goals / s.career_goals_total * 100).toFixed(1) : null,
+  involvement_per_game:    (p, s) => s.career_appearances > 0 ? +(((s.career_goals_total || 0) + (s.career_assists_total || 0)) / s.career_appearances).toFixed(3) : null,
+  intl_goal_ratio:         (p, s) => (s.career_goals_total > 0 && s.international_goals > 0) ? +(s.international_goals / s.career_goals_total * 100).toFixed(1) : null,
+  bmi:                     (p, s) => (s.height_cm > 0 && s.weight_kg > 0) ? +(s.weight_kg / Math.pow(s.height_cm / 100, 2)).toFixed(1) : null,
+  clubs_per_year:          (p, s) => (s.years_pro > 0 && s.clubs_count > 1) ? +(s.clubs_count / s.years_pro).toFixed(3) : null,
+  value_per_game:          (p, s) => (s.career_appearances > 0 && s.peak_market_value_m > 0) ? +(s.peak_market_value_m * 1000 / s.career_appearances).toFixed(1) : null,
+  intl_ratio:              (p, s) => (s.career_appearances > 0 && s.international_caps > 0) ? +(s.international_caps / s.career_appearances * 100).toFixed(1) : null,
+  intl_goals_per_year:     (p, s) => (s.years_pro > 0 && s.international_goals > 0) ? +(s.international_goals / s.years_pro).toFixed(2) : null,
+  wc_goals_per_game:       (p, s) => (s.world_cup_appearances > 0 && s.world_cup_goals > 0) ? +(s.world_cup_goals / s.world_cup_appearances).toFixed(3) : null,
 };
 
 export function getVal(card, field) {
@@ -52,12 +67,13 @@ export function compareCards(cardA, cardB, question) {
 // Havuzdaki oyuncuların en az %30'unun verisi olan soruları filtreler.
 // Aynı field+higher_wins çiftini aynı oyunda iki kez seçmez.
 export function pickQuestions(count = 10, poolPlayers = []) {
-  let candidates = QUESTIONS;
+  let candidates = QUESTIONS.filter(q => !q.disabled);
 
   if (poolPlayers.length > 0) {
     candidates = QUESTIONS.filter(q => {
       const withData = poolPlayers.filter(p => {
         const v = getVal(p, q.field);
+        if (q.zero_valid) return v !== null && v !== undefined;
         return v !== null && v !== undefined && v > 0;
       });
       return withData.length >= poolPlayers.length * 0.3;

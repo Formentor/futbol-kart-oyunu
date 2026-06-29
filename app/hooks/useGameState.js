@@ -1,6 +1,6 @@
 'use client';
 import { useState, useCallback } from 'react';
-import { pickQuestions } from '../data/questions';
+import { pickQuestions } from '../lib/gameUtils';
 
 const WIN_SCORE = 3;
 const POOL_SIZE = 10;
@@ -92,7 +92,7 @@ export function useGameState(allPlayers) {
     const [pA, pB] = buildBalancedPools(allPlayers, POOL_SIZE);
     setPoolA(pA);
     setPoolB(pB);
-    setQuestions(pickQuestions(10));
+    setQuestions(pickQuestions(10, [...pA, ...pB]));
     setQuestionIndex(0);
     setHandA([]); setHandB([]);
     setUsedA(new Set()); setUsedB(new Set());
