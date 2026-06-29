@@ -9,6 +9,7 @@ import RevealScreen from './components/RevealScreen';
 import GameOverScreen from './components/GameOverScreen';
 import LeaderboardScreen from './components/LeaderboardScreen';
 import LobbyScreen from './components/LobbyScreen';
+import AuthButton from './components/AuthButton';
 
 export default function Home() {
   const [players, setPlayers] = useState([]);
@@ -18,6 +19,7 @@ export default function Home() {
   const [nameB, setNameB] = useState('Oyuncu B');
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [gameMode, setGameMode] = useState(null); // null | 'local' | 'online'
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch('/api/players')
@@ -71,11 +73,17 @@ export default function Home() {
   if (!gameMode) {
     return (
       <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center gap-8 p-6">
+        {/* Üst köşe: auth */}
+        <div className="absolute top-4 right-4">
+          <AuthButton onUserChange={setUser} />
+        </div>
+
         <div className="text-center">
           <p className="text-6xl mb-3">⚽</p>
           <h1 className="text-4xl font-black tracking-widest uppercase text-yellow-400">Futbol Kart</h1>
           <p className="text-gray-400 text-sm mt-1 tracking-widest uppercase">Oyunu</p>
         </div>
+
         <div className="w-full max-w-sm flex flex-col gap-3">
           <button
             onClick={() => setGameMode('local')}
@@ -84,10 +92,15 @@ export default function Home() {
             🎮 Hot Seat (Aynı Cihaz)
           </button>
           <button
-            onClick={() => setGameMode('online')}
-            className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-black text-xl uppercase tracking-widest transition-all hover:scale-105 shadow-lg"
+            onClick={() => user ? setGameMode('online') : null}
+            className={`w-full py-4 rounded-xl font-black text-xl uppercase tracking-widest transition-all shadow-lg ${
+              user
+                ? 'bg-blue-600 hover:bg-blue-500 text-white hover:scale-105'
+                : 'bg-blue-900/40 text-blue-400/50 cursor-not-allowed'
+            }`}
+            title={!user ? 'Online oynamak için giriş yap' : ''}
           >
-            🌐 Online (Farklı Cihaz)
+            🌐 Online {!user && <span className="text-sm font-normal normal-case">(Giriş gerekli)</span>}
           </button>
           <button
             onClick={() => setShowLeaderboard(true)}
