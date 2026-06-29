@@ -99,20 +99,33 @@ function posGroup(p) {
 }
 
 export function buildBalancedPools(allPlayers, poolSize) {
+  // Separate legends (retired) from active players
+  const legends = shuffle(allPlayers.filter(p => p.current_club === 'Emekli'));
+  const active  = allPlayers.filter(p => p.current_club !== 'Emekli');
+
+  // 2 legends per pool
+  const legendsA = legends.splice(0, 2);
+  const legendsB = legends.splice(0, 2);
+
+  // Active players grouped by position
   const groups = { GK: [], DEF: [], MID: [], FWD: [] };
-  allPlayers.forEach(p => groups[posGroup(p)].push(p));
+  active.forEach(p => groups[posGroup(p)].push(p));
   Object.keys(groups).forEach(k => { groups[k] = shuffle(groups[k]); });
 
-  const poolA = [], poolB = [];
-  const mins = { GK: 2, DEF: 2, MID: 2, FWD: 2 };
+  // 2 per position per pool (8 slots) + 2 legends = 10 total
+  const poolA = [...legendsA];
+  const poolB = [...legendsB];
   const leftover = [];
+  const mins = { GK: 2, DEF: 2, MID: 2, FWD: 2 };
   Object.entries(groups).forEach(([k, arr]) => {
     const n = Math.min(mins[k], Math.floor(arr.length / 2));
     poolA.push(...arr.splice(0, n));
     poolB.push(...arr.splice(0, n));
     leftover.push(...arr);
   });
-  const rest = shuffle(leftover);
+
+  // Fill any remaining slots from leftover active players
+  const rest = shuffle([...leftover, ...legends]);
   while (poolA.length < poolSize && rest.length) poolA.push(rest.pop());
   while (poolB.length < poolSize && rest.length) poolB.push(rest.pop());
   return [shuffle(poolA), shuffle(poolB)];
