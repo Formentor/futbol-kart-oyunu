@@ -50,6 +50,11 @@ export function useOnlineGame(allPlayers) {
             const { key, id } = pendingChoiceRef.current;
             if (!incoming[key]) incoming[key] = id;
           }
+          // Also restore from lastChoiceRef — covers the window after pendingChoiceRef clears
+          if (lastChoiceRef.current && incoming.phase === 'play' && !incoming.round_result) {
+            const { key, id } = lastChoiceRef.current;
+            if (!incoming[key]) incoming[key] = id;
+          }
           // Restore pending draft selection if wiped by stale event
           if (pendingDraftRef.current) {
             const { key, value } = pendingDraftRef.current;
