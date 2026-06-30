@@ -307,7 +307,7 @@ export function useOnlineGame(allPlayers) {
       phase: otherConfirmed ? 'play' : 'draft',
       ...(otherConfirmed ? { play_started_at: new Date().toISOString() } : {}),
     };
-    await updateState(patch);
+    await updateState(patch, roomCode, latest);
   }, [gs, role, roomCode, updateState]);
 
   // ── Play actions ────────────────────────────────────────────────────────────
