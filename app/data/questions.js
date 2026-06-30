@@ -106,7 +106,7 @@ export const QUESTIONS = [
 
   // ── TERS SORULAR ─────────────────────────────────────────────────────────────
   { id: 'S101', text: 'Hangi futbolcunun ikonik forma numarası daha küçüktür?',                           field: 'shirt_number',                 higher_wins: false, unit: 'no' },
-  { id: 'S102', text: 'Hangi futbolcu kariyerini daha erken noktalamıştır?',                              field: 'years_pro',                    higher_wins: false, unit: 'yıl' },
+  { id: 'S102', text: 'Hangi futbolcu kariyerini daha erken noktalamıştır?',                              field: 'years_pro',                    higher_wins: false, unit: 'yıl',  disabled: true },
   { id: 'S103', text: 'Hangi futbolcu daha az kulüpte oynamıştır? (sadık kariyer)',                       field: 'clubs_count',                  higher_wins: false, unit: 'kulüp' },
   { id: 'S104', text: 'Hangi futbolcu kariyerinde daha az ülkede oynamıştır?',                            field: 'countries_played_count',       higher_wins: false, unit: 'ülke' },
   { id: 'S105', text: 'Hangi futbolcu daha hafiftir?',                                                    field: 'weight_kg',                    higher_wins: false, unit: 'kg' },
