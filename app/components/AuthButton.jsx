@@ -62,7 +62,7 @@ export default function AuthButton({ onUserChange, nickname }) {
         className="w-8 h-8 rounded-full border-2 border-white/20"
       />
       <span className="text-white text-sm font-medium hidden sm:block">
-        {nickname || user.user_metadata?.full_name?.split(' ')[0]}
+        {nickname || '...'}
       </span>
       <button
         onClick={signOut}
