@@ -61,6 +61,16 @@ export function useOnlineGame(allPlayers) {
     return () => { supabase.removeChannel(channel); };
   }, [roomCode]);
 
+  // Waiting-for-b polling — realtime bazen geç gelir, 3s'de bir kontrol et
+  useEffect(() => {
+    if (!roomCode || gs?.phase !== 'waiting-for-b') return;
+    const poll = setInterval(async () => {
+      const { data } = await supabase.from('games').select('state').eq('room_code', roomCode).single();
+      if (data?.state?.phase !== 'waiting-for-b') setGs(data.state);
+    }, 3000);
+    return () => clearInterval(poll);
+  }, [roomCode, gs?.phase]);
+
   // ── Role A: auto-resolve when both cards chosen ──────────────────────────────
   // Accepts the state object directly so it can be called from the stuck detector too.
   const doResolve = useCallback((g) => {
