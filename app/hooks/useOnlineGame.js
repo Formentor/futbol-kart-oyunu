@@ -139,7 +139,6 @@ export function useOnlineGame(allPlayers) {
       // For role A: if both cards chosen but still in play, force-retry resolution
       // in case the realtime event was missed or the previous RPC failed.
       if (role === 'A' && data.state.chosen_a && data.state.chosen_b && !data.state.round_result) {
-        resolvedRef.current = false;
         doResolve(data.state);
       }
       setGs(data.state);
