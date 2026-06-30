@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { saveResult } from './LeaderboardScreen';
 
 export default function GameOverScreen({ game, nameA, nameB, onLeaderboard, role, isOnline }) {
-  const { scoreA, scoreB, roundHistory, resetGame, WIN_SCORE } = game;
+  const { scoreA, scoreB, roundHistory, resetGame, WIN_SCORE, requestRematch, myRematch, oppRematch } = game;
   const saved = useRef(false);
   const [step, setStep] = useState(0); // 0=hidden 1=scores 2=winner 3=confetti 4=summary
 
@@ -152,12 +152,28 @@ export default function GameOverScreen({ game, nameA, nameB, onLeaderboard, role
 
       {step >= 4 && (
         <div className="flex gap-3 w-full max-w-lg">
-          <button
-            onClick={resetGame}
-            className="flex-1 py-3 bg-green-600 hover:bg-green-500 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg hover:scale-105"
-          >
-            Yeniden Oyna
-          </button>
+          {isOnline ? (
+            <button
+              onClick={requestRematch}
+              disabled={myRematch}
+              className={`flex-1 py-3 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg ${
+                myRematch
+                  ? 'bg-yellow-600/40 text-yellow-300 cursor-default'
+                  : 'bg-green-600 hover:bg-green-500 hover:scale-105'
+              }`}
+            >
+              {myRematch
+                ? oppRematch ? '⚡ Başlıyor...' : '⏳ Rakip bekleniyor...'
+                : '🔁 Tekrar Oyna'}
+            </button>
+          ) : (
+            <button
+              onClick={resetGame}
+              className="flex-1 py-3 bg-green-600 hover:bg-green-500 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg hover:scale-105"
+            >
+              Yeniden Oyna
+            </button>
+          )}
           <button
             onClick={onLeaderboard}
             className="flex-1 py-3 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-xl font-bold text-sm uppercase tracking-widest transition-all text-gray-300"

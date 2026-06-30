@@ -394,6 +394,27 @@ export function useOnlineGame(allPlayers) {
   const goToGameOver = useCallback(() => updateState({ phase: 'gameover' }), [updateState]);
   const resetGame = useCallback(() => { setGs(null); setRoomCode(null); setRole(null); }, []);
 
+  // ── Rematch (aynı odada yeniden oyna) ───────────────────────────────────────
+  const requestRematch = useCallback(async () => {
+    if (!roomCode || !role) return;
+    const key = role === 'A' ? 'rematch_a' : 'rematch_b';
+    await supabase.rpc('patch_game_state', { p_room_code: roomCode, p_patch: { [key]: true } });
+  }, [roomCode, role]);
+
+  // Her iki oyuncu da rematch isteyince A yeni state oluşturur
+  useEffect(() => {
+    if (gs?.rematch_a && gs?.rematch_b && role === 'A' && gs?.phase === 'gameover') {
+      const newState = buildInitialState(gs.player_a, allPlayers);
+      newState.player_b = gs.player_b;
+      newState.phase = 'draft';
+      newState.draft_started_at = new Date().toISOString();
+      supabase.from('games')
+        .update({ state: newState, updated_at: new Date().toISOString() })
+        .eq('room_code', roomCode)
+        .then(() => setGs(newState));
+    }
+  }, [gs?.rematch_a, gs?.rematch_b, role, roomCode, allPlayers]);
+
   // ── Derive local phase for existing UI components ───────────────────────────
   const phase = (() => {
     if (!gs) return 'loading';
@@ -472,6 +493,9 @@ export function useOnlineGame(allPlayers) {
     oppReady: role === 'A' ? (gs?.ready_next_b ?? false) : (gs?.ready_next_a ?? false),
     goToGameOver,
     resetGame,
+    requestRematch,
+    myRematch:  role === 'A' ? (gs?.rematch_a ?? false) : (gs?.rematch_b ?? false),
+    oppRematch: role === 'A' ? (gs?.rematch_b ?? false) : (gs?.rematch_a ?? false),
     onPlayersLoaded: () => {},
     startGame: () => {},
     playSuddenDeath: () => {},
