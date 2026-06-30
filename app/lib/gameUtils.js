@@ -91,7 +91,7 @@ export function pickQuestions(count = 5, poolPlayers = []) {
   const higher = shuffle(candidates.filter(q =>  q.higher_wins));
   const lower  = shuffle(candidates.filter(q => !q.higher_wins));
 
-  // Aynı field iki kez seçilmesin
+  // Aynı field iki kez seçilmesin; yeterli unique field yoksa tekrar izin ver
   const pick = (pool, n) => {
     const result = [];
     const usedFields = new Set();
@@ -100,6 +100,14 @@ export function pickQuestions(count = 5, poolPlayers = []) {
       if (usedFields.has(q.field)) continue;
       usedFields.add(q.field);
       result.push(q);
+    }
+    // Unique field yetmediyse kalan sorulardan tamamla
+    if (result.length < n) {
+      const usedIds = new Set(result.map(q => q.id));
+      for (const q of pool) {
+        if (result.length >= n) break;
+        if (!usedIds.has(q.id)) result.push(q);
+      }
     }
     return result;
   };
