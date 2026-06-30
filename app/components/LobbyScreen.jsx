@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function sanitize(v) {
   return v.replace(/[^a-zA-Z0-9ÇçĞğİıÖöŞşÜü]/g, '').toUpperCase();
@@ -7,7 +7,11 @@ function sanitize(v) {
 
 export default function LobbyScreen({ game, onBack, nickname }) {
   const [mode, setMode] = useState(null); // 'create' | 'join'
-  const [name, setName] = useState(nickname ? sanitize(nickname) : '');
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    if (nickname) setName(sanitize(nickname));
+  }, [nickname]);
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [localError, setLocalError] = useState('');
