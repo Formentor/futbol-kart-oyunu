@@ -5,9 +5,9 @@ function sanitize(v) {
   return v.replace(/[^a-zA-Z0-9ÇçĞğİıÖöŞşÜü]/g, '').toUpperCase();
 }
 
-export default function LobbyScreen({ game, onBack }) {
+export default function LobbyScreen({ game, onBack, nickname }) {
   const [mode, setMode] = useState(null); // 'create' | 'join'
-  const [name, setName] = useState('');
+  const [name, setName] = useState(nickname ? sanitize(nickname) : '');
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [localError, setLocalError] = useState('');
@@ -73,17 +73,24 @@ export default function LobbyScreen({ game, onBack }) {
         </div>
       ) : (
         <div className="w-full max-w-sm flex flex-col gap-4">
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-widest mb-1.5 text-yellow-400">İsmin</label>
-            <input
-              type="text"
-              value={name}
-              onChange={e => setName(sanitize(e.target.value))}
-              placeholder="ISMIN"
-              maxLength={16}
-              className="w-full bg-gray-800 border-2 border-yellow-800 focus:border-yellow-400 rounded-xl px-4 py-3 text-white font-bold outline-none uppercase tracking-widest"
-            />
-          </div>
+          {nickname ? (
+            <div className="flex items-center gap-2 bg-gray-800 border border-gray-700 rounded-xl px-4 py-3">
+              <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">İsmin:</span>
+              <span className="text-yellow-400 font-black uppercase tracking-widest">{name}</span>
+            </div>
+          ) : (
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-widest mb-1.5 text-yellow-400">İsmin</label>
+              <input
+                type="text"
+                value={name}
+                onChange={e => setName(sanitize(e.target.value))}
+                placeholder="ISMIN"
+                maxLength={16}
+                className="w-full bg-gray-800 border-2 border-yellow-800 focus:border-yellow-400 rounded-xl px-4 py-3 text-white font-bold outline-none uppercase tracking-widest"
+              />
+            </div>
+          )}
 
           {mode === 'join' && (
             <div>

@@ -147,7 +147,7 @@ export default function Home() {
     const { phase, role } = onlineGame;
 
     if (!onlineGame.roomCode || phase === 'waiting-for-b') {
-      return withHome(<LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} />);
+      return withHome(<LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} nickname={nickname} />);
     }
 
     const oNameA = onlineGame.playerA || 'Oyuncu A';
