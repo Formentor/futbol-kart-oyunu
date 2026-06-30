@@ -2,7 +2,7 @@
 import { createClient } from '../lib/supabase/client';
 import { useEffect, useState } from 'react';
 
-export default function AuthButton({ onUserChange }) {
+export default function AuthButton({ onUserChange, nickname }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
@@ -62,7 +62,7 @@ export default function AuthButton({ onUserChange }) {
         className="w-8 h-8 rounded-full border-2 border-white/20"
       />
       <span className="text-white text-sm font-medium hidden sm:block">
-        {user.user_metadata?.full_name?.split(' ')[0]}
+        {nickname || user.user_metadata?.full_name?.split(' ')[0]}
       </span>
       <button
         onClick={signOut}

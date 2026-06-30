@@ -10,6 +10,8 @@ import GameOverScreen from './components/GameOverScreen';
 import LeaderboardScreen from './components/LeaderboardScreen';
 import LobbyScreen from './components/LobbyScreen';
 import AuthButton from './components/AuthButton';
+import NicknameModal from './components/NicknameModal';
+import { createClient } from './lib/supabase/client';
 
 export default function Home() {
   const [players, setPlayers] = useState([]);
@@ -20,6 +22,16 @@ export default function Home() {
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [gameMode, setGameMode] = useState(null); // null | 'local' | 'online'
   const [user, setUser] = useState(null);
+  const [nickname, setNickname] = useState(null); // null = yükleniyor, '' = yok, 'x' = var
+  const supabase = createClient();
+
+  // Kullanıcı değişince profili çek
+  const handleUserChange = async (u) => {
+    setUser(u);
+    if (!u) { setNickname(null); return; }
+    const { data } = await supabase.from('profiles').select('username').eq('id', u.id).single();
+    setNickname(data?.username || '');
+  };
 
   useEffect(() => {
     fetch('/api/players')
@@ -87,8 +99,13 @@ export default function Home() {
       <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center gap-8 p-6">
         {/* Üst köşe: auth */}
         <div className="absolute top-4 right-4">
-          <AuthButton onUserChange={setUser} />
+          <AuthButton onUserChange={handleUserChange} nickname={nickname} />
         </div>
+
+        {/* Nickname modal — login olmuş ama isim seçmemiş */}
+        {user && nickname === '' && (
+          <NicknameModal user={user} onSaved={(n) => setNickname(n)} />
+        )}
 
         <div className="text-center">
           <p className="text-6xl mb-3">⚽</p>
