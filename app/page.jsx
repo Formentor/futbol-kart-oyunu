@@ -13,6 +13,42 @@ import AuthButton from './components/AuthButton';
 import NicknameModal from './components/NicknameModal';
 import { createClient } from './lib/supabase/client';
 
+function GuestModal({ onConfirm, onCancel }) {
+  const [name, setName] = useState('');
+  const sanitize = (v) => v.replace(/[^a-zA-Z0-9ÇçĞğİıÖöŞşÜü_]/g, '');
+  return (
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur flex items-center justify-center p-6">
+      <div className="bg-gray-900 border border-white/10 rounded-2xl p-8 w-full max-w-sm flex flex-col gap-5">
+        <div className="text-center">
+          <p className="text-4xl mb-3">👤</p>
+          <h2 className="text-white text-xl font-black">Misafir girişi</h2>
+          <p className="text-gray-400 text-sm mt-1">Oyunda görünecek ismi gir</p>
+        </div>
+        <input
+          type="text"
+          value={name}
+          onChange={e => setName(sanitize(e.target.value))}
+          onKeyDown={e => e.key === 'Enter' && name.trim().length >= 2 && onConfirm(name.trim())}
+          placeholder="İsmin"
+          maxLength={16}
+          className="w-full bg-gray-800 border border-white/10 rounded-xl px-4 py-3 text-white text-center text-lg font-bold placeholder-gray-600 focus:outline-none focus:border-yellow-400 transition-colors uppercase tracking-widest"
+          autoFocus
+        />
+        <button
+          onClick={() => onConfirm(name.trim())}
+          disabled={name.trim().length < 2}
+          className="w-full py-3 bg-blue-600 hover:bg-blue-500 disabled:bg-gray-700 disabled:text-gray-500 text-white font-black rounded-xl text-lg transition-all"
+        >
+          Devam Et →
+        </button>
+        <button onClick={onCancel} className="text-gray-500 text-sm font-bold uppercase tracking-widest hover:text-gray-300 transition-colors text-center">
+          İptal
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,6 +59,8 @@ export default function Home() {
   const [gameMode, setGameMode] = useState(null); // null | 'local' | 'online'
   const [user, setUser] = useState(null);
   const [nickname, setNickname] = useState(null); // null = yükleniyor, '' = yok, 'x' = var
+  const [guestName, setGuestName] = useState('');
+  const [showGuestModal, setShowGuestModal] = useState(false);
   const supabase = createClient();
 
   // Kullanıcı değişince profili çek
@@ -107,6 +145,14 @@ export default function Home() {
           <NicknameModal user={user} onSaved={(n) => setNickname(n)} />
         )}
 
+        {/* Misafir isim modal */}
+        {showGuestModal && (
+          <GuestModal
+            onConfirm={(name) => { setGuestName(name); setShowGuestModal(false); setGameMode('online'); }}
+            onCancel={() => setShowGuestModal(false)}
+          />
+        )}
+
         <div className="text-center">
           <p className="text-6xl mb-3">⚽</p>
           <h1 className="text-4xl font-black tracking-widest uppercase text-yellow-400">Futbol Kart</h1>
@@ -121,16 +167,19 @@ export default function Home() {
             🎮 Hot Seat (Aynı Cihaz)
           </button>
           <button
-            onClick={() => user ? setGameMode('online') : null}
-            className={`w-full py-4 rounded-xl font-black text-xl uppercase tracking-widest transition-all shadow-lg ${
-              user
-                ? 'bg-blue-600 hover:bg-blue-500 text-white hover:scale-105'
-                : 'bg-blue-900/40 text-blue-400/50 cursor-not-allowed'
-            }`}
-            title={!user ? 'Online oynamak için giriş yap' : ''}
+            onClick={() => (user || guestName) ? setGameMode('online') : setShowGuestModal(true)}
+            className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-black text-xl uppercase tracking-widest transition-all hover:scale-105 shadow-lg"
           >
-            🌐 Online {!user && <span className="text-sm font-normal normal-case">(Giriş gerekli)</span>}
+            🌐 Online
           </button>
+          {!user && (
+            <button
+              onClick={() => setShowGuestModal(true)}
+              className="w-full py-3 bg-gray-700 hover:bg-gray-600 border border-gray-600 rounded-xl font-bold text-sm uppercase tracking-widest text-gray-300 transition-all"
+            >
+              👤 Misafir Olarak Devam Et
+            </button>
+          )}
           <button
             onClick={() => setShowLeaderboard(true)}
             className="w-full py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl font-bold text-sm uppercase tracking-widest text-gray-400 transition-all"
@@ -147,7 +196,7 @@ export default function Home() {
     const { phase, role } = onlineGame;
 
     if (!onlineGame.roomCode || phase === 'waiting-for-b') {
-      return withHome(<LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} nickname={nickname} />);
+      return withHome(<LobbyScreen game={onlineGame} onBack={() => setGameMode(null)} nickname={nickname || guestName} />);
     }
 
     const oNameA = onlineGame.playerA || 'Oyuncu A';
